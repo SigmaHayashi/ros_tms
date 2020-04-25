@@ -2,6 +2,7 @@
 	<node pkg="tms_ss_ibs" type="ibs.py" name="ibs_cbnt" output="screen">
 		<param name="PORT_TR"  value="/dev/ttyUSB0" />
 		<param name="PORT_LC0" value="/dev/ttyACM0" />
+<<<<<<< HEAD
 		<param name="frame_id" value="/cabinet_link" />
 		<param name="idSensor" value="3002" />
 		<param name="idPlace"  value="6019" />
@@ -10,5 +11,13 @@
 		<param name="offset_z"		   value="0.8" />
 		<rosparam param="loadcell_points/x">[0.04, 0.425, 0.04, 0.425]</rosparam>
 		<rosparam param="loadcell_points/y">[0.047, 0.047, 0.27, 0.27]</rosparam>
+=======
+		<param name="frame_id" value="/ics" />
+		<param name="idSensor" value="3002" />
+		<param name="idPlace"  value="6019" />
+		<param name="z"		   value="620.0" />
+		<rosparam param="loadcell_points/x">[40.0, 425.0, 40.0, 425.0]</rosparam>
+		<rosparam param="loadcell_points/y">[47.0, 47.0, 270.0, 270.0]</rosparam>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 	</node>
 </launch>

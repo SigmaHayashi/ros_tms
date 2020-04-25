@@ -1,17 +1,28 @@
 
 /*
 Copyright (c) 2010 Donatien Garnier (donatiengar [at] gmail [dot] com)
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+<<<<<<< HEAD
 
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
+=======
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -42,6 +53,7 @@ Debugging helpers header file
 #ifndef __DEBUGSTREAM
 #define __DEBUGSTREAM
 
+<<<<<<< HEAD
 class DebugStream
 {
 public:
@@ -50,12 +62,24 @@ public:
   static void breakPoint(const char* file, int line);
 
 private:
+=======
+
+class DebugStream
+{
+public:
+static void debug(const char* format, ...);
+static void release();
+static void breakPoint(const char* file, int line);
+private:
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 #undef DBG
 #undef DBG_END
 #undef BREAK
 
+<<<<<<< HEAD
 /// Debug output (if enabled), same syntax as printf, with heading info
 #define DBG(...)                                                                                                       \
   do                                                                                                                   \
@@ -73,6 +97,16 @@ private:
 #define DBG_END DebugStream::release
 
 /// Break point usin serial debug interface (if debug enbaled)
+=======
+///Debug output (if enabled), same syntax as printf, with heading info
+#define DBG(...) do{ DebugStream::debug("[%s:%s@%d] ", __FILE__, __FUNCTION__, __LINE__); DebugStream::debug(__VA_ARGS__); } while(0);
+
+///Debug output (if enabled), same syntax as printf, no heading info
+#define DBGL(...) do{ DebugStream::debug(__VA_ARGS__); } while(0);
+#define DBG_END DebugStream::release
+
+///Break point usin serial debug interface (if debug enbaled)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define BREAK() DebugStream::breakPoint(__FILE__, __LINE__)
 #endif
 
@@ -90,7 +124,11 @@ private:
 #define __SNPRINTF
 #include "mbed.h"
 
+<<<<<<< HEAD
 // int snprintf(char *str, int size, const char *format, ...);
+=======
+//int snprintf(char *str, int size, const char *format, ...);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 #endif
 
@@ -99,3 +137,7 @@ private:
 #endif
 
 //#endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

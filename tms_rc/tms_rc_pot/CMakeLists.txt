@@ -1,15 +1,19 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(tms_rc_pot)
 
+<<<<<<< HEAD
 
 #set( CMAKE_INCLUDE_PATH "/usr/include")
 #set( CMAKE_LIBRARY_PATH "/usr/lib/x86_64-linux-gnu/libncurses.so")
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 find_package(catkin REQUIRED COMPONENTS
   tms_msg_rc
   roscpp
   rospy
   tf
+<<<<<<< HEAD
   geometry_msgs
   sensor_msgs
 )
@@ -19,6 +23,17 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Boost REQUIRED COMPONENTS thread)
 
 generate_messages(
+=======
+)
+
+# add_service_files(
+#   FILES
+#   Service1.srv
+#   Service2.srv
+# )
+
+ generate_messages(
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
    DEPENDENCIES
    std_msgs
 )
@@ -31,6 +46,7 @@ catkin_package(
 )
 
 include_directories(
+<<<<<<< HEAD
   include
   ${catkin_INCLUDE_DIRS}
   ${BOOST_INCLUDE_DIRS}
@@ -93,3 +109,15 @@ target_link_libraries(portable_virtual_laser ${catkin_LIBRARIES})
 add_executable(portable_virtual_laser2 src/portable_virtual_laser2.cpp)
 add_dependencies(portable_virtual_laser2 tms_msg_rc_gencpp)
 target_link_libraries(portable_virtual_laser2 ${catkin_LIBRARIES})
+=======
+  ${catkin_INCLUDE_DIRS}
+)
+
+add_executable(tf_test_node src/tf_test.cpp)
+add_dependencies(tf_test_node tf_test_generate_messages_cpp tms_msg_rc_gencpp)
+target_link_libraries(tf_test_node ${catkin_LIBRARIES})
+
+add_executable(virtual_robot src/virtual_pot_robot.cpp)
+add_dependencies(virtual_robot tf_test_generate_messages_cpp tms_msg_rc_gencpp)
+target_link_libraries(virtual_robot ${catkin_LIBRARIES})
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

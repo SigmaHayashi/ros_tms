@@ -7,13 +7,21 @@
 * The authors hereby grant permission to use, copy, modify, distribute,
 * and license this software and its documentation for any purpose, provided
 * that existing copyright notices are retained in all copies and that this
+<<<<<<< HEAD
 * notice and the following disclaimer are included verbatim in any
+=======
+* notice and the following disclaimer are included verbatim in any 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * distributions. No written agreement, license, or royalty fee is required
 * for any of the authorized uses.
 *
 * THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS *AS IS* AND ANY EXPRESS OR
 * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+<<<<<<< HEAD
 * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+=======
+* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
 * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -57,11 +65,17 @@
 /*
  * LCP Packet header = Code, id, length.
  */
+<<<<<<< HEAD
 #define HEADERLEN (sizeof(u_char) + sizeof(u_char) + sizeof(u_short))
+=======
+#define HEADERLEN (sizeof (u_char) + sizeof (u_char) + sizeof (u_short))
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*
  *  CP (LCP, IPCP, etc.) codes.
  */
+<<<<<<< HEAD
 #define CONFREQ 1 /* Configuration Request */
 #define CONFACK 2 /* Configuration Ack */
 #define CONFNAK 3 /* Configuration Nak */
@@ -69,12 +83,26 @@
 #define TERMREQ 5 /* Termination Request */
 #define TERMACK 6 /* Termination Ack */
 #define CODEREJ 7 /* Code Reject */
+=======
+#define CONFREQ     1 /* Configuration Request */
+#define CONFACK     2 /* Configuration Ack */
+#define CONFNAK     3 /* Configuration Nak */
+#define CONFREJ     4 /* Configuration Reject */
+#define TERMREQ     5 /* Termination Request */
+#define TERMACK     6 /* Termination Ack */
+#define CODEREJ     7 /* Code Reject */
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*
  * Each FSM is described by an fsm structure and fsm callbacks.
  */
+<<<<<<< HEAD
 typedef struct fsm
 {
+=======
+typedef struct fsm {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   int unit;                        /* Interface unit number */
   u_short protocol;                /* Data Link Layer Protocol field value */
   int state;                       /* State */
@@ -93,6 +121,7 @@ typedef struct fsm
   int term_reason_len;             /* Length of term_reason */
 } fsm;
 
+<<<<<<< HEAD
 typedef struct fsm_callbacks
 {
   void (*resetci)(fsm*);                           /* Reset our Configuration Information */
@@ -125,17 +154,58 @@ typedef struct fsm_callbacks
 #define LS_ACKRCVD 7  /* We've received a Config Ack */
 #define LS_ACKSENT 8  /* We've sent a Config Ack */
 #define LS_OPENED 9   /* Connection available */
+=======
+
+typedef struct fsm_callbacks {
+  void (*resetci)(fsm*);                            /* Reset our Configuration Information */
+  int  (*cilen)(fsm*);                              /* Length of our Configuration Information */
+  void (*addci)(fsm*, u_char*, int*);               /* Add our Configuration Information */
+  int  (*ackci)(fsm*, u_char*, int);                /* ACK our Configuration Information */
+  int  (*nakci)(fsm*, u_char*, int);                /* NAK our Configuration Information */
+  int  (*rejci)(fsm*, u_char*, int);                /* Reject our Configuration Information */
+  int  (*reqci)(fsm*, u_char*, int*, int);          /* Request peer's Configuration Information */
+  void (*up)(fsm*);                                 /* Called when fsm reaches LS_OPENED state */
+  void (*down)(fsm*);                               /* Called when fsm leaves LS_OPENED state */
+  void (*starting)(fsm*);                           /* Called when we want the lower layer */
+  void (*finished)(fsm*);                           /* Called when we don't want the lower layer */
+  void (*protreject)(int);                          /* Called when Protocol-Reject received */
+  void (*retransmit)(fsm*);                         /* Retransmission is necessary */
+  int  (*extcode)(fsm*, int, u_char, u_char*, int); /* Called when unknown code received */
+  char *proto_name;                                 /* String name for protocol (for messages) */
+} fsm_callbacks;
+
+
+/*
+ * Link states.
+ */
+#define LS_INITIAL  0 /* Down, hasn't been opened */
+#define LS_STARTING 1 /* Down, been opened */
+#define LS_CLOSED   2 /* Up, hasn't been opened */
+#define LS_STOPPED  3 /* Open, waiting for down event */
+#define LS_CLOSING  4 /* Terminating the connection, not open */
+#define LS_STOPPING 5 /* Terminating, but open */
+#define LS_REQSENT  6 /* We've sent a Config Request */
+#define LS_ACKRCVD  7 /* We've received a Config Ack */
+#define LS_ACKSENT  8 /* We've sent a Config Ack */
+#define LS_OPENED   9 /* Connection available */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*
  * Flags - indicate options controlling FSM operation
  */
 #define OPT_PASSIVE 1 /* Don't die if we don't get a response */
 #define OPT_RESTART 2 /* Treat 2nd OPEN as DOWN, UP */
+<<<<<<< HEAD
 #define OPT_SILENT 4  /* Wait for peer to speak first */
+=======
+#define OPT_SILENT  4 /* Wait for peer to speak first */
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*
  * Prototypes
  */
+<<<<<<< HEAD
 void fsm_init(fsm*);
 void fsm_lowerup(fsm*);
 void fsm_lowerdown(fsm*);
@@ -144,6 +214,17 @@ void fsm_close(fsm*, char*);
 void fsm_input(fsm*, u_char*, int);
 void fsm_protreject(fsm*);
 void fsm_sdata(fsm*, u_char, u_char, u_char*, int);
+=======
+void fsm_init (fsm*);
+void fsm_lowerup (fsm*);
+void fsm_lowerdown (fsm*);
+void fsm_open (fsm*);
+void fsm_close (fsm*, char*);
+void fsm_input (fsm*, u_char*, int);
+void fsm_protreject (fsm*);
+void fsm_sdata (fsm*, u_char, u_char, u_char*, int);
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*
  * Variables

@@ -15,7 +15,11 @@ catkin_package(
 #  INCLUDE_DIRS include
    LIBRARIES tms_ss_ps_manager
    CATKIN_DEPENDS message_runtime roscpp std_msgs
+<<<<<<< HEAD
   # DEPENDS system_lib
+=======
+   DEPENDS system_lib
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 ###########
@@ -26,7 +30,11 @@ include_directories(
 )
 
 add_executable(rps_manager src/rps.cpp)
+<<<<<<< HEAD
 add_dependencies(rps_manager
+=======
+add_dependencies(rps_manager tms_ss_ps_gencpp 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 tms_msg_ss_gencpp 
 tms_msg_db_gencpp
 tms_msg_rp_gencpp)

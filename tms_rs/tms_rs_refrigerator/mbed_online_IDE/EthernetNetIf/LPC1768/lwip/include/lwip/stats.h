@@ -1,8 +1,14 @@
 /*
  * Copyright (c) 2001-2004 Swedish Institute of Computer Science.
+<<<<<<< HEAD
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * All rights reserved. 
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -11,6 +17,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -26,6 +33,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
@@ -48,6 +72,7 @@ extern "C" {
 #endif
 
 #if LWIP_STATS_LARGE
+<<<<<<< HEAD
 #define STAT_COUNTER u32_t
 #define STAT_COUNTER_F U32_F
 #else
@@ -91,6 +116,48 @@ struct stats_igmp
 
 struct stats_mem
 {
+=======
+#define STAT_COUNTER     u32_t
+#define STAT_COUNTER_F   U32_F
+#else
+#define STAT_COUNTER     u16_t
+#define STAT_COUNTER_F   U16_F
+#endif 
+
+struct stats_proto {
+  STAT_COUNTER xmit;             /* Transmitted packets. */
+  STAT_COUNTER recv;             /* Received packets. */
+  STAT_COUNTER fw;               /* Forwarded packets. */
+  STAT_COUNTER drop;             /* Dropped packets. */
+  STAT_COUNTER chkerr;           /* Checksum error. */
+  STAT_COUNTER lenerr;           /* Invalid length error. */
+  STAT_COUNTER memerr;           /* Out of memory error. */
+  STAT_COUNTER rterr;            /* Routing error. */
+  STAT_COUNTER proterr;          /* Protocol error. */
+  STAT_COUNTER opterr;           /* Error in options. */
+  STAT_COUNTER err;              /* Misc error. */
+  STAT_COUNTER cachehit;
+};
+
+struct stats_igmp {
+  STAT_COUNTER xmit;             /* Transmitted packets. */
+  STAT_COUNTER recv;             /* Received packets. */
+  STAT_COUNTER drop;             /* Dropped packets. */
+  STAT_COUNTER chkerr;           /* Checksum error. */
+  STAT_COUNTER lenerr;           /* Invalid length error. */
+  STAT_COUNTER memerr;           /* Out of memory error. */
+  STAT_COUNTER proterr;          /* Protocol error. */
+  STAT_COUNTER rx_v1;            /* Received v1 frames. */
+  STAT_COUNTER rx_group;         /* Received group-specific queries. */
+  STAT_COUNTER rx_general;       /* Received general queries. */
+  STAT_COUNTER rx_report;        /* Received reports. */
+  STAT_COUNTER tx_join;          /* Sent joins. */
+  STAT_COUNTER tx_leave;         /* Sent leaves. */
+  STAT_COUNTER tx_report;        /* Sent reports. */
+};
+
+struct stats_mem {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #ifdef LWIP_DEBUG
   const char *name;
 #endif /* LWIP_DEBUG */
@@ -101,22 +168,34 @@ struct stats_mem
   STAT_COUNTER illegal;
 };
 
+<<<<<<< HEAD
 struct stats_syselem
 {
+=======
+struct stats_syselem {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   STAT_COUNTER used;
   STAT_COUNTER max;
   STAT_COUNTER err;
 };
 
+<<<<<<< HEAD
 struct stats_sys
 {
+=======
+struct stats_sys {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   struct stats_syselem sem;
   struct stats_syselem mutex;
   struct stats_syselem mbox;
 };
 
+<<<<<<< HEAD
 struct stats_
 {
+=======
+struct stats_ {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #if LINK_STATS
   struct stats_proto link;
 #endif
@@ -158,6 +237,7 @@ void stats_init(void);
 
 #define STATS_INC(x) ++lwip_stats.x
 #define STATS_DEC(x) --lwip_stats.x
+<<<<<<< HEAD
 #define STATS_INC_USED(x, y)                                                                                           \
   do                                                                                                                   \
   {                                                                                                                    \
@@ -167,6 +247,13 @@ void stats_init(void);
       lwip_stats.x.max = lwip_stats.x.used;                                                                            \
     }                                                                                                                  \
   } while (0)
+=======
+#define STATS_INC_USED(x, y) do { lwip_stats.x.used += y; \
+                                if (lwip_stats.x.max < lwip_stats.x.used) { \
+                                    lwip_stats.x.max = lwip_stats.x.used; \
+                                } \
+                             } while(0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #else /* LWIP_STATS */
 #define stats_init()
 #define STATS_INC(x)

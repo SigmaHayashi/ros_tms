@@ -4,12 +4,18 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+<<<<<<< HEAD
         - /MotionPlanning1/Scene Geometry1
         - /MotionPlanning1/Scene Robot1
         - /RobotModel1
         - /RobotModel1/Links1
       Splitter Ratio: 0.742560029
     Tree Height: 264
+=======
+        - /MotionPlanning1
+      Splitter Ratio: 0.74256
+    Tree Height: 380
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -24,9 +30,15 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
+<<<<<<< HEAD
       Enabled: false
       Line Style:
         Line Width: 0.0299999993
+=======
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
@@ -37,17 +49,26 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 59
       Reference Frame: <Fixed Frame>
+<<<<<<< HEAD
       Value: false
     - Class: moveit_rviz_plugin/MotionPlanning
       Enabled: true
       Move Group Namespace: ""
       MoveIt_Allow_Approximate_IK: false
       MoveIt_Goal_Tolerance: 0.10000000000000001
+=======
+      Value: true
+    - Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: true
+      Move Group Namespace: ""
+      MoveIt_Goal_Tolerance: 0.1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       MoveIt_Planning_Attempts: 10
       MoveIt_Planning_Time: 5
       MoveIt_Use_Constraint_Aware_IK: true
       MoveIt_Warehouse_Host: 127.0.0.1
       MoveIt_Warehouse_Port: 33829
+<<<<<<< HEAD
       MoveIt_Workspace:
         Center:
           X: 0
@@ -61,6 +82,10 @@ Visualization Manager:
       Planned Path:
         Color Enabled: false
         Interrupt Display: false
+=======
+      Name: MotionPlanning
+      Planned Path:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Links:
           All Links Enabled: true
           Expand Joint Details: false
@@ -101,6 +126,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           cancoffee_link:
             Alpha: 1
             Show Axes: false
@@ -126,6 +152,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           carpet_link:
             Alpha: 1
             Show Axes: false
@@ -144,6 +172,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
           chipstar_red_link:
             Alpha: 1
             Show Axes: false
@@ -169,11 +198,14 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           drawer_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           greentea_bottle_link:
             Alpha: 1
             Show Axes: false
@@ -199,6 +231,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           intelingent_shelf_link:
             Alpha: 1
             Show Axes: false
@@ -321,11 +355,14 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
           meeting_door_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           meeting_table_link:
             Alpha: 1
             Show Axes: false
@@ -381,7 +418,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           refrigerator_door_link:
+=======
+          recorder_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -391,6 +432,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
+=======
+          refrigerator_x_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          refrigerator_y_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           smartpal5_link:
             Alpha: 1
             Show Axes: false
@@ -413,11 +465,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           soysauce_bottle_black_link:
+=======
+          tree_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           soysauce_bottle_black_pitch_link:
             Alpha: 1
             Show Axes: false
@@ -439,6 +496,9 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
           tree_link:
+=======
+          tv_52_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -471,6 +531,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           wheelchair_link:
             Alpha: 1
             Show Axes: false
@@ -484,6 +545,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           workdesk_link:
             Alpha: 1
             Show Axes: false
@@ -493,6 +556,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -501,6 +565,14 @@ Visualization Manager:
         Show Trail: false
         State Display Time: 0.05 s
         Trail Step Size: 1
+=======
+        Loop Animation: true
+        Robot Alpha: 0.5
+        Show Robot Collision: false
+        Show Robot Visual: true
+        Show Trail: false
+        State Display Time: 0.05 s
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Trajectory Topic: move_group/display_planned_path
       Planning Metrics:
         Payload: 1
@@ -508,7 +580,11 @@ Visualization Manager:
         Show Manipulability: false
         Show Manipulability Index: false
         Show Weight Limit: false
+<<<<<<< HEAD
         TextHeight: 0.0799999982
+=======
+        TextHeight: 0.08
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       Planning Request:
         Colliding Link Color: 255; 0; 0
         Goal State Alpha: 1
@@ -516,7 +592,11 @@ Visualization Manager:
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
         Planning Group: l_arm
+<<<<<<< HEAD
         Query Goal State: false
+=======
+        Query Goal State: true
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
@@ -526,7 +606,11 @@ Visualization Manager:
       Scene Geometry:
         Scene Alpha: 1
         Scene Color: 50; 230; 50
+<<<<<<< HEAD
         Scene Display Time: 0.200000003
+=======
+        Scene Display Time: 0.2
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Show Scene Geometry: true
         Voxel Coloring: Z-Axis
         Voxel Rendering: Occupied Voxels
@@ -572,6 +656,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           cancoffee_link:
             Alpha: 1
             Show Axes: false
@@ -597,6 +682,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           carpet_link:
             Alpha: 1
             Show Axes: false
@@ -615,6 +702,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
           chipstar_red_link:
             Alpha: 1
             Show Axes: false
@@ -640,11 +728,14 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           drawer_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           greentea_bottle_link:
             Alpha: 1
             Show Axes: false
@@ -670,6 +761,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           intelingent_shelf_link:
             Alpha: 1
             Show Axes: false
@@ -792,11 +885,14 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
           meeting_door_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           meeting_table_link:
             Alpha: 1
             Show Axes: false
@@ -852,7 +948,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           refrigerator_door_link:
+=======
+          recorder_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -862,6 +962,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
+=======
+          refrigerator_x_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          refrigerator_y_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           smartpal5_link:
             Alpha: 1
             Show Axes: false
@@ -884,11 +995,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           soysauce_bottle_black_link:
+=======
+          tree_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           soysauce_bottle_black_pitch_link:
             Alpha: 1
             Show Axes: false
@@ -910,6 +1026,9 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
           tree_link:
+=======
+          tv_52_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -942,6 +1061,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+<<<<<<< HEAD
           wheelchair_link:
             Alpha: 1
             Show Axes: false
@@ -955,6 +1075,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           workdesk_link:
             Alpha: 1
             Show Axes: false
@@ -964,7 +1086,11 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
         Robot Alpha: 1
+=======
+        Robot Alpha: 0.5
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
@@ -985,6 +1111,7 @@ Visualization Manager:
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
+<<<<<<< HEAD
       Enabled: false
       Marker Topic: /dynamic_map_marker
       Name: DynamicMap
@@ -1502,6 +1629,34 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
+=======
+      Enabled: true
+      Marker Topic: /dynamic_map_marker
+      Name: DynamicMap
+      Namespaces:
+        dynamic_map: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /robot_path_marker
+      Name: RobotPath
+      Namespaces:
+        robot_path: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /shadow_path_marker
+      Name: RobotShadow
+      Namespaces:
+        robot_shadow: true
+      Queue Size: 100
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     Fixed Frame: world_link
     Frame Rate: 30
   Name: root
@@ -1514,13 +1669,20 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
+<<<<<<< HEAD
       Distance: 11.2023602
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
+=======
+      Distance: 12.0751
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
+<<<<<<< HEAD
         X: 10.2725477
         Y: 2.79053569
         Z: 9.33612955e-06
@@ -1533,6 +1695,17 @@ Visualization Manager:
       Target Frame: world_link
       Value: XYOrbit (rviz)
       Yaw: 4.47812462
+=======
+        X: 10.6527
+        Y: 3.12965
+        Z: 4.11912e-06
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.739796
+      Target Frame: world_link
+      Value: XYOrbit (rviz)
+      Yaw: 6.28314
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     Saved: ~
 Window Geometry:
   Displays:
@@ -1542,6 +1715,7 @@ Window Geometry:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
+<<<<<<< HEAD
   MotionPlanning:
     collapsed: false
   MotionPlanning - Slider:
@@ -1551,4 +1725,13 @@ Window Geometry:
     collapsed: false
   Width: 1855
   X: 65
+=======
+  Motion Planning:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b1000003dafc0200000005fb000000100044006900730070006c006100790073010000002800000211000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067010000023f000001c3000001ab00ffffff00000490000003da00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 1863
+  X: 1977
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   Y: 24

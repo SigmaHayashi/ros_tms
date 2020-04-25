@@ -1,8 +1,15 @@
 #!/usr/bin/env python
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 import rospy
 import genpy
 import pymongo  # https://api.mongodb.org/python/2.6.3/
+=======
+# -*- coding: utf-8 -*- 
+import rospy
+import genpy
+import pymongo # https://api.mongodb.org/python/2.6.3/
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 import json
 import copy
 from bson import json_util
@@ -14,14 +21,19 @@ import tms_db_manager.tms_db_util as db_util
 client = pymongo.MongoClient('localhost:27017')
 db = client.rostmsdb
 
+<<<<<<< HEAD
 
 class TmsDbBackuper():
 
+=======
+class TmsDbBackuper():
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     def __init__(self):
         rospy.init_node("tms_db_backuper")
         rospy.on_shutdown(self.shutdown)
         db_host = 'localhost'
         db_port = 27017
+<<<<<<< HEAD
         self.is_connected = db_util.check_connection(db_host, db_port)
         if not self.is_connected:
             raise Exception("Problem of connection")
@@ -36,10 +48,27 @@ class TmsDbBackuper():
         # print(update_period)
 
         cursor = db.history.find({'time': {'$lt': update_period}})
+=======
+        self.is_connected = db_util.check_connection(db_host, db_port);
+        if not self.is_connected:
+            raise Exception("Problem of connection")
+
+        rospy.Timer(rospy.Duration(60), self.manageDataCallback) #60sec
+        rospy.Timer(rospy.Duration(12*60*60), self.removeForeverDataCallback) # 12hour
+
+    def manageDataCallback(self, event):
+        # GMT +9 -1 hour
+        nowtime = rospy.Time.now() + rospy.Duration(9*60*60) - rospy.Duration(1*60*60)
+        update_period = str(datetime.utcfromtimestamp(nowtime.to_sec()))
+        # print(update_period)
+
+        cursor = db.history.find({'time':{'$lt':update_period}})
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         # print(cursor.count())
         for doc in cursor:
             db.backup.insert(doc)
 
+<<<<<<< HEAD
         db.history.remove({'time': {'$lt': update_period}})
 
     def removeForeverDataCallback(self, event):
@@ -48,6 +77,16 @@ class TmsDbBackuper():
         update_period = str(datetime.utcfromtimestamp(nowtime.to_sec()))
         # print(update_period)
         db.backup.remove({'time': {'$lt': update_period}})
+=======
+        db.history.remove({'time':{'$lt':update_period}})
+
+    def removeForeverDataCallback(self, event):
+        # GMT +9hour - 14day
+        nowtime = rospy.Time.now() + rospy.Duration(9*60*60) - rospy.Duration(14*24*60*60)
+        update_period = str(datetime.utcfromtimestamp(nowtime.to_sec()))
+        # print(update_period)
+        db.backup.remove({'time':{'$lt':update_period}})
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     def shutdown(self):
         rospy.loginfo("Stopping the node")

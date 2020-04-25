@@ -14,6 +14,7 @@
 #include <tms_msg_rc/robot_tts.h>
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 bool robotTts(tms_msg_rc::robot_tts::Request &req, tms_msg_rc::robot_tts::Response &res)
 {
   char cmd[26];
@@ -28,11 +29,29 @@ bool robotTts(tms_msg_rc::robot_tts::Request &req, tms_msg_rc::robot_tts::Respon
   system(say);
 
   res.result = 1;
+=======
+bool robotTts(tms_msg_rc::robot_tts::Request  &req,
+              tms_msg_rc::robot_tts::Response &res)
+{
+    char cmd[26];
+    char tts[128];
+    char say[14];
+
+    strcpy(cmd,"pico2wave --wave ~/say.wav ");
+    strcpy(say,"aplay ~/say.wav");
+
+    snprintf(tts, 128, "%s\"%s\"", cmd, req.text.c_str());
+    system(tts);
+    system(say);
+
+    res.result = 1;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 }
 
 //------------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
+<<<<<<< HEAD
   //--------------------------------------------------------------------------
   ros::init(argc, argv, "smartpal5_tts");
   ros::NodeHandle nh;
@@ -48,6 +67,23 @@ int main(int argc, char **argv)
     //----------------------------------------------------------------------
   }
   return 0;
+=======
+    //--------------------------------------------------------------------------
+    ros::init(argc, argv, "smartpal5_tts");
+    ros::NodeHandle nh;
+    ros::ServiceServer service  = nh.advertiseService("smartpal5_tts", robotTts);
+
+    //--------------------------------------------------------------------------
+    ros::Rate loop_rate(10); // 10Hz frequency (0.1 sec)    
+    while (ros::ok())
+    {
+      //----------------------------------------------------------------------
+      ros::spinOnce();
+      loop_rate.sleep();
+      //----------------------------------------------------------------------
+    }
+    return 0;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 }
 
 //------------------------------------------------------------------------------

@@ -19,18 +19,26 @@
   <build_depend>tms_msg_db</build_depend>
   <build_depend>tms_msg_rc</build_depend>
   <build_depend>tf</build_depend>
+<<<<<<< HEAD
   <build_depend>yocs-joyop</build_depend>
   <build_depend>nav_msgs</build_depend>
 
+=======
+  
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <run_depend>geometry_msgs</run_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>tms_msg_db</run_depend>
   <run_depend>tms_msg_rc</run_depend>
   <run_depend>tf</run_depend>
+<<<<<<< HEAD
   <run_depend>yocs-joyop</run_depend>
   <run_depend>nav_msgs</run_depend>
 
+=======
+  
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <export>
   </export>

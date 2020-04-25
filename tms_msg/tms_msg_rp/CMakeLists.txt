@@ -5,7 +5,11 @@ cmake_minimum_required(VERSION 2.8.3)
 project(tms_msg_rp)
 
 find_package(
+<<<<<<< HEAD
   catkin REQUIRED COMPONENTS
+=======
+  catkin REQUIRED COMPONENTS 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   std_msgs
   message_generation
 )
@@ -36,9 +40,14 @@ add_service_files(
   action.srv
   rp_cmd.srv
   rp_action.srv
+<<<<<<< HEAD
   rp_place.srv
   rp_pick.srv
   rp_release.srv
+=======
+  rp_give.srv
+  rp_grasp.srv
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   rp_move.srv
   rp_take.srv
   rp_arrow.srv
@@ -62,7 +71,10 @@ add_service_files(
   tms_ts_find_objects.srv
   tms_rs_get_object_info_ex.srv
   get_object.srv
+<<<<<<< HEAD
   rps_path_server.srv
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   #temp tms_msg_rp
 )
 

@@ -5,7 +5,11 @@
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
 
   <arg name="config" default="false" />
+<<<<<<< HEAD
   <arg unless="$(arg config)" name="command_args" value="-d $(find rostms_description)/rviz_config/rviz_config.rviz" />
+=======
+  <arg unless="$(arg config)" name="command_args" value="" />
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <arg     if="$(arg config)" name="command_args" value="-d $(find rostms_bringup)/config/rostms_with_moveit.rviz" />
 
   <node name="$(anon rviz)" launch-prefix="$(arg launch_prefix)" pkg="rviz" type="rviz" respawn="false"

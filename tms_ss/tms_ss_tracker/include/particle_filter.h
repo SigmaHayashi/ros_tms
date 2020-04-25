@@ -1,10 +1,17 @@
 #ifndef PARTICLE_FILTER_H
 #define PARTICLE_FILTER_H
 
+<<<<<<< HEAD
 #include "condens/condens.hpp"
 
 #ifndef M_PI
 #define M_PI 3.1415926535897932384626433832795
+=======
+#include <opencv2/legacy/legacy.hpp>
+
+#ifndef M_PI
+#define M_PI 3.1415926535897932384626433832795 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 class CPF
@@ -38,4 +45,8 @@ protected:
   double likelihood(double p[2]);
 };
 
+<<<<<<< HEAD
 #endif  // PARTICLE_FILTER_H
+=======
+#endif // PARTICLE_FILTER_H
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

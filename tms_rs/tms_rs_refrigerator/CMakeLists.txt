@@ -14,7 +14,11 @@ catkin_package(
   # INCLUDE_DIRS include
   LIBRARIES tms_rs_refrigerator
   CATKIN_DEPENDS rospy std_msgs tms_msg_db
+<<<<<<< HEAD
   #DEPENDS system_lib
+=======
+  DEPENDS system_lib
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 ###########

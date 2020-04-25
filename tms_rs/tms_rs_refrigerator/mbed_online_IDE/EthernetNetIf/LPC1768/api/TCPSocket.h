@@ -1,17 +1,28 @@
 
 /*
 Copyright (c) 2010 Donatien Garnier (donatiengar [at] gmail [dot] com)
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+<<<<<<< HEAD
 
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
+=======
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,6 +41,7 @@ TCP Socket header file
 
 #include "core/net.h"
 #include "core/host.h"
+<<<<<<< HEAD
 // Essentially it is a safe interface to NetTcpSocket
 
 /// TCP Socket error codes
@@ -59,18 +71,54 @@ enum TCPSocketEvent
   TCPSOCKET_CONABRT,      ///<Connection was aborted
   TCPSOCKET_ERROR,        ///<Unknown error
   TCPSOCKET_DISCONNECTED  ///<Disconnected
+=======
+//Essentially it is a safe interface to NetTcpSocket
+
+///TCP Socket error codes
+enum TCPSocketErr
+{
+  __TCPSOCKET_MIN = -0xFFFF,
+  TCPSOCKET_SETUP, ///<TCPSocket not properly configured
+  TCPSOCKET_TIMEOUT, ///<Connection timed out
+  TCPSOCKET_IF, ///<Interface has problems, does not exist or is not initialized
+  TCPSOCKET_MEM, ///<Not enough mem
+  TCPSOCKET_INUSE, ///<Interface / Port is in use
+  TCPSOCKET_EMPTY, ///<Connections queue is empty
+  TCPSOCKET_RST, ///<Connection was reset by remote host
+//...
+  TCPSOCKET_OK = 0 ///<Success
+};
+
+///TCP Socket Events
+enum TCPSocketEvent
+{
+  TCPSOCKET_CONNECTED, ///<Connected to host
+  TCPSOCKET_ACCEPT,  ///<Client is connected, must call accept() to get a new Socket
+  TCPSOCKET_READABLE, ///<Data in buf
+  TCPSOCKET_WRITEABLE, ///<Can write data to buf
+  TCPSOCKET_CONTIMEOUT, ///<Connection timed out
+  TCPSOCKET_CONRST, ///<Connection was reset by remote host
+  TCPSOCKET_CONABRT, ///<Connection was aborted
+  TCPSOCKET_ERROR, ///<Unknown error
+  TCPSOCKET_DISCONNECTED ///<Disconnected
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 class NetTcpSocket;
 enum NetTcpSocketEvent;
 
+<<<<<<< HEAD
 /// This is a simple TCP Socket class
+=======
+///This is a simple TCP Socket class
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /**
   This class exposes an API to deal with TCP Sockets
 */
 class TCPSocket
 {
 public:
+<<<<<<< HEAD
   /// Creates a new socket
   TCPSocket();
 
@@ -94,12 +142,40 @@ public:
   TCPSocketErr accept(Host* pClient, TCPSocket** ppNewTcpSocket);
 
   /// Sends data
+=======
+  ///Creates a new socket
+  TCPSocket();
+protected:
+  TCPSocket(NetTcpSocket* pNetTcpSocket);
+public:
+  ///Closes if needed and destroys the socket
+  ~TCPSocket(); //close()
+  
+  ///Binds the socket to (local) host
+  TCPSocketErr bind(const Host& me);
+  
+  ///Starts listening
+  TCPSocketErr listen();
+  
+  ///Connects socket to host
+  TCPSocketErr connect(const Host& host);
+  
+  ///Accepts connection from client and gets connected socket
+  TCPSocketErr accept(Host* pClient, TCPSocket** ppNewTcpSocket);
+  
+  ///Sends data
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   /*
   @return a negative error code or the number of bytes transmitted
   */
   int /*if < 0 : TCPSocketErr*/ send(const char* buf, int len);
+<<<<<<< HEAD
 
   /// Receives data
+=======
+  
+  ///Receives data
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   /*
   @return a negative error code or the number of bytes received
   */
@@ -107,6 +183,7 @@ public:
 
   /* TODO NTH : printf / scanf helpers that call send/recv */
 
+<<<<<<< HEAD
   /// Closes socket
   TCPSocketErr close();
 
@@ -119,10 +196,25 @@ public:
 
   class CDummy;
   /// Setups callback
+=======
+  ///Closes socket
+  TCPSocketErr close();
+
+  //Callbacks
+  ///Setups callback
+  /**
+  @param pMethod : callback function
+  */
+  void setOnEvent( void (*pMethod)(TCPSocketEvent) );
+  
+  class CDummy;
+  ///Setups callback
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   /**
   @param pItem : instance of class on which to execute the callback method
   @param pMethod : callback method
   */
+<<<<<<< HEAD
   template < class T >
   void setOnEvent(T* pItem, void (T::*pMethod)(TCPSocketEvent))
   {
@@ -133,17 +225,38 @@ public:
   /// Disables callback
   void resetOnEvent();
 
+=======
+  template<class T> 
+  void setOnEvent( T* pItem, void (T::*pMethod)(TCPSocketEvent) )
+  {
+    m_pCbItem = (CDummy*) pItem;
+    m_pCbMeth = (void (CDummy::*)(TCPSocketEvent)) pMethod;
+  }
+  
+  ///Disables callback
+  void resetOnEvent(); 
+  
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 protected:
   void onNetTcpSocketEvent(NetTcpSocketEvent e);
   TCPSocketErr checkInst();
 
 private:
   NetTcpSocket* m_pNetTcpSocket;
+<<<<<<< HEAD
 
   CDummy* m_pCbItem;
   void (CDummy::*m_pCbMeth)(TCPSocketEvent);
 
   void (*m_pCb)(TCPSocketEvent);
+=======
+  
+  CDummy* m_pCbItem;
+  void (CDummy::*m_pCbMeth)(TCPSocketEvent);
+  
+  void (*m_pCb)(TCPSocketEvent);
+  
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 #endif

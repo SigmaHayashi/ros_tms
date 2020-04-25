@@ -16,10 +16,18 @@
 */
 
 #ifndef WIN32
+<<<<<<< HEAD
 #define _declspec(dllexport) /**/
 #endif                       // ifndef WIN32
 
 extern "C" {
+=======
+#define	_declspec(dllexport) /**/
+#endif // ifndef WIN32
+
+extern "C"{
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 ///// STRUCTURES //////////////////////////////////////////////////////
 
@@ -29,14 +37,24 @@ const int MaxDof = 10;
 // This structure holds an int array including its length.
 typedef struct IntVector
 {
+<<<<<<< HEAD
   int length;
   int data[MaxDof];
+=======
+	int		length;
+	int		data[MaxDof];
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 } IntVector;
 // This structure holds a float array including its length.
 typedef struct FloatVector
 {
+<<<<<<< HEAD
   int length;
   float data[MaxDof];
+=======
+	int		length;
+	float	data[MaxDof];
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 } FloatVector;
 
 ///// SETTERS /////////////////////////////////////////////////////////
@@ -74,8 +92,13 @@ _declspec(dllexport) int kin_setType(int type);
 * @param typeNr	0: 6M90A_F, 1: 6M90A_G, 2: 6M180, 3: 6M90B_F, 4: 6M90B_G, -1: other
 * @return		0 if successful, < 0 if failed
 */
+<<<<<<< HEAD
 _declspec(dllexport) int kin_setMDH(FloatVector* theta, FloatVector* d, FloatVector* a, FloatVector* alpha,
                                     int typeNr = -1);
+=======
+_declspec(dllexport) int kin_setMDH(FloatVector* theta, FloatVector* d,
+		FloatVector* a, FloatVector* alpha, int typeNr = -1);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*! \brief This sets the link length parameters (part of mDH-parameters)
 *
@@ -207,7 +230,12 @@ _declspec(dllexport) int kin_getDOM();
 * @param alpha	vector to write in angle about previous x-axis
 * @return		0 if successful, < 0 if failed
 */
+<<<<<<< HEAD
 _declspec(dllexport) int kin_getMDH(FloatVector* theta, FloatVector* d, FloatVector* a, FloatVector* alpha);
+=======
+_declspec(dllexport) int kin_getMDH(FloatVector* theta, FloatVector* d,
+		FloatVector* a, FloatVector* alpha);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*! \brief Get the immobile flag of the last joint
 *
@@ -350,6 +378,16 @@ _declspec(dllexport) int kin_DK(FloatVector* angle, FloatVector* pose);
 * @param maxBisection	maximum number of bisections done, if no solution found
 * @return				0 if successful, < 0 if failed
 */
+<<<<<<< HEAD
 _declspec(dllexport) int kin_IK(FloatVector* pose, FloatVector* prev, FloatVector* angle, int maxBisection = 0);
 
 }  // extern c
+=======
+_declspec(dllexport) int kin_IK(FloatVector* pose, FloatVector* prev,
+		FloatVector* angle, int maxBisection = 0);
+
+} // extern c
+
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

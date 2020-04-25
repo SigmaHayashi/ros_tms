@@ -1,8 +1,14 @@
 /*
  * Copyright (c) 2001-2004 Swedish Institute of Computer Science.
+<<<<<<< HEAD
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * All rights reserved. 
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -11,6 +17,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -26,6 +33,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
@@ -84,12 +108,20 @@ typedef u16_t mem_size_t;
 #define mem_trim(mem, size) (mem)
 #else /* MEM_USE_POOLS */
 /* lwIP alternative malloc */
+<<<<<<< HEAD
 void mem_init(void);
+=======
+void  mem_init(void);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 void *mem_trim(void *mem, mem_size_t size);
 #endif /* MEM_USE_POOLS */
 void *mem_malloc(mem_size_t size);
 void *mem_calloc(mem_size_t count, mem_size_t size);
+<<<<<<< HEAD
 void mem_free(void *mem);
+=======
+void  mem_free(void *mem);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* MEM_LIBC_MALLOC */
 
 /** Calculate memory size for an aligned buffer - returns the next highest
@@ -97,7 +129,11 @@ void mem_free(void *mem);
  * LWIP_MEM_ALIGN_SIZE(4) will both yield 4 for MEM_ALIGNMENT == 4).
  */
 #ifndef LWIP_MEM_ALIGN_SIZE
+<<<<<<< HEAD
 #define LWIP_MEM_ALIGN_SIZE(size) (((size) + MEM_ALIGNMENT - 1) & ~(MEM_ALIGNMENT - 1))
+=======
+#define LWIP_MEM_ALIGN_SIZE(size) (((size) + MEM_ALIGNMENT - 1) & ~(MEM_ALIGNMENT-1))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** Calculate safe memory size for an aligned buffer when using an unaligned
@@ -112,7 +148,11 @@ void mem_free(void *mem);
  * so that ADDR % MEM_ALIGNMENT == 0
  */
 #ifndef LWIP_MEM_ALIGN
+<<<<<<< HEAD
 #define LWIP_MEM_ALIGN(addr) ((void *)(((mem_ptr_t)(addr) + MEM_ALIGNMENT - 1) & ~(mem_ptr_t)(MEM_ALIGNMENT - 1)))
+=======
+#define LWIP_MEM_ALIGN(addr) ((void *)(((mem_ptr_t)(addr) + MEM_ALIGNMENT - 1) & ~(mem_ptr_t)(MEM_ALIGNMENT-1)))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #ifdef __cplusplus

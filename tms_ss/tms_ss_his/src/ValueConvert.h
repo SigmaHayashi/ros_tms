@@ -13,15 +13,27 @@
 #include "typedef.h"
 
 VOID conv_Init();
+<<<<<<< HEAD
 BOOL conv_SetSensorRange(UINT node_no, AccelerometorRange range_acc, GyroscopeRange range_gyro,
                          CompassRange range_comp);
 MeasurementData conv_Measurement(int node_no, int time_stamp, int acc[3], int gyro[3], int comp[3]);
 StatusData conv_Status(int node_no, int role, int period, int range_acc, int range_gyro, int range_comp, int raw_batt,
                        int binary);
+=======
+BOOL conv_SetSensorRange(UINT node_no, AccelerometorRange range_acc, GyroscopeRange range_gyro, CompassRange range_comp);
+MeasurementData conv_Measurement(int node_no, int time_stamp, int acc[3], int gyro[3], int comp[3]);
+StatusData conv_Status(int node_no, int role, int period, int range_acc, int range_gyro, int range_comp, int raw_batt, int binary);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 float conv_acc(int node_no, int raw_acc);
 float conv_gyro(int node_no, int raw_gyro);
 float conv_comp(int node_no, int raw_comp);
 float conv_batt(int node_no, int raw_batt);
 
+<<<<<<< HEAD
 #endif
+=======
+
+#endif
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

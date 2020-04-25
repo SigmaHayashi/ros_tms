@@ -18,6 +18,7 @@
 //------------------------------------------------------------------------------
 class SkeletonDBStream
 {
+<<<<<<< HEAD
 public:
   SkeletonDBStream();
   ~SkeletonDBStream();
@@ -42,6 +43,34 @@ SkeletonDBStream::SkeletonDBStream() : frame_id_("/world"), update_time_(0.01)  
 {
   db_pub_ = nh_.advertise< tms_msg_db::TmsdbStamped >("tms_db_data", 1);
   skeleton_sub_ = nh_.subscribe("integrated_skeleton_stream", 1, &SkeletonDBStream::callback, this);
+=======
+  public:
+    SkeletonDBStream();
+    ~SkeletonDBStream();
+    void callback(const tms_msg_ss::SkeletonArray::ConstPtr& msg);
+  private:
+    // NodeHandle
+    ros::NodeHandle nh_;
+    // Publisher
+    ros::Publisher db_pub_;
+    // Subscriber
+    ros::Subscriber skeleton_sub_;
+
+    double update_time_;
+    std::string frame_id_;
+
+    std::string makeJSONofJointAngles(std::map<std::string, double>& data);
+};
+
+//------------------------------------------------------------------------------
+SkeletonDBStream::SkeletonDBStream() :
+  frame_id_("/world"),
+  update_time_(0.01)  // sec
+{
+  db_pub_ = nh_.advertise<tms_msg_db::TmsdbStamped>("tms_db_data", 1);
+  skeleton_sub_ = nh_.subscribe("integrated_skeleton_stream",1,
+                &SkeletonDBStream::callback, this);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   ROS_ASSERT("Start sending skeleton data to DB.");
   return;
@@ -66,11 +95,16 @@ void SkeletonDBStream::callback(const tms_msg_ss::SkeletonArray::ConstPtr& msg)
   db_msg.header.stamp = now;
   for (int i = 0; i < msg->data.size(); i++)
   {
+<<<<<<< HEAD
     const tms_msg_ss::Skeleton& skeleton = msg->data[i];
+=======
+    const tms_msg_ss::Skeleton &skeleton = msg->data[i];
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     tms_msg_db::Tmsdb data;
     // Data name
     std::stringstream data_name;
+<<<<<<< HEAD
     data_name << "Human_" << std::setw(3) << std::setfill('0') << i + 1;
     // Calculation of position and posture
     Eigen::Vector3d pos;
@@ -79,11 +113,25 @@ void SkeletonDBStream::callback(const tms_msg_ss::SkeletonArray::ConstPtr& msg)
     calcForModel01< double >(skeleton, pos, quat, joint_states);
     double rr, rp, ry;
     tf::Matrix3x3(tf::Quaternion(quat.x(), quat.y(), quat.z(), quat.w())).getRPY(rr, rp, ry);
+=======
+    data_name << "Human_" << std::setw(3) << std::setfill('0') << i+1;
+    // Calculation of position and posture
+    Eigen::Vector3d pos;
+    Eigen::Quaterniond quat;
+    std::map<std::string, double> joint_states;
+    calcForModel01<double>(skeleton, pos, quat, joint_states);
+    double rr, rp, ry;
+    tf::Matrix3x3(tf::Quaternion(quat.x(),quat.y(),quat.z(),quat.w())).getRPY(rr,rp,ry);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     // set data for DB
     // ref: ~/catkin_ws/src/ros_tms/tms_msg/tms_msg_db
     data.time = boost::posix_time::to_iso_extended_string(now.toBoost());
+<<<<<<< HEAD
     // data.type
+=======
+    //data.type
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     data.id = SKELETON_ID + i;
     data.name = data_name.str();
     data.x = pos[0];
@@ -92,6 +140,7 @@ void SkeletonDBStream::callback(const tms_msg_ss::SkeletonArray::ConstPtr& msg)
     data.rr = rr;
     data.rp = rp;
     data.ry = ry;
+<<<<<<< HEAD
     // data.offset_x
     // data.offset_y
     // data.offset_z
@@ -108,6 +157,24 @@ void SkeletonDBStream::callback(const tms_msg_ss::SkeletonArray::ConstPtr& msg)
     // data.task
     // data.note
     // data.tag
+=======
+    //data.offset_x
+    //data.offset_y
+    //data.offset_z
+    //data.joint
+    //data.weight
+    //data.rfid
+    data.etcdata = makeJSONofJointAngles(joint_states);
+    //data.place
+    //data.extfile
+    //data.sensor
+    //data.probability
+    data.state = 1;
+    //data.state = (msg->data[i].user_id < 0 ? 0 : 2);
+    //data.task
+    //data.note
+    //data.tag
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     db_msg.tmsdb.push_back(data);
     ROS_INFO("Sending data to DB %d", data.id);
@@ -118,21 +185,34 @@ void SkeletonDBStream::callback(const tms_msg_ss::SkeletonArray::ConstPtr& msg)
 }
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 std::string SkeletonDBStream::makeJSONofJointAngles(std::map< std::string, double >& data)
+=======
+std::string SkeletonDBStream::makeJSONofJointAngles(std::map<std::string, double>& data)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 {
   std::stringstream json;
   json << "{";
   for (int i = 0; i < kJointDoF; i++)
   {
     const std::string joint_name(kJointName[i]);
+<<<<<<< HEAD
     json << "\"" << joint_name << "\":" << data[joint_name] << (i == kJointDoF - 1 ? "" : ",");
+=======
+    json << "\"" << joint_name << "\":" << data[joint_name]
+    << (i == kJointDoF-1 ? "":",");
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   }
   json << "}";
   return json.str();
 }
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 int main(int argc, char** argv)
+=======
+int main(int argc, char **argv)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 {
   ros::init(argc, argv, "skeleton_db_stream");
   SkeletonDBStream sds;

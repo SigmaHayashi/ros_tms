@@ -4,7 +4,10 @@
 #include <vector>
 #include <string.h>
 #include <pthread.h>
+<<<<<<< HEAD
 #include <iostream>
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
@@ -21,9 +24,15 @@ extern pthread_mutex_t mutex_target;
 
 CMultipleParticleFilter::CMultipleParticleFilter()
 {
+<<<<<<< HEAD
   m_max_ID = 100;
   m_min_distance = 1000;  // 1000mm
   m_ID = 0;
+=======
+  m_max_ID        = 100;
+  m_min_distance  = 1000;  // 1000mm
+  m_ID            = 0;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 }
 
 CMultipleParticleFilter::~CMultipleParticleFilter()
@@ -40,10 +49,17 @@ void CMultipleParticleFilter::update(CLaser *Laser)
   {
     if (m_pLaser->m_bNodeActive[n])
     {
+<<<<<<< HEAD
       std::vector< int > label(m_pLaser->m_LRFClsPoints[n].size(), -1);
       int pn = m_ParticleFilter.size();
 
       for (int j = 0; j < m_pLaser->m_LRFClsPoints[n].size(); j++)
+=======
+      std::vector<int> label(m_pLaser->m_LRFClsPoints[n].size(), -1);
+      int pn = m_ParticleFilter.size();
+
+      for (int j=0; j<m_pLaser->m_LRFClsPoints[n].size(); j++)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       {
         obs[0] = m_pLaser->m_LRFClsPoints[n][j].x;
         obs[1] = m_pLaser->m_LRFClsPoints[n][j].y;
@@ -51,7 +67,11 @@ void CMultipleParticleFilter::update(CLaser *Laser)
         double min_r = 1e10;
         int np = 0;
 
+<<<<<<< HEAD
         for (vector< CPF >::iterator it = m_ParticleFilter.begin(); it != m_ParticleFilter.end(); ++it, ++np)
+=======
+        for (vector<CPF>::iterator it = m_ParticleFilter.begin(); it != m_ParticleFilter.end(); ++it, ++np)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           p[0] = it->state[0];
           p[1] = it->state[1];
@@ -71,7 +91,11 @@ void CMultipleParticleFilter::update(CLaser *Laser)
         }
       }
 
+<<<<<<< HEAD
       std::vector< int > flg(pn, -1);
+=======
+      std::vector<int> flg(pn, -1);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
       for (int j = 0; j < m_pLaser->m_LRFClsPoints[n].size(); j++)
       {
@@ -89,7 +113,11 @@ void CMultipleParticleFilter::update(CLaser *Laser)
         else
         {
           CPF pf;
+<<<<<<< HEAD
           int area[2] = {STAGE_X, STAGE_Y};
+=======
+          int area[2] = { STAGE_X, STAGE_Y };
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           pf.initialize(area);
           obs[0] = m_pLaser->m_LRFClsPoints[n][j].x;
           obs[1] = m_pLaser->m_LRFClsPoints[n][j].y;
@@ -102,7 +130,11 @@ void CMultipleParticleFilter::update(CLaser *Laser)
       }
 
       int np = 0;
+<<<<<<< HEAD
       for (vector< CPF >::iterator it = m_ParticleFilter.begin(); it != m_ParticleFilter.end(); ++it, ++np)
+=======
+      for (vector<CPF>::iterator it = m_ParticleFilter.begin(); it != m_ParticleFilter.end(); ++it, ++np)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       {
         if (flg[np] < 0)
         {
@@ -121,7 +153,11 @@ void CMultipleParticleFilter::update(CLaser *Laser)
       }
 
       np = 0;
+<<<<<<< HEAD
       for (vector< CPF >::iterator it = m_ParticleFilter.begin(); it != m_ParticleFilter.end(); ++it, ++np)
+=======
+      for (vector<CPF>::iterator it = m_ParticleFilter.begin(); it != m_ParticleFilter.end(); ++it, ++np)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       {
         m_pLaser->m_pTarget[np] = new CTarget();
         m_pLaser->m_pTarget[np]->id = it->GetID();

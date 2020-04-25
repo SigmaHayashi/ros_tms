@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // This file has been auto-generated, please do not modify here.
+=======
+//This file has been auto-generated, please do not modify here.
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #ifndef __ETHERNETNETIF_CONFIG_H
 #define TARGET_LPC2368 1
 #define NET_TELIT_STACK 0

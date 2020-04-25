@@ -1,7 +1,11 @@
 //
 // C++ Interface: cdlCOMExceptions
 //
+<<<<<<< HEAD
 // Description:
+=======
+// Description: 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 //
 //
 // Author: Tiziano Müller <tiziano.mueller@neuronics.ch>, (C) 2006
@@ -17,6 +21,7 @@
 #include <string>
 
 //!Error codes in error handling strings
+<<<<<<< HEAD
 enum
 {
   ERR_FAILED = -1,
@@ -34,6 +39,24 @@ enum
   ERR_PERIPHERAL = -13,
   ERR_MESSAGE = 192,
   ERR_MESSAGE_STRING = 193
+=======
+enum{
+	ERR_FAILED = -1,
+	ERR_INVALID_ARGUMENT = -2,
+	ERR_STATE_MISMATCH = -3,
+	ERR_TYPE_MISMATCH = -4,
+	ERR_RANGE_MISMATCH = -5,
+	ERR_AXIS_HEARTBEAT = -6,
+	ERR_AXIS_OPERATIONAL = -7,
+	ERR_AXIS_MOVE = -8,
+	ERR_AXIS_MOVE_POLY = -9,
+	ERR_AXIS_COLLISION = -10,
+	ERR_AXIS_ANY = -11,
+	ERR_CRC = -12,
+	ERR_PERIPHERAL = -13,
+	ERR_MESSAGE = 192,
+	ERR_MESSAGE_STRING = 193
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
@@ -45,6 +68,7 @@ enum
 /// Failed to open the serial communication device
 /// \note error_number=-10
 /// \note Linux only: You get also the direct error message from the system
+<<<<<<< HEAD
 class CannotOpenPortException : public Exception
 {
 public:
@@ -52,11 +76,18 @@ public:
     : Exception("Cannot open port '" + port + "': " + os_msg, -10)
   {
   }
+=======
+class CannotOpenPortException : public Exception {
+public:
+	CannotOpenPortException(const std::string & port, const std::string os_msg) throw ():
+		Exception("Cannot open port '" + port + "': " + os_msg, -10) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// Could not set or get the attributes for the given serial communication device
 /// \note error_number=-11
+<<<<<<< HEAD
 class CannotGetSetPortAttributesException : public Exception
 {
 public:
@@ -64,23 +95,37 @@ public:
     : Exception("Cannot get/set attributes on '" + port + "'", -11)
   {
   }
+=======
+class CannotGetSetPortAttributesException : public Exception {
+public:
+	CannotGetSetPortAttributesException(const std::string & port) throw ():
+		Exception("Cannot get/set attributes on '" + port + "'", -11) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// The port was not open
 /// \note error_number=-12
+<<<<<<< HEAD
 class PortNotOpenException : public Exception
 {
 public:
   PortNotOpenException(const std::string &port) throw() : Exception("Port '" + port + "' not open", -12)
   {
   }
+=======
+class PortNotOpenException : public Exception {
+public:
+	PortNotOpenException(const std::string & port) throw ():
+		Exception("Port '" + port + "' not open", -12) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// Reading from the serial communication device failed
 /// \note error_number=-13
 /// \note Linux only: You get also the direct error message from the system
+<<<<<<< HEAD
 class DeviceReadException : public Exception
 {
 public:
@@ -88,12 +133,19 @@ public:
     : Exception("Read failure on port '" + port + "': " + os_msg, -13)
   {
   }
+=======
+class DeviceReadException : public Exception {
+public:
+	DeviceReadException(const std::string & port, const std::string os_msg) throw ():
+		Exception("Read failure on port '" + port + "': " + os_msg, -13) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// Writing to the serial communication device failed
 /// \note error_number=-14
 /// \note Linux only: You get also the direct error message from the system
+<<<<<<< HEAD
 class DeviceWriteException : public Exception
 {
 public:
@@ -101,11 +153,18 @@ public:
     : Exception("Write failure on port '" + port + "': " + os_msg, -14)
   {
   }
+=======
+class DeviceWriteException : public Exception {
+public:
+	DeviceWriteException(const std::string & port, const std::string os_msg) throw ():
+		Exception("Write failure on port '" + port + "': " + os_msg, -14) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// This exception is the base for the WriteNotComplete and ReadNotCompleteException
 ///
+<<<<<<< HEAD
 class ReadWriteNotCompleteException : public Exception
 {
 public:
@@ -113,11 +172,18 @@ public:
     : Exception(errstr, error_number)
   {
   }
+=======
+class ReadWriteNotCompleteException : public Exception {
+public:
+	ReadWriteNotCompleteException(const std::string & errstr, const int error_number) throw ():
+		Exception(errstr, error_number) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// Not all bytes could be written to the serial communication device
 /// \note error_number=-15
+<<<<<<< HEAD
 class WriteNotCompleteException : public ReadWriteNotCompleteException
 {
 public:
@@ -125,11 +191,18 @@ public:
     : ReadWriteNotCompleteException("Cannot write all date to '" + port + "'", -15)
   {
   }
+=======
+class WriteNotCompleteException : public ReadWriteNotCompleteException {
+public:
+	WriteNotCompleteException(const std::string & port) throw ():
+		ReadWriteNotCompleteException("Cannot write all date to '" + port + "'", -15) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// The Katana didn't answer correctly within the given timeout
 /// \note error_number=-16
+<<<<<<< HEAD
 class ReadNotCompleteException : public ReadWriteNotCompleteException
 {
 public:
@@ -137,17 +210,30 @@ public:
     : ReadWriteNotCompleteException("Cannot read all data from '" + port + "'", -16)
   {
   }
+=======
+class ReadNotCompleteException : public ReadWriteNotCompleteException {
+public:
+	ReadNotCompleteException(const std::string & port) throw ():
+		ReadWriteNotCompleteException("Cannot read all data from '" + port + "'", -16) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///
 /// The Katana returned an error string
 /// \note error_number=-16
+<<<<<<< HEAD
 class ErrorException : public Exception
 {
 public:
   ErrorException(const std::string &error) throw() : Exception(error, -20)
   {
   }
+=======
+class ErrorException : public Exception {
+	public:
+	ErrorException(const std::string &error) throw ():
+		Exception(error, -20) {}
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 ///

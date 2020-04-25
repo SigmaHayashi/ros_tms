@@ -42,7 +42,10 @@ add_service_files(
   tmsdb_objects_data.srv
   tmsdb_get_task_list.srv
   tmsdb_get_unknown_object.srv
+<<<<<<< HEAD
   tmsdb_time.srv
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 generate_messages(

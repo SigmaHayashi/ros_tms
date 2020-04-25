@@ -7,13 +7,21 @@
 * The authors hereby grant permission to use, copy, modify, distribute,
 * and license this software and its documentation for any purpose, provided
 * that existing copyright notices are retained in all copies and that this
+<<<<<<< HEAD
 * notice and the following disclaimer are included verbatim in any
+=======
+* notice and the following disclaimer are included verbatim in any 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * distributions. No written agreement, license, or royalty fee is required
 * for any of the authorized uses.
 *
 * THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS *AS IS* AND ANY EXPRESS OR
 * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+<<<<<<< HEAD
 * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+=======
+* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
 * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -57,7 +65,12 @@
 /*
  * Packet header = Code, id, length.
  */
+<<<<<<< HEAD
 #define UPAP_HEADERLEN (sizeof(u_char) + sizeof(u_char) + sizeof(u_short))
+=======
+#define UPAP_HEADERLEN (sizeof (u_char) + sizeof (u_char) + sizeof (u_short))
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*
  * UPAP codes.
@@ -69,8 +82,12 @@
 /*
  * Each interface is described by upap structure.
  */
+<<<<<<< HEAD
 typedef struct upap_state
 {
+=======
+typedef struct upap_state {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   int us_unit;           /* Interface unit number */
   const char *us_user;   /* User */
   int us_userlen;        /* User length */
@@ -89,16 +106,24 @@ typedef struct upap_state
  * Client states.
  */
 #define UPAPCS_INITIAL 0 /* Connection down */
+<<<<<<< HEAD
 #define UPAPCS_CLOSED 1  /* Connection up, haven't requested auth */
 #define UPAPCS_PENDING 2 /* Connection down, have requested auth */
 #define UPAPCS_AUTHREQ 3 /* We've sent an Authenticate-Request */
 #define UPAPCS_OPEN 4    /* We've received an Ack */
+=======
+#define UPAPCS_CLOSED  1 /* Connection up, haven't requested auth */
+#define UPAPCS_PENDING 2 /* Connection down, have requested auth */
+#define UPAPCS_AUTHREQ 3 /* We've sent an Authenticate-Request */
+#define UPAPCS_OPEN    4 /* We've received an Ack */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define UPAPCS_BADAUTH 5 /* We've received a Nak */
 
 /*
  * Server states.
  */
 #define UPAPSS_INITIAL 0 /* Connection down */
+<<<<<<< HEAD
 #define UPAPSS_CLOSED 1  /* Connection up, haven't requested auth */
 #define UPAPSS_PENDING 2 /* Connection down, have requested auth */
 #define UPAPSS_LISTEN 3  /* Listening for an Authenticate */
@@ -109,6 +134,19 @@ extern upap_state upap[];
 
 void upap_authwithpeer(int, char *, char *);
 void upap_authpeer(int);
+=======
+#define UPAPSS_CLOSED  1 /* Connection up, haven't requested auth */
+#define UPAPSS_PENDING 2 /* Connection down, have requested auth */
+#define UPAPSS_LISTEN  3 /* Listening for an Authenticate */
+#define UPAPSS_OPEN    4 /* We've sent an Ack */
+#define UPAPSS_BADAUTH 5 /* We've sent a Nak */
+
+
+extern upap_state upap[];
+
+void upap_authwithpeer  (int, char *, char *);
+void upap_authpeer      (int);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 extern struct protent pap_protent;
 

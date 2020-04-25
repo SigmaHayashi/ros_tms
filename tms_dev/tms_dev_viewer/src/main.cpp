@@ -21,11 +21,19 @@
 //------------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
+<<<<<<< HEAD
   QApplication app(argc, argv);
   QNode qnode(argc, argv, "tms_viewer");
   MainWindow window(&qnode);
   window.show();
   return app.exec();
+=======
+    QApplication app(argc, argv);
+    QNode qnode(argc,argv,"tms_viewer");
+    MainWindow window(&qnode);
+    window.show();
+    return app.exec();
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 }
 
 //------------------------------------------------------------------------------

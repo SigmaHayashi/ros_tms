@@ -7,13 +7,21 @@
 * The authors hereby grant permission to use, copy, modify, distribute,
 * and license this software and its documentation for any purpose, provided
 * that existing copyright notices are retained in all copies and that this
+<<<<<<< HEAD
 * notice and the following disclaimer are included verbatim in any
+=======
+* notice and the following disclaimer are included verbatim in any 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * distributions. No written agreement, license, or royalty fee is required
 * for any of the authorized uses.
 *
 * THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS *AS IS* AND ANY EXPRESS OR
 * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+<<<<<<< HEAD
 * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+=======
+* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
 * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -59,6 +67,10 @@
 
 #define MAX_NT_PASSWORD 256 /* Maximum number of (Unicode) chars in an NT password */
 
+<<<<<<< HEAD
 void ChapMS(chap_state *, char *, int, char *, int);
+=======
+void ChapMS (chap_state *, char *, int, char *, int);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #endif /* CHPMS_H */

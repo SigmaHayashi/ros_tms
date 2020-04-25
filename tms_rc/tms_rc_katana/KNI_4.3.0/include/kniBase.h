@@ -18,20 +18,40 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /******************************************************************************************************************/
 #ifndef _KNIBASE_H_
 #define _KNIBASE_H_
 /******************************************************************************************************************/
 
+<<<<<<< HEAD
 #include "KNI/cdlCOM.h"     // for serial device: TCdlCOMDesc, CCdlCOM
 #include "KNI/cplSerial.h"  // for serial-CRC protocol: CCplSerialCRC
 #include "KNI/kmlBase.h"    // for robot: CKatBase, CMotBase, CSctBase
 #include "KNI/kmlExt.h"     // extended katana features
 #include "KNI/cdlSocket.h"
+=======
+#include "KNI/cdlCOM.h"		// for serial device: TCdlCOMDesc, CCdlCOM
+#include "KNI/cplSerial.h"	// for serial-CRC protocol: CCplSerialCRC
+#include "KNI/kmlBase.h"	// for robot: CKatBase, CMotBase, CSctBase
+#include "KNI/kmlExt.h"		// extended katana features
+#include "KNI/cdlSocket.h"	
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #include "KNI_InvKin/ikBase.h"
 #include "KNI_LM/lmBase.h"
 #include "KNI/kmlMotBase.h"
 
+<<<<<<< HEAD
 /******************************************************************************************************************/
 #endif  //_KNIBASE_H_
+=======
+
+
+
+/******************************************************************************************************************/
+#endif //_KNIBASE_H_
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /******************************************************************************************************************/

@@ -10,7 +10,11 @@ find_package(catkin REQUIRED COMPONENTS
   tms_msg_ss
   tms_msg_db
 )
+<<<<<<< HEAD
 find_package(Eigen3 REQUIRED)
+=======
+find_package(Eigen REQUIRED)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 ###################################
 ## catkin specific configuration ##

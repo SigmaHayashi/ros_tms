@@ -18,20 +18,34 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /****************************************************************************/
 #ifndef _CDLBASE_H_
 #define _CDLBASE_H_
 /****************************************************************************/
 
+<<<<<<< HEAD
 #if !defined(BYTE_DECLARED)
 #define BYTE_DECLARED
 typedef unsigned char byte;  //!< type specification (8 bit)
+=======
+#if !defined (BYTE_DECLARED)
+#define BYTE_DECLARED
+typedef unsigned char byte;	//!< type specification (8 bit)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 //--------------------------------------------------------------------------//
 
 #include "common/dllexport.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 //--------------------------------------------------------------------------//
 
 /*! \brief Abstract base class for devices
@@ -42,6 +56,7 @@ typedef unsigned char byte;  //!< type specification (8 bit)
  * easier.
  */
 
+<<<<<<< HEAD
 class DLLDIR CCdlBase
 {
 public:
@@ -68,4 +83,33 @@ public:
 
 /****************************************************************************/
 #endif  //_CDLBASE_H_
+=======
+class DLLDIR CCdlBase {
+
+public:
+
+	/*! \brief Pure function to send data
+	 *
+	 * This function is pure and should always be overwritten by classes
+	 * inheriting from 'CCdlBase'. As the name proposes the function should
+	 * contain a sending behavour from the device.
+	 */
+	virtual int  send(const void* _buf, int _sz)	= 0;
+	/*! \brief Pure function to receive data
+	 *
+	 * This function is pure and should always be overwritten by classes in-
+	 * heriting from 'CCdlBase'. As the name proposes the function should
+	 * contain a sending behavour from the device.
+	 */
+	virtual int  recv(void* _buf, int _sz)		= 0;
+	/*! \brief destructor
+	 *
+	 * This class is only an interface
+	 */
+	virtual ~CCdlBase() {};
+};
+
+/****************************************************************************/
+#endif //_CDLBASE_H_
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /****************************************************************************/

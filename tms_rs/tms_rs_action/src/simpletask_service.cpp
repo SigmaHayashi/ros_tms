@@ -19,6 +19,7 @@
 using namespace std;
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 // Global variables for data transfer
 int id;
 string task = "";
@@ -51,6 +52,37 @@ void sendTask(const tms_msg_rs::robot_task& msg)
 //------------------------------------------------------------------------------
 int main(int argc, char** argv)
 {
+=======
+//Global variables for data transfer
+int id;
+string task ="";
+
+//------------------------------------------------------------------------------
+//Service funciton : send data
+bool robot_task(tms_msg_rs::rs_task::Request& req,
+  				tms_msg_rs::rs_task::Response& res)
+{
+	if(req.id = id){
+		res.data.id = id;
+		res.data.task = task;
+		res.result = 1;
+		return true;
+	}
+	else{
+		res.result = -1;
+		return false;
+	}
+}
+
+//Get the data from the message (user request)
+void sendTask(const tms_msg_rs::robot_task& msg){
+	id = msg.id;
+	task = msg.task;
+}
+
+//------------------------------------------------------------------------------
+int main(int argc, char **argv){
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   ros::init(argc, argv, "simpletask_service");
   ros::NodeHandle nh;
   ros::Subscriber task_sub = nh.subscribe("rs_simple_task", 10, sendTask);
@@ -60,4 +92,8 @@ int main(int argc, char** argv)
 }
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 // EOF
+=======
+//EOF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

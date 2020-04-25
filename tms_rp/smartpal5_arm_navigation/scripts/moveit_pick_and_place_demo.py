@@ -22,8 +22,12 @@
     http://www.gnu.org/licenses/gpl.html
 """
 
+<<<<<<< HEAD
 import rospy
 import sys
+=======
+import rospy, sys
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 import moveit_commander
 from geometry_msgs.msg import PoseStamped, Pose
 from moveit_commander import MoveGroupCommander, PlanningSceneInterface
@@ -49,9 +53,13 @@ GRIPPER_EFFORT = [1.0]
 
 REFERENCE_FRAME = 'world_link'
 
+<<<<<<< HEAD
 
 class MoveItDemo:
 
+=======
+class MoveItDemo:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     def __init__(self):
         # Initialize the move_group API
         moveit_commander.roscpp_initialize(sys.argv)
@@ -93,10 +101,17 @@ class MoveItDemo:
         arm.set_planning_time(5)
 
         # Set a limit on the number of pick attempts before bailing
+<<<<<<< HEAD
         max_pick_attempts = 15
 
         # Set a limit on the number of place attempts
         max_place_attempts = 15
+=======
+        max_pick_attempts = 5
+
+        # Set a limit on the number of place attempts
+        max_place_attempts = 5
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
         # Give the scene a chance to catch up
         rospy.sleep(2)
@@ -137,8 +152,13 @@ class MoveItDemo:
         # Add a table top and two boxes to the scene
         table_pose = PoseStamped()
         table_pose.header.frame_id = REFERENCE_FRAME
+<<<<<<< HEAD
         table_pose.pose.position.x = 3.35
         table_pose.pose.position.y = 4.0
+=======
+        table_pose.pose.position.x = 0.35
+        table_pose.pose.position.y = 0.0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         table_pose.pose.position.z = table_ground + table_size[2] / 2.0
         table_pose.pose.orientation.w = 1.0
 
@@ -147,8 +167,13 @@ class MoveItDemo:
         # Set the target pose in between the boxes and on the table
         target_pose = PoseStamped()
         target_pose.header.frame_id = REFERENCE_FRAME
+<<<<<<< HEAD
         target_pose.pose.position.x = 3.35
         target_pose.pose.position.y = 4.2
+=======
+        target_pose.pose.position.x = 0.35
+        target_pose.pose.position.y = 0.2
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         target_pose.pose.position.z = table_ground + table_size[2] + target_size[2] / 2.0
         q = quaternion_from_euler(0, 0, -1.57079633)
         target_pose.pose.orientation.x = q[0]
@@ -174,8 +199,13 @@ class MoveItDemo:
         # Specify a pose to place the target after being picked up
         place_pose = PoseStamped()
         place_pose.header.frame_id = REFERENCE_FRAME
+<<<<<<< HEAD
         place_pose.pose.position.x = 3.35
         place_pose.pose.position.y = 4.3
+=======
+        place_pose.pose.position.x = 0.35
+        place_pose.pose.position.y = 0.3
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         place_pose.pose.position.z = table_ground + table_size[2] + target_size[2] / 2.0
         q = quaternion_from_euler(0, 0, -1.57079633)
         place_pose.pose.orientation.x = q[0]
@@ -187,7 +217,11 @@ class MoveItDemo:
         grasp_pose = target_pose
 
         # Shift the grasp pose by half the width of the target to center it
+<<<<<<< HEAD
         grasp_pose.pose.position.y += target_size[1] / 2.0
+=======
+        grasp_pose.pose.position.y -= target_size[1] / 2.0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
         # Generate a list of grasps
         grasps = self.make_grasps(grasp_pose, [target_id])
@@ -204,6 +238,7 @@ class MoveItDemo:
         # Repeat until we succeed or run out of attempts
         while result != MoveItErrorCodes.SUCCESS and n_attempts < max_pick_attempts:
             n_attempts += 1
+<<<<<<< HEAD
             rospy.loginfo("Pick attempt: " + str(n_attempts))
             result = arm.pick(target_id, grasps)
             print('pick result')
@@ -212,6 +247,12 @@ class MoveItDemo:
 
         rospy.loginfo("pickend")
 
+=======
+            rospy.loginfo("Pick attempt: " +  str(n_attempts))
+            result = arm.pick(target_id, grasps)
+            rospy.sleep(0.2)
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         # If the pick was successful, attempt the place operation
         if result == MoveItErrorCodes.SUCCESS:
             result = None
@@ -223,11 +264,17 @@ class MoveItDemo:
             # Repeat until we succeed or run out of attempts
             while result != MoveItErrorCodes.SUCCESS and n_attempts < max_place_attempts:
                 n_attempts += 1
+<<<<<<< HEAD
                 rospy.loginfo("Place attempt: " + str(n_attempts))
                 for place in places:
                     result = arm.place(target_id, place)
                     print('place result')
                     print(result)
+=======
+                rospy.loginfo("Place attempt: " +  str(n_attempts))
+                for place in places:
+                    result = arm.place(target_id, place)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                     if result == MoveItErrorCodes.SUCCESS:
                         break
                 rospy.sleep(0.2)
@@ -328,7 +375,11 @@ class MoveItDemo:
                 # Create a quaternion from the Euler angles
                 # q = quaternion_from_euler(0, p, y)
 
+<<<<<<< HEAD
                 # Set the grasp pose orientation accordingly
+=======
+                # # Set the grasp pose orientation accordingly
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                 # g.grasp_pose.pose.orientation.x = q[0]
                 # g.grasp_pose.pose.orientation.y = q[1]
                 # g.grasp_pose.pose.orientation.z = q[2]
@@ -391,7 +442,11 @@ class MoveItDemo:
                         # Create a quaternion from the Euler angles
                         # q = quaternion_from_euler(0, p, y)
 
+<<<<<<< HEAD
                         # Set the place pose orientation accordingly
+=======
+                        # # Set the place pose orientation accordingly
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                         # place.pose.orientation.x = q[0]
                         # place.pose.orientation.y = q[1]
                         # place.pose.orientation.z = q[2]
@@ -410,7 +465,11 @@ class MoveItDemo:
         return places
 
     # Set the color of an object
+<<<<<<< HEAD
     def setColor(self, name, r, g, b, a=0.9):
+=======
+    def setColor(self, name, r, g, b, a = 0.9):
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         # Initialize a MoveIt color object
         color = ObjectColor()
 

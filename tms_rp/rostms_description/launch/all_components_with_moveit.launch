@@ -12,6 +12,7 @@
   <!-- parameter setting for robot_description -->
   <!-- <param name="robot_description"
          command="$(find xacro)/xacro.py '$(find rostms_description)/urdf/all_components.urdf.xacro'" /> -->
+<<<<<<< HEAD
    <!--
    <param name="robot_description"
           command="$(find xacro)/xacro.py '$(find rostms_description)/urdf/all_components_without_robots.urdf.xacro'" />
@@ -19,6 +20,10 @@
     <param name="robot_description"
            command="$(find xacro)/xacro.py '$(find rostms_description)/urdf/all_components_with_moveit.urdf.xacro'" />
 
+=======
+   <param name="robot_description"
+          command="$(find xacro)/xacro.py '$(find rostms_description)/urdf/all_components_without_robots.urdf.xacro'" />
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <!-- robot_state_publisher -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="environment_state_publisher">

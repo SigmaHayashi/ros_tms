@@ -4,12 +4,19 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(tms_msg_rc)
 
+<<<<<<< HEAD
 find_package(catkin REQUIRED COMPONENTS
+=======
+find_package(catkin REQUIRED COMPONENTS 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   std_msgs
   message_generation
 )
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################
@@ -17,11 +24,15 @@ add_message_files(
   FILES
   robot_current_data.msg
   tag_data.msg
+<<<<<<< HEAD
   odom_rad.msg
   katana_pos.msg
   arduino_serial.msg 
   nucleo_serial.msg 
   sp5_unity.msg
+=======
+  katana_pos.msg
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 add_service_files(
@@ -39,9 +50,12 @@ add_service_files(
   katana_pos_single.srv
   gripper_action.srv
   robot_control.srv
+<<<<<<< HEAD
   nav_command.srv
   sp5_control_unity.srv
   sp5_arm_control_unity.srv
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 generate_messages(

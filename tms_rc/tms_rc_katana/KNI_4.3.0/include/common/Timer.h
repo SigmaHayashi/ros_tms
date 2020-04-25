@@ -23,21 +23,35 @@
 
 #include <ctime>
 
+<<<<<<< HEAD
 #ifndef WIN32  // POSIX 1b
 #include <sys/time.h>
 #endif
 
 namespace KNI
 {
+=======
+#ifndef WIN32 // POSIX 1b
+#include <sys/time.h>
+#endif
+
+namespace KNI {
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 ///
 /// This functions shields the platform specific implementation of the sleep function.
 ///
 ///
+<<<<<<< HEAD
 void sleep(long time);
+=======
+    void sleep(long time);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 ///
 /// Provides a stop-watch-like class with a resolution of milliseconds.
 ///
+<<<<<<< HEAD
 class Timer
 {
 private:
@@ -76,6 +90,49 @@ public:
   ///
   void WaitUntilElapsed() const;
 };
+=======
+    class Timer {
+    private:
+	long _timeout;
+	
+#ifdef WIN32
+	clock_t _ct;
+#else
+	struct timeval _ct;
+#endif
+
+        /// Platform specific implementation of ElapsedTime().
+	long _ElapsedTime() const;
+
+    public:
+	Timer();
+	Timer(long timeout);
+
+	void Set(long timeout);
+	void Start();
+
+	void Set_And_Start(long timeout);
+	
+	///
+	/// Returns true if timer is elapsed.
+	///
+	bool Elapsed() const;
+
+	///
+	/// Returns the elapsed time.
+	///
+	long ElapsedTime() const;
+
+        ///
+        /// Block until time's up.
+        ///
+        void WaitUntilElapsed() const;
+
+    };
+
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 }
 
 #endif

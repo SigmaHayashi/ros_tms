@@ -1,4 +1,5 @@
 # tms_rc_mimamorukun_control
+<<<<<<< HEAD
 ## Network setup
 Setup ethernet port of PC as below.
 - `IP Address`: 192.168.11.10
@@ -11,6 +12,10 @@ You can check IP address and port setting of `chairbot` by connecting usb to Mbe
 ---
 ## Minimal control node.
 Launch below
+=======
+---
+## Minimal control program.
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 ```
 roslaunch tms_rc_mimamorukun_control minimal.launch
 ```
@@ -18,12 +23,20 @@ This node serve
 * Subcrive topic for control **velocity**
 * Publish topics for **odometry** and **tf** information
 
+<<<<<<< HEAD
 You must launch this file first at all.  
 If you want to change IP address and port setting, you must modify minimal.launch.
+=======
+You must launch this file first at all.
+
+If you want to change IP address and port setting, you must modify minimal.launch.
+You can check IP address and port setting by connecting usb to Mbed(micro controller) in robot.
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 
 ---
 ### Joystick control
+<<<<<<< HEAD
 Launch below.  
 ```
 sudo chmod a+rw /dev/input/js0
@@ -50,6 +63,23 @@ roslaunch tms_rc_mimamorukun_control keyop.launch
 * `arrow keys` : control velocity
 
 Use below command to install depending packages
+=======
+```
+roslaunch tms_rc_mimamorukun_control joyop.launch
+```
+Make sure to ``yocs-joyop`` is installed.
+If not, run command below
+```
+sudo apt-get install ros-indigo-yocs-joyop
+```
+
+### Keyboard control
+```
+roslaunch tms_rc_mimamorukun_control keyop.launch
+```
+Make sure to ``kobuki_keyop`` is installed.
+If not, run command below
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 ```
 sudo apt-get install ros-indigo-kobuki_keyop
 ```

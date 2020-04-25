@@ -4,9 +4,17 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+<<<<<<< HEAD
         - /Marker (voronoi map)1/Namespaces1
       Splitter Ratio: 0.595133
     Tree Height: 567
+=======
+        - /Global Options1
+        - /Status1
+        - /Marker (voronoi map)1/Namespaces1
+      Splitter Ratio: 0.595133
+    Tree Height: 746
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -31,7 +39,11 @@ Visualization Manager:
   Displays:
     - Class: rviz/Axes
       Enabled: true
+<<<<<<< HEAD
       Length: 0.5
+=======
+      Length: 1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       Name: Axes
       Radius: 0.1
       Reference Frame: <Fixed Frame>
@@ -79,7 +91,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         bsen_celling_link:
+<<<<<<< HEAD
           Alpha: 0
+=======
+          Alpha: 1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           Show Axes: false
           Show Trail: false
           Value: true
@@ -98,6 +114,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
         cancoffee_link:
           Alpha: 1
           Show Axes: false
@@ -123,6 +140,8 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         carpet_link:
           Alpha: 1
           Show Axes: false
@@ -141,6 +160,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+<<<<<<< HEAD
         chipstar_red_link:
           Alpha: 1
           Show Axes: false
@@ -166,11 +186,14 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         drawer_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
         greentea_bottle_link:
           Alpha: 1
           Show Axes: false
@@ -196,6 +219,8 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         intelingent_shelf_link:
           Alpha: 1
           Show Axes: false
@@ -318,11 +343,14 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+<<<<<<< HEAD
         meeting_door_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         meeting_table_link:
           Alpha: 1
           Show Axes: false
@@ -378,7 +406,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
         refrigerator_door_link:
+=======
+        recorder_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -388,6 +420,17 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
+=======
+        refrigerator_x_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        refrigerator_y_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         smartpal5_link:
           Alpha: 1
           Show Axes: false
@@ -410,11 +453,16 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
         soysauce_bottle_black_link:
+=======
+        tree_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
         soysauce_bottle_black_pitch_link:
           Alpha: 1
           Show Axes: false
@@ -436,6 +484,9 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         tree_link:
+=======
+        tv_52_link:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -468,6 +519,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+<<<<<<< HEAD
         wheelchair_link:
           Alpha: 1
           Show Axes: false
@@ -481,6 +533,8 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         workdesk_link:
           Alpha: 1
           Show Axes: false
@@ -536,6 +590,7 @@ Visualization Manager:
         {}
       Queue Size: 100
       Value: false
+<<<<<<< HEAD
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: visualization_marker_array
@@ -544,6 +599,8 @@ Visualization Manager:
         {}
       Queue Size: 100
       Value: true
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -568,13 +625,18 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
+<<<<<<< HEAD
       Distance: 22.1838
+=======
+      Distance: 15.0652
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
+<<<<<<< HEAD
         X: 1.81843
         Y: 6.39224
         Z: -4.61734
@@ -584,14 +646,32 @@ Visualization Manager:
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
       Yaw: 4.70928
+=======
+        X: 7.87497
+        Y: 3.66481
+        Z: 0.301148
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 1.2798
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 4.70748
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
+<<<<<<< HEAD
   Height: 848
   Hide Left Dock: false
   Hide Right Dock: true
   QMainWindow State: 000000ff00000000fd0000000400000000000001c4000002c6fc0200000009fb0000001200530065006c0065006300740069006f006e00000000280000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000002c6000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001f6000001ab0000000000000000000000010000010f00000379fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000379000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005ff0000003efc0100000002fb0000000800540069006d00650100000000000005ff000002f600fffffffb0000000800540069006d0065010000000000000450000000000000000000000435000002c600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+=======
+  Height: 1027
+  Hide Left Dock: false
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd0000000400000000000001c600000379fc0200000009fb0000001200530065006c0065006300740069006f006e00000000280000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000379000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001f6000001ab0000000000000000000000010000010f00000379fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000379000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007470000003efc0100000002fb0000000800540069006d0065010000000000000747000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000057b0000037900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   Selection:
     collapsed: false
   Time:
@@ -600,6 +680,11 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
+<<<<<<< HEAD
   Width: 1535
   X: 55
+=======
+  Width: 1863
+  X: 1967
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   Y: 14

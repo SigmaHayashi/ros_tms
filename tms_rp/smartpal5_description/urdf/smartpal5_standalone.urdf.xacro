@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
+<<<<<<< HEAD
 <robot name="smartpal5" xmlns:xacro="http://ros.org/wiki/xacro">
+=======
+<robot name="smartpal5" xmlns:xacro="http://www.ros.org/wiki/xacro">
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <!-- Used for fixing all components to 'world' frame of RViz and Gazebo 'world' -->
   <link name="world_link"/>
 

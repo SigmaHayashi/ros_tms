@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <!-- Objects of ROS-TMS -->
+<<<<<<< HEAD
 <robot name="objects" xmlns:xacro="http://ros.org/wiki/xacro">
+=======
+<robot name="objects" xmlns:xacro="http://www.ros.org/wiki/xacro">
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
   <xacro:include filename="$(find rostms_description)/urdf/objects_gazebo.urdf.xacro" />
@@ -92,7 +96,11 @@
     </link>
 
     <!-- refrigerator -->
+<<<<<<< HEAD
 <!--     <link name="refrigerator_x_link"/>
+=======
+    <link name="refrigerator_x_link"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     <joint name="refrigerator_x_joint" type="prismatic">
       <parent link="world_link"/>
@@ -130,7 +138,11 @@
         </geometry>
         <origin xyz="0.0 0.0 0.56" rpy="0 0 0"/>
       </collision>
+<<<<<<< HEAD
     </link> -->
+=======
+    </link>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     <!-- Add meeting_chair -->
     <xacro:meeting_chair_link num="1"/>
@@ -179,6 +191,7 @@
       </collision>
     </link>
 
+<<<<<<< HEAD
     <!-- object -->
     <!-- chipstar_red -->
     <link name="chipstar_red_x_link"/>
@@ -436,6 +449,8 @@
       </collision>
     </link>
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     <objects_sim/>
 
   </xacro:macro>

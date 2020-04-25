@@ -1,17 +1,28 @@
 
 /*
 Copyright (c) 2010 Donatien Garnier (donatiengar [at] gmail [dot] com)
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+<<<<<<< HEAD
 
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
+=======
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -48,6 +59,7 @@ class NetIf
 public:
   NetIf();
   virtual ~NetIf();
+<<<<<<< HEAD
   virtual NetTcpSocket* tcpSocket() = 0;  // Create a new tcp socket
   virtual NetUdpSocket* udpSocket() = 0;  // Create a new udp socket
   virtual void poll() = 0;
@@ -57,6 +69,17 @@ public:
   //!Returns the IP of the interface once it's connected
   IpAddr getIp() const;
 
+=======
+  virtual NetTcpSocket* tcpSocket() = 0; //Create a new tcp socket
+  virtual NetUdpSocket* udpSocket() = 0; //Create a new udp socket
+  virtual void poll() = 0;
+  virtual NetDnsRequest* dnsRequest(const char* hostname) = 0; //Create a new NetDnsRequest object
+  virtual NetDnsRequest* dnsRequest(Host* pHost) = 0; //Create a new NetDnsRequest object
+  
+  //!Returns the IP of the interface once it's connected
+  IpAddr getIp() const;
+  
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 protected:
   IpAddr m_ip;
 };

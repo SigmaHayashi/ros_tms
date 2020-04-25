@@ -23,6 +23,10 @@ include_directories(
 )
 
 add_executable(smartpal_tts src/smartpal_tts.cpp)
+<<<<<<< HEAD
 add_dependencies(smartpal_tts tms_msg_rc_gencpp)
+=======
+add_dependencies(smartpal_tts DEPENDS tms_msg_rc_gencpp)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 target_link_libraries(smartpal_tts ${catkin_LIBRARIES})
 

@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/balloon_blue"
     android:weightSum="1">
+=======
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/balloon_blue">
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="お探しの物品は、"
         android:id="@+id/textView"
@@ -29,3 +37,23 @@
         android:id="@+id/textView3"
         android:textColor="#ff000000" />
 </LinearLayout>
+=======
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="お探しの物品は、" />
+    
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="にあります" />
+
+</LinearLayout>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

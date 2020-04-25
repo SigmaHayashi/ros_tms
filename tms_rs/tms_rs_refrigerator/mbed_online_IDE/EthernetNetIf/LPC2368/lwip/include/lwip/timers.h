@@ -1,8 +1,14 @@
 /*
  * Copyright (c) 2001-2004 Swedish Institute of Computer Science.
+<<<<<<< HEAD
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * All rights reserved. 
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -11,6 +17,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -26,6 +33,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Adam Dunkels <adam@sics.se>
  *         Simon Goldschmidt
  *
@@ -60,25 +84,41 @@ extern "C" {
  *
  * @param arg Additional argument to pass to the function - set up by sys_timeout()
  */
+<<<<<<< HEAD
 typedef void (*sys_timeout_handler)(void *arg);
 
 struct sys_timeo
 {
+=======
+typedef void (* sys_timeout_handler)(void *arg);
+
+struct sys_timeo {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   struct sys_timeo *next;
   u32_t time;
   sys_timeout_handler h;
   void *arg;
 #if LWIP_DEBUG_TIMERNAMES
+<<<<<<< HEAD
   const char *handler_name;
+=======
+  const char* handler_name;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* LWIP_DEBUG_TIMERNAMES */
 };
 
 void sys_timeouts_init(void);
 
 #if LWIP_DEBUG_TIMERNAMES
+<<<<<<< HEAD
 void sys_timeout_debug(u32_t msecs, sys_timeout_handler handler, void *arg, const char *handler_name);
 #define sys_timeout(msecs, handler, arg) sys_timeout_debug(msecs, handler, arg, #handler)
 #else  /* LWIP_DEBUG_TIMERNAMES */
+=======
+void sys_timeout_debug(u32_t msecs, sys_timeout_handler handler, void *arg, const char* handler_name);
+#define sys_timeout(msecs, handler, arg) sys_timeout_debug(msecs, handler, arg, #handler)
+#else /* LWIP_DEBUG_TIMERNAMES */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 void sys_timeout(u32_t msecs, sys_timeout_handler handler, void *arg);
 #endif /* LWIP_DEBUG_TIMERNAMES */
 
@@ -86,10 +126,18 @@ void sys_untimeout(sys_timeout_handler handler, void *arg);
 #if NO_SYS
 void sys_check_timeouts(void);
 void sys_restart_timeouts(void);
+<<<<<<< HEAD
 #else  /* NO_SYS */
 void sys_timeouts_mbox_fetch(sys_mbox_t *mbox, void **msg);
 #endif /* NO_SYS */
 
+=======
+#else /* NO_SYS */
+void sys_timeouts_mbox_fetch(sys_mbox_t *mbox, void **msg);
+#endif /* NO_SYS */
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #ifdef __cplusplus
 }
 #endif

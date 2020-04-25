@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -107,6 +108,8 @@
 
 
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 cmake_minimum_required(VERSION 2.8.3)
 project(smartpal5_description)
 

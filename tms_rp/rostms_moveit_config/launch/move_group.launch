@@ -14,18 +14,24 @@
   <arg     if="$(arg info)" name="command_args" value="--debug" />
 
   <!-- move_group settings -->
+<<<<<<< HEAD
   <!--
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <arg name="allow_trajectory_execution" default="true"/>
   <arg name="fake_execution" default="false"/>
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="jiggle_fraction" default="0.05" />
   <arg name="publish_monitored_planning_scene" default="true"/>
+<<<<<<< HEAD
   -->
   <arg name="allow_trajectory_execution" default="true"/>
   <arg name="fake_execution" default="true"/>
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="jiggle_fraction" default="0.05" />
   <arg name="publish_monitored_planning_scene" default="true"/>
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <!-- Planning Functionality -->
   <include ns="move_group" file="$(find rostms_moveit_config)/launch/planning_pipeline.launch.xml">
@@ -46,9 +52,12 @@
 
   <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
+<<<<<<< HEAD
   <!--
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="joint_states:=/rostms/joint_states $(arg command_args)">
   -->
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     <!-- Set the display variable, in case OpenGL code is used internally -->
     <env name="DISPLAY" value="$(optenv DISPLAY :0)" />
 

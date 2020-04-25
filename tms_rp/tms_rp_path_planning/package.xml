@@ -4,7 +4,11 @@
   <version>1.0.2</version>
   <description>The tms_rp_path_planning package</description>
 
+<<<<<<< HEAD
   <maintainer email="kawamura@ait.kyushu-u.ac.jp">Akihiro Kawamura</maintainer>
+=======
+  <maintainer email="sakamoto@irvs.ait.kyushu-u.ac.jp">Junya Sakamoto</maintainer>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <license>BSD</license>
 

@@ -17,4 +17,7 @@
 include 'tms_ur_dbbrowser'
 include 'tms_ur_arviewer'
 include 'tms_ur_sanmoku'
+<<<<<<< HEAD
 include 'tms_ur_commander'
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

@@ -22,6 +22,10 @@ add_executable( smartpal_tagreader
                   
                 src/corba/tag.cpp)
 
+<<<<<<< HEAD
 add_dependencies(smartpal_tagreader tms_msg_rc_gencpp)
+=======
+add_dependencies(smartpal_tagreader DEPENDS tms_msg_rc_gencpp)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 target_link_libraries(smartpal_tagreader ${catkin_LIBRARIES} omniORB4 omnithread)

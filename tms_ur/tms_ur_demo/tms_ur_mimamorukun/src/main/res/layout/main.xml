@@ -192,12 +192,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+<<<<<<< HEAD
                 <!-- /tms_db_reader connection -->
+=======
+                <!-- /tms_db_reader/dbreader connection -->
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+<<<<<<< HEAD
                     android:text="\n/tms_db_reader"/>
+=======
+                    android:text="\n/tms_db_reader/dbreader"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
                 <TextView
                     android:id="@+id/dbreader_status"

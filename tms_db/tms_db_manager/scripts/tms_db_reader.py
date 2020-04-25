@@ -2,7 +2,11 @@
 # -*- coding: utf-8 -*-
 import rospy
 import genpy
+<<<<<<< HEAD
 import pymongo  # https://api.mongodb.org/python/2.6.3/
+=======
+import pymongo # https://api.mongodb.org/python/2.6.3/
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 import json
 import copy
 from bson import json_util
@@ -15,16 +19,24 @@ import tms_db_manager.tms_db_util as db_util
 client = pymongo.MongoClient('localhost:27017')
 db = client.rostmsdb
 
+<<<<<<< HEAD
 
 class TmsDbReader():
 
+=======
+class TmsDbReader():
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     def __init__(self):
         rospy.init_node("tms_db_reader")
         rospy.on_shutdown(self.shutdown)
 
         db_host = 'localhost'
         db_port = 27017
+<<<<<<< HEAD
         self.is_connected = db_util.check_connection(db_host, db_port)
+=======
+        self.is_connected = db_util.check_connection(db_host, db_port);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         if not self.is_connected:
             raise Exception("Problem of connection")
 
@@ -37,6 +49,7 @@ class TmsDbReader():
         TmsdbGetData()
         result = False
 
+<<<<<<< HEAD
         mode = 0
         temp_id = 0
         temp_type = ""
@@ -62,6 +75,31 @@ class TmsDbReader():
         MODE_ID_STATE = 15
         MODE_ID_SENSOR_STATE = 16
         MODE_ERROR = 999
+=======
+        mode = 0;
+        temp_id = 0;
+        temp_type = "";
+        temp_name = "";
+        temp_place = 0;
+        sid = 100000
+
+        MODE_ALL           =  0
+        MODE_NAME_IDTABLE  =  1
+        MODE_NAME          =  2
+        MODE_NAME_SENSOR   =  3
+        MODE_ID_IDTABLE    =  4
+        MODE_ID            =  5
+        MODE_ID_SENSOR     =  6
+        MODE_TYPE_IDTABLE  =  7
+        MODE_TYPE          =  8
+        MODE_TYPE_SENSOR   =  9
+        MODE_PLACE_IDTABLE = 10
+        MODE_PLACE         = 11
+        MODE_PLACE_TYPE    = 12
+        MODE_HIERARCHY     = 13
+        MODE_TAG_IDTABLE   = 14
+        MODE_ERROR         = 999
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
         if req.tmsdb.tag != '':
             mode = MODE_TAG_IDTABLE
@@ -77,6 +115,7 @@ class TmsDbReader():
             req.tmsdb.id -= sid
             mode = MODE_ID_IDTABLE
         elif (req.tmsdb.id != 0) and (req.tmsdb.id != sid) and (req.tmsdb.type == '') and (req.tmsdb.sensor == 0) and (req.tmsdb.place == 0):
+<<<<<<< HEAD
             if (req.tmsdb.state == 1):
                 mode = MODE_ID_STATE
             else:
@@ -97,22 +136,46 @@ class TmsDbReader():
         elif (req.tmsdb.id == 0) and (req.tmsdb.type == '') and (req.tmsdb.place != 0):
             mode = MODE_PLACE
         elif (req.tmsdb.id == 0) and (req.tmsdb.type != '') and (req.tmsdb.place != 0):
+=======
+            mode = MODE_ID
+        elif (req.tmsdb.id != 0) and (req.tmsdb.id != sid) and (req.tmsdb.type == '') and (req.tmsdb.sensor != 0) and (req.tmsdb.place == 0):
+            mode = MODE_ID_SENSOR
+        elif (req.tmsdb.id == sid) and (req.tmsdb.type != ''):
+            mode = MODE_TYPE_IDTABLE
+        elif (req.tmsdb.id == 0) and (req.tmsdb.type != '') and (req.tmsdb.sensor == 0) and (req.tmsdb.place ==0):
+            mode = MODE_TYPE
+        elif (req.tmsdb.id == 0) and (req.tmsdb.type != '') and (req.tmsdb.sensor != 0) and (req.tmsdb.place ==0):
+            mode = MODE_TYPE_SENSOR
+        elif (req.tmsdb.id == sid) and (req.tmsdb.type == '') and (req.tmsdb.place !=0):
+            mode = MODE_PLACE_IDTABLE
+        elif (req.tmsdb.id == 0) and (req.tmsdb.type == '') and (req.tmsdb.place !=0):
+          mode = MODE_PLACE
+        elif (req.tmsdb.id == 0) and (req.tmsdb.type != '') and (req.tmsdb.place !=0):
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             mode = MODE_PLACE_TYPE
         elif (req.tmsdb.id != 0) and (req.tmsdb.type == '') and (req.tmsdb.place == sid):
             mode = MODE_HIERARCHY
         elif (req.tmsdb.id > 0) and ((req.tmsdb.id < 1000) or (req.tmsdb.id > 20002)):
             mode = MODE_ERROR
         else:
+<<<<<<< HEAD
             mode = MODE_ERROR
 
         if mode == MODE_ERROR:
             temp_dbdata.note = "Wrong request! Try to check the command!"
+=======
+          mode = MODE_ERROR
+
+        if mode == MODE_ERROR:
+            temp_dbdata.note = "Wrong request! Try to check the command!";
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             ret = TmsdbGetDataResponse()
             ret.tmsdb.append(temp_dbdata)
             return ret
 
         #  Search the ID, type, etc infomation in ID table
         if (mode == MODE_NAME) or (mode == MODE_NAME_SENSOR):
+<<<<<<< HEAD
             cursor = db.default.find({'name': req.tmsdb.name})
             temp_type = cursor[0]['type']
             temp_id = cursor[0]['id']
@@ -131,6 +194,26 @@ class TmsDbReader():
             cursor = db.now.find({'place': req.tmsdb.place})
             if cursor.count() == 0:
                 temp_dbdata.note = "Wrong request! Try to check the place tag!"
+=======
+            cursor = db.default.find({'name':req.tmsdb.name})
+            temp_type  = cursor[0]['type'];
+            temp_id    = cursor[0]['id'];
+            temp_place = cursor[0]['place'];
+
+        # Search the type, name, etc infomation in ID table
+        if(mode == MODE_ID) or (mode == MODE_ID_SENSOR) or (mode == MODE_HIERARCHY):
+            cursor = db.default.find({'id':req.tmsdb.id})
+            temp_type  = cursor[0]['type'];
+            temp_name  = cursor[0]['name'];
+            temp_place = cursor[0]['place'];
+
+        # Search only using the place tag
+        if mode == MODE_PLACE :
+            ret = TmsdbGetDataResponse()
+            cursor = db.now.find({'place':req.tmsdb.place})
+            if cursor.count() == 0:
+                temp_dbdata.note = "Wrong request! Try to check the place tag!";
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                 ret.tmsdb.append(temp_dbdata)
                 return ret
             else:
@@ -141,6 +224,7 @@ class TmsDbReader():
                 return ret
 
         if mode == MODE_HIERARCHY:
+<<<<<<< HEAD
             loop_end_tag = False
             temp_place = req.tmsdb.id
 
@@ -148,6 +232,15 @@ class TmsDbReader():
                 cursor = db.now.find({'id': temp_place}).sort({'time': -1})
                 if cursor.count() == 0:
                     temp_dbdata.note = "Wrong request! Try to check the target ID, place info!"
+=======
+            loop_end_tag = False;
+            temp_place = req.tmsdb.id;
+
+            while temp_place != 0:
+                cursor = db.now.find({'id':temp_place}).sort({'time':-1})
+                if cursor.count() == 0:
+                    temp_dbdata.note = "Wrong request! Try to check the target ID, place info!";
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                     ret.tmsdb.append(temp_dbdata)
                     return ret
                 else:
@@ -159,6 +252,7 @@ class TmsDbReader():
                 if loop_end_tag:
                     break
 
+<<<<<<< HEAD
                 temp_id = temp_dbdata.place
                 cursor = db.default.find({'id': temp_id})
                 temp_type = cursor[0]['type']
@@ -171,12 +265,27 @@ class TmsDbReader():
                     loop_end_tag = False
 
                 temp_place = temp_id
+=======
+                temp_id = temp_dbdata.place;
+                cursor = db.default.find({'id':temp_id})
+                temp_type  = cursor[0]['type'];
+                temp_name  = cursor[0]['name'];
+                temp_place = cursor[0]['place'];
+
+                if temp_id == temp_place:
+                    loop_end_tag = True;
+                else:
+                    loop_end_tag = False;
+
+                temp_place = temp_id;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
             return ret
 
         if mode == MODE_ALL:
             cursor = db.default.find()
         elif mode == MODE_TAG_IDTABLE:
+<<<<<<< HEAD
             cursor = db.default.find({'tag': {'$regex': req.tmsdb.tag}})
         elif mode == MODE_NAME_IDTABLE:
             cursor = db.default.find({'name': req.tmsdb.name})
@@ -208,6 +317,35 @@ class TmsDbReader():
         ret = TmsdbGetDataResponse()
         if cursor.count() == 0:
             temp_dbdata.note = "Wrong request! Try to check the command"
+=======
+            cursor = db.default.find({'tag':{'$regex': req.tmsdb.tag}})
+        elif mode == MODE_NAME_IDTABLE:
+            cursor = db.default.find({'name':req.tmsdb.name})
+        elif mode == MODE_NAME:
+            cursor = db.now.find({'name':req.tmsdb.name})
+        elif mode == MODE_NAME_SENSOR:
+            cursor = db.now.find({'name':req.tmsdb.name, 'sensor':req.tmsdb.sensor})
+        elif mode == MODE_ID_IDTABLE:
+            cursor = db.default.find({'id':req.tmsdb.id})
+        elif mode == MODE_ID:
+            cursor = db.now.find({'id':req.tmsdb.id})
+        elif mode == MODE_ID_SENSOR:
+            cursor = db.now.find({'id':req.tmsdb.id, 'sensor':req.tmsdb.sensor})
+        elif mode == MODE_TYPE_IDTABLE:
+            cursor = db.default.find({'type':req.tmsdb.type})
+        elif mode == MODE_TYPE:
+            cursor = db.now.find({'type':req.tmsdb.type})
+        elif mode == MODE_TYPE_SENSOR:
+            cursor = db.now.find({'sensor':req.tmsdb.sensor})
+        elif mode == MODE_PLACE_IDTABLE:
+            cursor = db.default.find({'place':req.tmsdb.place})
+        elif mode == MODE_PLACE_TYPE:
+            cursor = db.now.find({'place':req.tmsdb.place})
+
+        ret = TmsdbGetDataResponse()
+        if cursor.count() == 0:
+            temp_dbdata.note = "Wrong request! Try to check the command";
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             ret.tmsdb.append(temp_dbdata)
             return ret
         else:

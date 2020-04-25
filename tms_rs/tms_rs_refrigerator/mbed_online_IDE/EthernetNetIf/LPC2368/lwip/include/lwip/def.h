@@ -1,8 +1,14 @@
 /*
  * Copyright (c) 2001-2004 Swedish Institute of Computer Science.
+<<<<<<< HEAD
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * All rights reserved. 
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -11,6 +17,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -26,6 +33,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
@@ -40,8 +64,13 @@
 extern "C" {
 #endif
 
+<<<<<<< HEAD
 #define LWIP_MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define LWIP_MIN(x, y) (((x) < (y)) ? (x) : (y))
+=======
+#define LWIP_MAX(x , y)  (((x) > (y)) ? (x) : (y))
+#define LWIP_MIN(x , y)  (((x) < (y)) ? (x) : (y))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #ifndef NULL
 #define NULL ((void *)0)
@@ -49,14 +78,22 @@ extern "C" {
 
 /** Get the absolute difference between 2 u32_t values (correcting overflows)
  * 'a' is expected to be 'higher' (without overflow) than 'b'. */
+<<<<<<< HEAD
 #define LWIP_U32_DIFF(a, b) (((a) >= (b)) ? ((a) - (b)) : (((a) + ((b) ^ 0xFFFFFFFF) + 1)))
+=======
+#define LWIP_U32_DIFF(a, b) (((a) >= (b)) ? ((a) - (b)) : (((a) + ((b) ^ 0xFFFFFFFF) + 1))) 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /* Endianess-optimized shifting of two u8_t to create one u16_t */
 #if BYTE_ORDER == LITTLE_ENDIAN
 #define LWIP_MAKE_U16(a, b) ((a << 8) | b)
 #else
 #define LWIP_MAKE_U16(a, b) ((b << 8) | a)
+<<<<<<< HEAD
 #endif
+=======
+#endif 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #ifndef LWIP_PLATFORM_BYTESWAP
 #define LWIP_PLATFORM_BYTESWAP 0
@@ -99,7 +136,11 @@ extern "C" {
 #define lwip_ntohs(x) LWIP_PLATFORM_HTONS(x)
 #define lwip_htonl(x) LWIP_PLATFORM_HTONL(x)
 #define lwip_ntohl(x) LWIP_PLATFORM_HTONL(x)
+<<<<<<< HEAD
 #else  /* LWIP_PLATFORM_BYTESWAP */
+=======
+#else /* LWIP_PLATFORM_BYTESWAP */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 u16_t lwip_htons(u16_t x);
 u16_t lwip_ntohs(u16_t x);
 u32_t lwip_htonl(u32_t x);
@@ -109,9 +150,18 @@ u32_t lwip_ntohl(u32_t x);
 /* These macros should be calculated by the preprocessor and are used
    with compile-time constants only (so that there is no little-endian
    overhead at runtime). */
+<<<<<<< HEAD
 #define PP_HTONS(x) ((((x)&0xff) << 8) | (((x)&0xff00) >> 8))
 #define PP_NTOHS(x) PP_HTONS(x)
 #define PP_HTONL(x) ((((x)&0xff) << 24) | (((x)&0xff00) << 8) | (((x)&0xff0000UL) >> 8) | (((x)&0xff000000UL) >> 24))
+=======
+#define PP_HTONS(x) ((((x) & 0xff) << 8) | (((x) & 0xff00) >> 8))
+#define PP_NTOHS(x) PP_HTONS(x)
+#define PP_HTONL(x) ((((x) & 0xff) << 24) | \
+                     (((x) & 0xff00) << 8) | \
+                     (((x) & 0xff0000UL) >> 8) | \
+                     (((x) & 0xff000000UL) >> 24))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define PP_NTOHL(x) PP_HTONL(x)
 
 #endif /* BYTE_ORDER == BIG_ENDIAN */
@@ -121,3 +171,7 @@ u32_t lwip_ntohl(u32_t x);
 #endif
 
 #endif /* __LWIP_DEF_H__ */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

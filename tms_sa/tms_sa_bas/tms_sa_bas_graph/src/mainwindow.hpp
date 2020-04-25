@@ -31,11 +31,16 @@
 //------------------------------------------------------------------------------
 namespace bas_graph
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 //------------------------------------------------------------------------------
 // Implementation [MainWindow]
 //------------------------------------------------------------------------------
 class MainWindow : public QMainWindow
 {
+<<<<<<< HEAD
   Q_OBJECT
 
 public:
@@ -87,6 +92,61 @@ private:
 
 //------------------------------------------------------------------------------
 }  // namespace bas_graph
+=======
+    Q_OBJECT
+
+public:
+    MainWindow(int argc, char** argv, QWidget *parent = 0);
+    ~MainWindow();
+    void showNoMasterMessage();
+
+
+public Q_SLOTS:
+    void plotGraph();
+    void captureEvent();
+    void exportAnalysePlot();
+    void exportResultPlot();
+    void exportPlot(int iPlotID);
+    void updateZoom1();
+    void updateZoom2();
+    void updateMove1();
+    void updateMove2();
+
+
+private:
+    void createActions();
+    void createToolBars();
+    void readSettings();
+    void writeSettings();
+
+    void resizeEvent(QResizeEvent *event);
+    void closeEvent(QCloseEvent *event);
+
+    QToolBar *toolBar;
+    QAction *captureAct;
+    QAction *analysePlotSaveAct;
+    QAction *resultPlotSaveAct;
+
+    QNode qNode;
+
+    QwtPlot *qwtAnalysePlot;
+    QwtPlot *qwtResultPlot;
+
+    QwtPlotCurve *qwtCurveBehaviorWalking;
+    QwtPlotCurve *qwtCurveBehaviorSitting;
+    QwtPlotCurve *qwtCurveBehaviorSleeping;
+    QwtPlotCurve *qwtCurveBehaviorMerged;
+
+    QwtPlotZoomer *zoomer1;
+    QwtPlotZoomer *zoomer2;
+
+    QwtPlotPanner *panner1;
+    QwtPlotPanner *panner2;
+};
+
+//------------------------------------------------------------------------------
+}       // namespace bas_graph
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif  // MAIN_WINDOW_HPP
 
 //------------------------------------------------------------------------------

@@ -4,9 +4,16 @@
   <group ns="sim">
     <param name="robot_description" textfile="$(find skeleton_description)/urdf/skeleton.urdf"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+<<<<<<< HEAD
     <param name="use_gui" value="false"/>
     <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
     <!-- <node name="skeleton_offset_publisher" pkg="tf" type="static_transform_publisher"
       args="7.3 5.6 1.1 0 0 1 0.0 world_link Body 10"/> -->
+=======
+    <param name="use_gui" value="true"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <node name="skeleton_offset_publisher" pkg="tf" type="static_transform_publisher"
+      args="1 2 1.1 0 0 0 1 world_link Body 10"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </group>
 </launch>

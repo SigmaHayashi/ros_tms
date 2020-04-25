@@ -18,6 +18,11 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #ifndef _CDLCOM_H_
 #define _CDLCOM_H_
 
@@ -34,6 +39,7 @@
 //-------------------------------------------------------//
 #ifdef WIN32
 //-------------------------------------------------------//
+<<<<<<< HEAD
 #include <windows.h>
 //-------------------------------------------------------//
 #else  // LINUX
@@ -44,11 +50,25 @@
 //-------------------------------------------------------//
 #endif  // WIN32 else LINUX
         //-------------------------------------------------------//
+=======
+	#include <windows.h>
+//-------------------------------------------------------//
+#else //LINUX
+//-------------------------------------------------------//
+	#include <termios.h>
+	#include <fcntl.h>
+	#include <cerrno>
+//-------------------------------------------------------//
+#endif //WIN32 else LINUX
+//-------------------------------------------------------//
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*! \brief	This structrue stores the attributes for a
  *			serial port device.
  */
 
+<<<<<<< HEAD
 struct TCdlCOMDesc
 {
   int port;    //!<	serial port number
@@ -58,10 +78,24 @@ struct TCdlCOMDesc
   int stop;    //!<	stop bit
   int rttc;    //!<	read  total timeout
   int wttc;    //!<	write total timeout
+=======
+struct TCdlCOMDesc {
+	int	port;	//!<	serial port number
+	int	baud;	//!<	baud rate of port
+	int	data;	//!<	data bit
+	int	parity;	//!<	parity bit
+	int	stop;	//!<	stop bit
+	int	rttc;	//!<	read  total timeout
+	int	wttc;	//!<	write total timeout
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 //--------------------------------------------------------------------------//
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /*!	\brief	Encapsulates the serial port device.
  *
  *	This class is responsible for direct communication with the serial port
@@ -69,6 +103,7 @@ struct TCdlCOMDesc
  *	API functions to get access the to the device.
  */
 
+<<<<<<< HEAD
 class DLLDIR CCdlCOM : public CCdlBase
 {
 private:
@@ -119,3 +154,57 @@ public:
 };
 
 #endif  //_CDLCOM_H_
+=======
+class DLLDIR CCdlCOM : public CCdlBase {
+private:
+	std::string _deviceName;
+
+protected:
+
+	TCdlCOMDesc _ccd;	//!< Stores the attributes of the serial port device.
+
+//-------------------------------------------------------//
+#ifdef WIN32
+//-------------------------------------------------------//
+	HANDLE _prtHdl;	//!< port handle
+	COMMTIMEOUTS _oto;	//!< old timeouts
+//-------------------------------------------------------//
+#else //LINUX
+//-------------------------------------------------------//
+	int _prtHdl;	//!< port handle
+        struct termios _oto;	//!< old timeouts
+//-------------------------------------------------------//
+#endif //WIN32 else LINUX
+//-------------------------------------------------------//
+
+protected:
+
+	/*! \brief	Converts an integer to a char.
+	 */
+	static char digit(const int _val) {
+		return (char)((int)'0' + _val);
+	}
+
+public:
+	/*! \brief	Construct a CCdlCOM class
+	 *
+	 *	To this constructor a 'TCdlCOMDesc' parameter has to be given, which
+	 *	describes the desired serial port. An attempt to open a connection
+	 *	to the desired device will be tried.
+	 */
+	CCdlCOM(TCdlCOMDesc ccd);
+
+	/*! \brief	Destructs the class
+	 */	virtual ~CCdlCOM();
+
+	/*!	\brief	Sends data to the device
+	 */	virtual int  send(const void* buf, int size);
+
+	/*! \brief	Receives data from the device
+	*/	virtual int  recv(void* buf, int size);
+};
+
+
+#endif //_CDLCOM_H_
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

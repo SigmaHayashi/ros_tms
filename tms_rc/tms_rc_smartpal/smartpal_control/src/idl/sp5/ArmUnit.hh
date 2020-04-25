@@ -20,7 +20,11 @@
 
 #ifndef __Common_hh_EXTERNAL_GUARD__
 #define __Common_hh_EXTERNAL_GUARD__
+<<<<<<< HEAD
 #include "Common.hh"
+=======
+#include <Common.hh>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 

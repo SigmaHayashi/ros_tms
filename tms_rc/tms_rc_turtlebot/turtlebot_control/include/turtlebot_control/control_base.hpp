@@ -12,7 +12,11 @@
 #include <geometry_msgs/Point.h>
 #include <stdio.h>
 
+<<<<<<< HEAD
 // kobukiの初期位置を保持するための大域変数
+=======
+//kobukiの初期位置を保持するための大域変数
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 double x;
 double y;
 double th;
@@ -29,6 +33,7 @@ double v_ori_th;
 double distance(double x0, double y0, double x1, double y1);
 double quaternion_to_enler(double z, double w);
 
+<<<<<<< HEAD
 void pub_vel(double angular, double linear);
 void vicon_sysCallback(const tms_msg_ss::vicon_data::ConstPtr &msg);
 void odomCallback(const nav_msgs::Odometry::ConstPtr &msg);
@@ -36,5 +41,15 @@ void control_base(double goal_dis, double goal_ang);
 
 bool getKobukiInfo(double *robot_x, double *robot_y, double *robot_th);
 bool callback(tms_msg_rc::kobuki_control_1::Request &req, tms_msg_rc::kobuki_control_1::Response &res);
+=======
+void pub_vel(double angular,double linear);
+void vicon_sysCallback(const tms_msg_ss::vicon_data::ConstPtr& msg);
+void odomCallback(const nav_msgs::Odometry::ConstPtr& msg);
+void control_base(double goal_dis, double goal_ang);
+
+bool getKobukiInfo(double *robot_x, double *robot_y, double *robot_th);
+bool callback(tms_msg_rc::kobuki_control_1::Request  &req,
+		tms_msg_rc::kobuki_control_1::Response &res);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #endif /* CONTROL_BASE_HPP_ */

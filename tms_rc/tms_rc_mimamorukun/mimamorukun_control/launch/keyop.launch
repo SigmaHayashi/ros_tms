@@ -7,11 +7,17 @@
     <remap from="keyop/motor_power" to="mobile_base/commands/motor_power"/>
     <remap from="keyop/cmd_vel" to="cmd_vel_mux/input/keyop"/>
     <param name="linear_vel_step"  value="0.05" type="double"/>
+<<<<<<< HEAD
     <!--<param name="linear_vel_max"   value="0.3"  type="double"/>-->
     <param name="linear_vel_max"   value="0.6"  type="double"/>
     <param name="angular_vel_step" value="0.1" type="double"/>
     <!--<param name="angular_vel_max"  value="0.8"  type="double"/>-->
     <param name="angular_vel_max"  value="1.6"  type="double"/>
+=======
+    <param name="linear_vel_max"   value="0.3"  type="double"/>
+    <param name="angular_vel_step" value="0.1" type="double"/>
+    <param name="angular_vel_max"  value="0.8"  type="double"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     <param name="wait_for_connection_" value="true" type="bool"/>
   </node>
 </group>

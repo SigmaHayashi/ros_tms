@@ -23,4 +23,7 @@ int32     state
 string    task
 string    note
 string    tag
+<<<<<<< HEAD
 string    announce
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

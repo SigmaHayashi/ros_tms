@@ -20,11 +20,19 @@
 
 #ifndef __Common_hh_EXTERNAL_GUARD__
 #define __Common_hh_EXTERNAL_GUARD__
+<<<<<<< HEAD
 #include "Common.hh"
 #endif
 #ifndef __GripperExtAxes_hh_EXTERNAL_GUARD__
 #define __GripperExtAxes_hh_EXTERNAL_GUARD__
 #include "GripperExtAxes.hh"
+=======
+#include <Common.hh>
+#endif
+#ifndef __GripperExtAxes_hh_EXTERNAL_GUARD__
+#define __GripperExtAxes_hh_EXTERNAL_GUARD__
+#include <GripperExtAxes.hh>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 

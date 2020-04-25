@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 n_of_particles: #パーティクル数
  100
 update: #背景を更新する頻度,何回ごとにUpdateするか 0ならUpdateしない
@@ -67,3 +68,12 @@ lrf_active: # LRFを使用するかどうか
  #[ true, true, true, false ]
  # 928
  [ true, true, true, true ]
+=======
+max_lrf_range: 4.0
+min_lrf_range: 0.2
+target_area: [ 0.0, 0.0, 15.0, 7.0 ]
+m_min_distance: 1000
+max_vel: 100.0
+m_sigma: 200.0
+n_of_particles: 100
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

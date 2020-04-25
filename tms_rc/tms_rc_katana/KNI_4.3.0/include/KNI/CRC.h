@@ -18,13 +18,22 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /****************************************************************************/
 #ifndef _CRC_H
 #define _CRC_H
 /****************************************************************************/
 
+<<<<<<< HEAD
 #define uint8 unsigned char    //!< unsigned 8 bit
 #define uint16 unsigned short  //!< unsigned 16 bit
+=======
+#define uint8  unsigned char	//!< unsigned 8 bit
+#define uint16 unsigned short	//!< unsigned 16 bit
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /*--------------------------------------------------------------------------*/
 
@@ -34,5 +43,9 @@
 uint16 CRC_CHECKSUM(uint8 *data, uint8 size_of_BYTE);
 
 /****************************************************************************/
+<<<<<<< HEAD
 #endif  //_CRC_H
+=======
+#endif //_CRC_H
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /****************************************************************************/

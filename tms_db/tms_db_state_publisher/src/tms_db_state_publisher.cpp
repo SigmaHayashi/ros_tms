@@ -6,18 +6,28 @@
 // @version: Ver0.0.4 (since 2015.07.22)
 // @date   : 2015.08.26
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 // include for ROS
+=======
+//include for ROS
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #include <ros/ros.h>
 #include <unistd.h>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <tms_msg_db/TmsdbStamped.h>
 #include <tms_msg_db/Tmsdb.h>
+<<<<<<< HEAD
 #include <tms_msg_db/TmsdbGetData.h>
 #include <sensor_msgs/JointState.h>
 #include <tms_msg_ss/SkeletonArray.h>
 #include <visualization_msgs/Marker.h>
 
 // include for std
+=======
+#include <sensor_msgs/JointState.h>
+
+//include for std
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
@@ -25,12 +35,15 @@
 #include <iostream>
 #include <vector>
 #include <map>
+<<<<<<< HEAD
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/split.hpp>
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_listener.h>
 
 #include "picojson.h"
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 // #define rad2deg(x)	((x)*(180.0)/M_PI)
 // #define deg2rad(x)	((x)*M_PI/180.0)
@@ -38,17 +51,24 @@
 //------------------------------------------------------------------------------
 using std::string;
 using std::vector;
+<<<<<<< HEAD
 using namespace std;
 using namespace boost;
 
 const int inf = -100000;
 #define PI 3.14159265
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 //------------------------------------------------------------------------------
 class DbStatePublisher
 {
+<<<<<<< HEAD
   //------------------------------------------------------------------------------
+=======
+//------------------------------------------------------------------------------
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 private:
   // ROS NodeHandle
   ros::NodeHandle nh;
@@ -58,6 +78,7 @@ private:
   // ROS Topic Subscriber
   ros::Subscriber data_sub;
   // ROS Topic Publisher
+<<<<<<< HEAD
   ros::Publisher state_pub;
   ros::Publisher skeleton_pub;
   ros::Publisher skeleton_joint_pub;
@@ -85,6 +106,22 @@ public:
     skeleton_joint_pub = nh.advertise< sensor_msgs::JointState >("/sim/joint_states",10);
     marker_pub = nh.advertise<visualization_msgs::Marker>("visualization_marker", 10);
     heartrate_pub = nh.advertise<visualization_msgs::Marker>("heartrate",10);
+=======
+  ros::Publisher  state_pub;
+
+//------------------------------------------------------------------------------
+public:
+  DbStatePublisher() :
+    nh_priv("~"),
+    is_debug(false)
+  {
+    //Init parameter
+    nh_priv.param("is_debug", is_debug, is_debug);
+    //Init target name
+    ROS_ASSERT(initDbStatePublisher());
+    data_sub  = nh.subscribe("/tms_db_publisher", 1,  &DbStatePublisher::dbTFCallback, this);
+    state_pub = nh.advertise<sensor_msgs::JointState>("/joint_states", 10);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   }
 
   //----------------------------------------------------------------------------
@@ -93,7 +130,11 @@ public:
     ROS_ASSERT(shutdownDbStatePublisher());
   }
 
+<<<<<<< HEAD
   //------------------------------------------------------------------------------
+=======
+//------------------------------------------------------------------------------
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 private:
   bool initDbStatePublisher()
   {
@@ -109,6 +150,7 @@ private:
 
   //----------------------------------------------------------------------------
   // void dbTFCallback(const ros::MessageEvent<tms_msg_db::TmsdbStamped const>& event)
+<<<<<<< HEAD
   void dbTFCallback(const tms_msg_db::TmsdbStamped::ConstPtr &msg)
   {
     uint32_t id, oID, sensor, state, place;
@@ -223,10 +265,32 @@ private:
       if (id == 2003 && ((type2003 == true && sensor == 3001) || (type2003 == false && sensor == 3005)))  // smartpal5-2
       {
         if (state == 1)
+=======
+  void dbTFCallback(const tms_msg_db::TmsdbStamped::ConstPtr& msg)
+  {
+    uint32_t id, oID, sensor, state, place;
+    double posX,posY,rotY;
+    sensor_msgs::JointState state_data;
+
+    if (msg->tmsdb.size()==0)
+      return;
+
+    for (uint32_t i=0; i<msg->tmsdb.size(); i++)
+    {
+      id      = msg->tmsdb[i].id;
+      sensor  = msg->tmsdb[i].sensor;
+      state   = msg->tmsdb[i].state;
+      place   = msg->tmsdb[i].place;
+
+      if (id==2003) // smartpal5-2
+      {
+        if (state==1)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
+<<<<<<< HEAD
           double g_jR[7] = {0.0, -0.08, 0.0, 0.0, 0.0, 0.0, 0.0};
           double g_jL[7] = {0.0, -0.08, 0.0, 0.0, 0.0, 0.0, 0.0};
           double g_gripper_right = 0.3;
@@ -257,6 +321,8 @@ private:
             ss << v_joint.at(17);
             ss >> g_gripper_left;
           }
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
           state_data.header.stamp = ros::Time::now();
           state_data.name.push_back("smartpal5_x_joint");
@@ -272,6 +338,7 @@ private:
           state_data.name.push_back("lumbar_upper_joint");
           state_data.position.push_back(0);
           // state_data.name.push_back("head_camera_joint");
+<<<<<<< HEAD
           // state_data.position.push_back(0);
           state_data.name.push_back("l_arm_j1_joint");
           state_data.position.push_back(g_jL[0]);
@@ -289,11 +356,31 @@ private:
           state_data.position.push_back(g_jL[6]);
           state_data.name.push_back("l_gripper_thumb_joint");
           state_data.position.push_back(g_gripper_left);
+=======
+          //state_data.position.push_back(0);
+          state_data.name.push_back("l_arm_j1_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("l_arm_j2_joint");
+          state_data.position.push_back(0.08);
+          state_data.name.push_back("l_arm_j3_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("l_arm_j4_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("l_arm_j5_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("l_arm_j6_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("l_arm_j7_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("l_gripper_thumb_joint");
+          state_data.position.push_back(0);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           // state_data.name.push_back("l_gripper_joint");
           // state_data.position.push_back(0);
           // state_data.name.push_back("l_end_effector_joint");
           // state_data.position.push_back(0);
           state_data.name.push_back("r_arm_j1_joint");
+<<<<<<< HEAD
           state_data.position.push_back(g_jR[0]);
           state_data.name.push_back("r_arm_j2_joint");
           state_data.position.push_back(g_jR[1]);
@@ -309,6 +396,23 @@ private:
           state_data.position.push_back(g_jR[6]);
           state_data.name.push_back("r_gripper_thumb_joint");
           state_data.position.push_back(g_gripper_right);
+=======
+          state_data.position.push_back(0);
+          state_data.name.push_back("r_arm_j2_joint");
+          state_data.position.push_back(-0.08);
+          state_data.name.push_back("r_arm_j3_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("r_arm_j4_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("r_arm_j5_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("r_arm_j6_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("r_arm_j7_joint");
+          state_data.position.push_back(0);
+          state_data.name.push_back("r_gripper_thumb_joint");
+          state_data.position.push_back(0);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           // state_data.name.push_back("r_gripper_joint");
           // state_data.position.push_back(0);
           // state_data.name.push_back("r_end_effector_joint");
@@ -316,24 +420,40 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 2007)  // wheelchair
       {
         if (state != 0)
+=======
+      if (id==2009) // refrigerator
+      {
+        if (state!=0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
           else
           {
             state_data.header.stamp = ros::Time::now();
+<<<<<<< HEAD
             state_data.name.push_back("wheelchair_x_joint");
             state_data.name.push_back("wheelchair_y_joint");
             state_data.name.push_back("wheelchair_yaw_joint");
+=======
+            state_data.name.push_back("refrigerator_x_joint");
+            state_data.name.push_back("refrigerator_y_joint");
+            state_data.name.push_back("refrigerator_yaw_joint");
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             state_data.position.push_back(posX);
             state_data.position.push_back(posY);
             state_data.position.push_back(rotY);
@@ -341,6 +461,7 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 2009 &&
           ((type2009 == true && sensor == 3001) || (type2009 == false && sensor == 3005)))  // refrigerator
       {
@@ -457,12 +578,21 @@ private:
       if (id == 6004)  // chair
       {
         if (state != 0)
+=======
+      if (id==6004) // chair
+      {
+        if (state!=0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
@@ -479,15 +609,25 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 6007)  // meeting_chair1
       {
         if (state != 0)
+=======
+      if (id==6007) // meeting_chair1
+      {
+        if (state!=0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
@@ -504,15 +644,25 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 6008)  // meeting_chair2
       {
         if (state != 0)
+=======
+      if (id==6008) // meeting_chair2
+      {
+        if (state!=0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
@@ -529,15 +679,25 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 6009)  // meeting_chair3
       {
         if (state != 0)
+=======
+      if (id==6009) // meeting_chair3
+      {
+        if (state!=0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
@@ -554,15 +714,25 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 6010)  // meeting_chair4
       {
         if (state != 0)
+=======
+      if (id==6010) // meeting_chair4
+      {
+        if (state!=0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
@@ -579,15 +749,25 @@ private:
         }
       }
 
+<<<<<<< HEAD
       if (id == 6018)  // wagon
       {
         if (state == 1)
+=======
+      if (id==6018) // wagon
+      {
+        if (state==1)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         {
           posX = msg->tmsdb[i].x;
           posY = msg->tmsdb[i].y;
           rotY = msg->tmsdb[i].ry;
 
+<<<<<<< HEAD
           if (posX == 0.0 && posY == 0.0)
+=======
+          if(posX == 0.0 && posY == 0.0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           {
             continue;
           }
@@ -603,6 +783,7 @@ private:
           }
         }
       }
+<<<<<<< HEAD
 
       if (id == 6024)  // styrofoam_desk
       {
@@ -849,6 +1030,8 @@ private:
           state_data.position.push_back(rotR);
         }
       }
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     }
     state_pub.publish(state_data);
   }
@@ -857,13 +1040,23 @@ private:
 //------------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
+<<<<<<< HEAD
   // Init ROS node
   ros::init(argc, argv, "tms_db_state_publisher");
   DbStatePublisher dsp;
 
+=======
+  //Init ROS node
+  ros::init(argc, argv, "tms_db_state_publisher");
+  DbStatePublisher dsp;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   ros::spin();
   return 0;
 }
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 // EOF
+=======
+//EOF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

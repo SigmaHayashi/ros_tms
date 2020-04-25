@@ -20,11 +20,19 @@
 
 #ifndef __Common_hh_EXTERNAL_GUARD__
 #define __Common_hh_EXTERNAL_GUARD__
+<<<<<<< HEAD
 #include "Common.hh"
 #endif
 #ifndef __LumbarExtAxes_hh_EXTERNAL_GUARD__
 #define __LumbarExtAxes_hh_EXTERNAL_GUARD__
 #include "LumbarExtAxes.hh"
+=======
+#include <Common.hh>
+#endif
+#ifndef __LumbarExtAxes_hh_EXTERNAL_GUARD__
+#define __LumbarExtAxes_hh_EXTERNAL_GUARD__
+#include <LumbarExtAxes.hh>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 

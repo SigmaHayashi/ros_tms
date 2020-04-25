@@ -14,12 +14,19 @@ import copy
 from bson import json_util
 from bson.objectid import ObjectId
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 def msg_to_document(msg):
     msg_dict = {}
     slot_types = []
 
+<<<<<<< HEAD
     if hasattr(msg, '_slot_types'):
+=======
+    if hasattr(msg,'_slot_types'):
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         slot_types = msg._slot_types
     else:
         slot_types = [None] * len(msg.__slots__)
@@ -29,7 +36,10 @@ def msg_to_document(msg):
 
     return msg_dict
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 def sanitize_value(attr, v, type):
     if isinstance(v, str):
         if type == 'uint8[]':
@@ -37,7 +47,11 @@ def sanitize_value(attr, v, type):
         else:
             try:
                 v = unicode(v, "utf-8")
+<<<<<<< HEAD
             except UnicodeDecodeError as e:
+=======
+            except UnicodeDecodeError, e:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                 v = Binary(v)
         return v
 
@@ -46,7 +60,11 @@ def sanitize_value(attr, v, type):
     elif isinstance(v, genpy.rostime.Time):
         return msg_to_document(v)
     elif isinstance(v, genpy.rostime.Duration):
+<<<<<<< HEAD
         return msg_to_document(v)
+=======
+         return msg_to_document(v)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     elif isinstance(v, list):
         result = []
         for t in v:
@@ -58,7 +76,10 @@ def sanitize_value(attr, v, type):
     else:
         return v
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 def check_connection(db_host, db_port):
     try:
         from pymongo import Connection
@@ -70,6 +91,7 @@ def check_connection(db_host, db_port):
         rospy.loginfo("Could not connect to mongo server %s:%d" % (db_host, db_port))
         return False
 
+<<<<<<< HEAD
 
 def document_to_msg(document, TYPE):
     msg = TYPE()
@@ -83,3 +105,16 @@ def _fill_msg(msg, dic):
             _fill_msg(getattr(msg, i), dic[i])
         else:
             setattr(msg, i, dic[i])
+=======
+def document_to_msg(document, TYPE):
+    msg = TYPE()
+    _fill_msg(msg,document)
+    return msg
+
+def _fill_msg(msg,dic):
+    for i in dic:
+        if isinstance(dic[i],dict):
+            _fill_msg(getattr(msg,i),dic[i])
+        else:
+            setattr(msg,i,dic[i])
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

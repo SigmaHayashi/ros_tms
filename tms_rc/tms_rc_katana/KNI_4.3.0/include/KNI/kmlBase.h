@@ -18,6 +18,10 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /*! \mainpage "Katana Native Interface Documentation"
  */
 
@@ -35,17 +39,28 @@
 #include "KNI/cdlCOM.h"
 #include "KNI/cdlCOMExceptions.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 //--------------------------------------------------------------------------//
 //!The old protocol is only supported up to K400 version 0.x.x
 #define K400_OLD_PROTOCOL_THRESHOLD 3
 
+<<<<<<< HEAD
 #if !defined(BYTE_DECLARED)
 #define BYTE_DECLARED
 typedef unsigned char byte;  //!< type specification (8 bit)
+=======
+#if !defined (BYTE_DECLARED)
+#define BYTE_DECLARED
+typedef unsigned char byte;	//!< type specification (8 bit)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 //--------------------------------------------------------------------------//
 
+<<<<<<< HEAD
 #define TM_ENDLESS -1  //!< timeout symbol for 'endless' waiting
 
 //--------------------------------------------------------------------------//
@@ -53,6 +68,17 @@ typedef unsigned char byte;  //!< type specification (8 bit)
 class CKatBase;  // katana
 class CMotBase;  // motor
 class CSctBase;  // sensor contoller
+=======
+#define TM_ENDLESS -1	//!< timeout symbol for 'endless' waiting
+
+//--------------------------------------------------------------------------//
+
+class CKatBase;	//katana
+class CMotBase;	//motor
+class CSctBase;	//sensor contoller
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 //--------------------------------------------------------------------------//
 // CKatBase ----------------------------------------------------------------//
@@ -60,47 +86,80 @@ class CSctBase;  // sensor contoller
 
 /*!	\brief	[GNL] general robot attributes
  */
+<<<<<<< HEAD
 struct TKatGNL
 {
   byte adr;             //!< jumper adress
   char modelName[255];  //!< model name
+=======
+struct  TKatGNL {
+	byte		adr;			//!< jumper adress
+	char		modelName[255]; //!< model name
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 /*!	\brief	[MFW] master firmware version/revision number
  */
+<<<<<<< HEAD
 struct TKatMFW
 {
   byte ver;  //!< version
   byte rev;  //!< revision
+=======
+struct  TKatMFW {
+	byte		ver;			//!< version
+	byte		rev;			//!< revision
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 /*!	\brief	[IDS] identification string
  */
+<<<<<<< HEAD
 struct TKatIDS
 {
   byte strID[256];  //!< id string
+=======
+struct  TKatIDS {
+	byte		strID[256];		//!< id string
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 /*!	\brief	[CTB] command table defined in the firmware
  */
+<<<<<<< HEAD
 struct TKatCTB
 {
   byte cmdtbl[256];  //!< command table
+=======
+struct  TKatCTB {
+	byte		cmdtbl[256];	//!< command table
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 /*!	\brief	[CBX] connector box
  */
+<<<<<<< HEAD
 struct TKatCBX
 {
   bool inp[2];  //!< input: green & red LED
   bool out[2];  //!< output: green & red LED
+=======
+struct TKatCBX {
+	bool inp[2];				//!< input: green & red LED
+	bool out[2];				//!< output: green & red LED
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 /*!	\brief	[ECH] echo
  */
+<<<<<<< HEAD
 struct TKatECH
 {
   byte echo;  //!< echo answer
+=======
+struct  TKatECH {
+	byte		echo;			//!< echo answer
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 /*! \brief Inverse Kinematics structure of the endeffektor
@@ -112,11 +171,20 @@ struct TKatECH
  *	behaviour with a Katana <b>5M</b>.
  */
 
+<<<<<<< HEAD
 struct TKatEFF
 {
   double arr_segment[4];  //!< length of the Katana segments
 };
 
+=======
+struct TKatEFF {
+	double		arr_segment[4];		//!< length of the Katana segments
+};
+
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 //--------------------------------------------------------------------------//
 
 /*!	\brief	Base Katana class
@@ -130,6 +198,7 @@ struct TKatEFF
  *	in the 'kmlExt' module (which encapsulates this class) or by writing your
  *	own calibrations function..
  */
+<<<<<<< HEAD
 class DLLDIR CKatBase
 {
 protected:
@@ -281,4 +350,126 @@ public:
 
 /****************************************************************************/
 #endif  //_KMLBASE_H_
+=======
+class  DLLDIR CKatBase {
+
+protected:
+	TKatGNL gnl;	//!< katana general
+	TKatMFW mfw;	//!< master's firmware version/revision
+	TKatIDS ids;	//!< ID string
+	TKatCTB ctb;	//!< cmd table
+	TKatCBX cbx;	//!< connector box
+	TKatECH ech;	//!< echo
+
+	TKatMOT mot;	//!< motors
+	TKatSCT sct;	//!< sensor controllers
+	TKatEFF	eff;	//!< end effector
+
+	CCplBase* protocol;	//!< protocol interface
+	short mMasterVersion;   //!< master version of robot we are communicating with
+	short mMasterRevision;  //!< master firmware revision
+
+public:
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatGNL* GetGNL() { return &gnl; }
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatMFW* GetMFW() { return &mfw; }
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatIDS* GetIDS() { return &ids; }
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatCTB* GetCTB() { return &ctb; }
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatCBX* GetCBX() { return &cbx; }
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatECH* GetECH() { return &ech; }
+
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatMOT* GetMOT() { return &mot; }
+	/*! \brief Get a pointer to the desired structure
+	*/	const TKatSCT* GetSCT() { return &sct; }
+	/*! \brief Get a pointer to the desired structure
+	*/	TKatEFF* GetEFF() { return &eff; }
+
+	
+	CKatBase() {}
+	/*!	\brief	destructor
+	*/
+	virtual ~CKatBase() {}
+
+	virtual bool init(
+		const TKatGNL _gnl,		//!< general attributes
+		const TKatMOT _mot,		//!< motor attributes
+		const TKatSCT _sct,		//!< sensor controller attributes
+		const TKatEFF _eff,		//!< end effector attributes
+		CCplBase* _protocol		//!< desired protocol
+		);
+
+	/*!\brief receive data
+	*/	void	recvMFW();
+	/*!\brief receive data
+	*/	void	recvIDS();
+	/*!\brief receive data
+	*/	void	recvCTB();
+	/*!\brief receive data
+	*/	void	recvGMS();
+	/*!\brief wait for motor on all motors
+	*/	void	waitFor(TMotStsFlg status, int waitTimeout, bool gripper);
+	/*!\brief receive data
+	*/	void	recvECH();
+	/*!\brief read all motor positions simultaneously
+		 */	void	recvMPS();
+	/*!\brief get a handle of the protocol, used in CKatana*/	
+	CCplBase* getProtocol(){return protocol;}
+	/*!\brief checks for a K300 or K400*/	
+	int checkKatanaType(int type);
+
+	/*!	\brief	Get the master firmware of the robot we are communicating with
+	 *
+	 *	Get master firmware read at initialization time.
+	 */
+	void getMasterFirmware(short* fw, short* rev);
+
+	/*!\brief crash limits enable
+	*/	void enableCrashLimits();
+	/*!\brief crash limits disable
+	*/	void disableCrashLimits();
+	/*!\brief unblock robot after a crash
+	*/	void unBlock();
+	/*!\brief set collision limits
+	* 
+	* //deprecated, use speed & position
+	*/	
+	void setCrashLimit(long idx, int limit);
+	/*!\brief set collision position limits
+	*/	
+	void setPositionCollisionLimit(long idx, int limit);
+	/*!\brief set collision speed limits
+	*/
+	void setSpeedCollisionLimit(long idx, int limit);
+
+    /// Start a spline movement
+    /// @param exactflag Set it to 1 if you want the position controller activated after the movement, 0 otherwise, add 2 to set motor6_follow (no gripper)
+    /// @param moreflag 0 = start moving more following, 1 = last or a single polynomial movement, 2 = do not start moving yet more following
+    void startSplineMovement(int exactflag, int moreflag = 1);
+
+    /// Send polynomials to all motors and start movement
+    /// @param polynomial time, target pos and coefficients of the motor polynomials
+    /// @param exactflag exactflag
+    /// @param moreflag 0 = start moving more following, 1 = last or a single polynomial movement, 2 = do not start moving yet more following
+    void setAndStartPolyMovement(std::vector<short> polynomial, int exactflag, int moreflag);
+    
+	//!get digital I/O data from Katana400:
+	int readDigitalIO();
+    
+	//!flush move buffers on all motors:
+	int flushMoveBuffers();
+};
+
+
+
+
+
+/****************************************************************************/
+#endif //_KMLBASE_H_
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /****************************************************************************/

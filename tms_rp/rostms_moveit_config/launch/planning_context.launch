@@ -6,11 +6,19 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
+<<<<<<< HEAD
   <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find rostms_description)/urdf/all_components_with_moveit2.urdf"/>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find rostms_moveit_config)/config/rostms2.srdf" />    
 
+=======
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find rostms_description)/urdf/all_components_with_moveit.urdf"/>
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="$(arg robot_description)_semantic" textfile="$(find rostms_moveit_config)/config/rostms.srdf" />
+  
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
     <rosparam command="load" file="$(find rostms_moveit_config)/config/joint_limits.yaml"/>

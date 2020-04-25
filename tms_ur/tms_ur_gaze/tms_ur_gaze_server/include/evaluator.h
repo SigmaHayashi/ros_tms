@@ -58,10 +58,15 @@ class Evaluator
   struct compare_struct
   {
     Evaluator* ptr_;
+<<<<<<< HEAD
     compare_struct(Evaluator* ptr) : ptr_(ptr)
     {
     }
     bool operator()(Object* object1, Object* object2)
+=======
+    compare_struct(Evaluator* ptr): ptr_(ptr) {}
+    bool operator () (Object* object1, Object* object2)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     {
       return object1->sort_key_ < object2->sort_key_;
     }
@@ -70,8 +75,13 @@ class Evaluator
 private:
   ros::NodeHandle* nh_;
   ros::ServiceServer sever_;
+<<<<<<< HEAD
   std::vector< Object > objects_;
   std::vector< Object* > objects_ptr_;
+=======
+  std::vector<Object> objects_;
+  std::vector<Object*> objects_ptr_;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   Object object_tmp_;
 
   double yaw_;
@@ -91,8 +101,14 @@ private:
 public:
   Evaluator(ros::NodeHandle* nh);
   ~Evaluator();
+<<<<<<< HEAD
   void StoreAddress(std::vector< Object* >* object, std::vector< Object >* object_data);
   bool CallBack(tms_ur_gaze_server::object_list::Request& req, tms_ur_gaze_server::object_list::Response& res);
+=======
+  void StoreAddress(std::vector<Object*>* object, std::vector<Object>* object_data);
+  bool CallBack(tms_ur_gaze_server::object_list::Request  &req,
+                tms_ur_gaze_server::object_list::Response &res);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 #endif

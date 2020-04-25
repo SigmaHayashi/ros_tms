@@ -21,8 +21,12 @@
     http://www.gnu.org/licenses/gpl.html
 """
 
+<<<<<<< HEAD
 import rospy
 import sys
+=======
+import rospy, sys
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 import moveit_commander
 from control_msgs.msg import GripperCommand
 from moveit_msgs.msg import RobotTrajectory
@@ -45,18 +49,28 @@ GRIPPER_EFFORT = [1.0]
 
 REFERENCE_FRAME = 'world_link'
 
+<<<<<<< HEAD
 
 class MoveItFKDemo:
 
+=======
+class MoveItFKDemo:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     def __init__(self):
         # Initialize the move_group API and node
         moveit_commander.roscpp_initialize(sys.argv)
         rospy.init_node('moveit_ik_demo', anonymous=True)
 
         robot = moveit_commander.RobotCommander()
+<<<<<<< HEAD
         smartpal5_x_joint = moveit_commander.RobotCommander.Joint(robot, 'smartpal5_x_joint')
         smartpal5_y_joint = moveit_commander.RobotCommander.Joint(robot, 'smartpal5_y_joint')
         smartpal5_yaw_joint = moveit_commander.RobotCommander.Joint(robot, 'smartpal5_yaw_joint')
+=======
+        smartpal5_x_joint = moveit_commander.RobotCommander.Joint(robot,'smartpal5_x_joint')
+        smartpal5_y_joint = moveit_commander.RobotCommander.Joint(robot,'smartpal5_y_joint')
+        smartpal5_yaw_joint = moveit_commander.RobotCommander.Joint(robot,'smartpal5_yaw_joint')
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
         # Use the groups of SmartPal5
         arm = moveit_commander.MoveGroupCommander(GROUP_NAME_ARM)

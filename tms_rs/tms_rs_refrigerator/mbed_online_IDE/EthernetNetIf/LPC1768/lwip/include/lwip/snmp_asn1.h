@@ -2,7 +2,11 @@
  * @file
  * Abstract Syntax Notation One (ISO 8824, 8825) codec.
  */
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /*
  * Copyright (c) 2006 Axon Digital Design B.V., The Netherlands.
  * All rights reserved.
@@ -46,7 +50,11 @@
 extern "C" {
 #endif
 
+<<<<<<< HEAD
 #define SNMP_ASN1_UNIV (0)      /* (!0x80 | !0x40) */
+=======
+#define SNMP_ASN1_UNIV   (0)    /* (!0x80 | !0x40) */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define SNMP_ASN1_APPLIC (0x40) /* (!0x80 |  0x40) */
 #define SNMP_ASN1_CONTXT (0x80) /* ( 0x80 | !0x40) */
 
@@ -54,11 +62,19 @@ extern "C" {
 #define SNMP_ASN1_PRIMIT (0)    /* (!0x20) */
 
 /* universal tags */
+<<<<<<< HEAD
 #define SNMP_ASN1_INTEG 2
 #define SNMP_ASN1_OC_STR 4
 #define SNMP_ASN1_NUL 5
 #define SNMP_ASN1_OBJ_ID 6
 #define SNMP_ASN1_SEQ 16
+=======
+#define SNMP_ASN1_INTEG  2
+#define SNMP_ASN1_OC_STR 4
+#define SNMP_ASN1_NUL    5
+#define SNMP_ASN1_OBJ_ID 6
+#define SNMP_ASN1_SEQ    16
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /* application specific (SNMP) tags */
 #define SNMP_ASN1_IPADDR 0    /* octet string size(4) */

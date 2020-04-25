@@ -4,9 +4,17 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/tms_ur_arviewer/tms_ur_arviewer.iml" filepath="$PROJECT_DIR$/tms_ur_arviewer/tms_ur_arviewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/tms_ur_client.iml" filepath="$PROJECT_DIR$/tms_ur_client.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/tms_ur_commander/tms_ur_commander.iml" filepath="$PROJECT_DIR$/tms_ur_commander/tms_ur_commander.iml" />
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       <module fileurl="file://$PROJECT_DIR$/tms_ur_dbbrowser/tms_ur_dbbrowser.iml" filepath="$PROJECT_DIR$/tms_ur_dbbrowser/tms_ur_dbbrowser.iml" />
       <module fileurl="file://$PROJECT_DIR$/tms_ur_sanmoku/tms_ur_sanmoku.iml" filepath="$PROJECT_DIR$/tms_ur_sanmoku/tms_ur_sanmoku.iml" />
     </modules>
   </component>
+<<<<<<< HEAD
 </project>
+=======
+</project>
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

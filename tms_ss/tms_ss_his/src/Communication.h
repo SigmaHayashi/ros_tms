@@ -12,11 +12,20 @@
 #include <unistd.h>
 #include <stdio.h>
 
+<<<<<<< HEAD
 // BOOL com_Open(LPCTSTR comName);
 // VOID com_Close();
 // BOOL com_ReadLine(PBYTE lpBuff, DWORD readMax);
 BOOL com_ReadPacket(FILE *fprfcomm0, PBYTE lpBuff, DWORD readMax);
 // BOOL com_Send(const PBYTE lpBuff, DWORD size);
 // BOOL com_SendString(LPCTSTR line);
+=======
+//BOOL com_Open(LPCTSTR comName);
+//VOID com_Close();
+//BOOL com_ReadLine(PBYTE lpBuff, DWORD readMax);
+BOOL com_ReadPacket(FILE *fprfcomm0, PBYTE lpBuff, DWORD readMax);
+//BOOL com_Send(const PBYTE lpBuff, DWORD size);
+//BOOL com_SendString(LPCTSTR line);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #endif

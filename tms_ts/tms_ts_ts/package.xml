@@ -6,7 +6,11 @@
 
   <license>BSD</license>
 
+<<<<<<< HEAD
   <maintainer email="kawamura@ait.kyushu-u.ac.jp">Akihiro Kawamura</maintainer>
+=======
+  <maintainer email="sakamoto@irvs.ait.kyushu-u.ac.jp">Junya Sakamoto</maintainer>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <url type="website">http://irvs.github.io/ros_tms/</url>
   <url type="repository">https://github.com/irvs/ros_tms</url>

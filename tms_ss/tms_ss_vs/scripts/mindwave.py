@@ -6,8 +6,12 @@ import serial
 import json
 from time import sleep
 import datetime
+<<<<<<< HEAD
 import rospy
 import roslib
+=======
+import rospy, roslib
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 from tms_msg_rs.srv import *
 from tms_msg_db.msg import TmsdbStamped
 from tms_msg_db.msg import Tmsdb
@@ -15,7 +19,11 @@ import subprocess
 
 BT_ADDR = "20:68:9D:91:D3:05"
 RFCOMM_NUM = "1"
+<<<<<<< HEAD
 DEV_PORT = "/dev/rfcomm" + RFCOMM_NUM
+=======
+DEV_PORT = "/dev/rfcomm"+RFCOMM_NUM
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 SYNC_BYTE = 0xaa
 
@@ -23,6 +31,7 @@ SYNC_BYTE = 0xaa
 def main():
     print "Hello World"
 
+<<<<<<< HEAD
     # init mind wave mobile
     cmd_release = "sudo rfcomm release " + RFCOMM_NUM
     cmd_bind = "sudo rfcomm bind " + RFCOMM_NUM + " " + BT_ADDR
@@ -33,6 +42,18 @@ def main():
     dev = MindWaveMobile(DEV_PORT)
 
     # init ROS
+=======
+    ###init mind wave mobile
+    cmd_release =   "sudo rfcomm release "+RFCOMM_NUM
+    cmd_bind =      "sudo rfcomm bind "+RFCOMM_NUM+" "+BT_ADDR
+    cmd_chmod =     "sudo chmod a+rw /dev/rfcomm"+RFCOMM_NUM
+    print cmd_release+"\n", subprocess.check_output(cmd_release.split(" "))
+    print cmd_bind+"\n",    subprocess.check_output(cmd_bind.split(" "))
+    print cmd_chmod+"\n",   subprocess.check_output(cmd_chmod.split(" "))
+    dev = MindWaveMobile(DEV_PORT)
+
+    ###init ROS
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     rospy.init_node('tms_ss_vs_mindwave')
     db_pub = rospy.Publisher('tms_db_data', TmsdbStamped, queue_size=10)
     r = rospy.Rate(1)
@@ -42,13 +63,21 @@ def main():
             r.sleep()
             dev.is_updated = False
 
+<<<<<<< HEAD
             # make json text
+=======
+            ###make json text
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             note_d = {"meditation": str(dev.meditation),
                       "attention": str(dev.attention),
                       "poor_signal": str(dev.poor_signal)}
             note_j = json.dumps(note_d)
 
+<<<<<<< HEAD
             # regist to DB
+=======
+            ###regist to DB
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             msg = TmsdbStamped()
             db = Tmsdb()
             db.time = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
@@ -58,10 +87,17 @@ def main():
             db.place = 1001
             db.note = note_j
             msg.tmsdb.append(db)
+<<<<<<< HEAD
             msg.header.stamp = rospy.get_rostime() + rospy.Duration(9 * 60 * 60)
             db_pub.publish(msg)
 
             # show messege
+=======
+            msg.header.stamp = rospy.get_rostime()+rospy.Duration(9*60*60)
+            db_pub.publish(msg)
+
+            ###show messege
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             print "Med:",
             print dev.meditation,
             print "    Att:",
@@ -71,7 +107,10 @@ def main():
 
 
 class MindWaveMobile(object):
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     def __init__(self, port='/dev/rfcomm1'):
         self.meditation = 0
         self.attention = 0
@@ -95,7 +134,11 @@ class MindWaveMobile(object):
             # print "      ",
             # print hex(code),
             if code >= 0x80:    # multi-bytes value
+<<<<<<< HEAD
                 vlength = payload.pop(0)  # dont use because vlength can assumed by [code] variable
+=======
+                vlength = payload.pop(0)  #dont use because vlength can assumed by [code] variable
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                 if code == 0x80:
                     high_word = payload.pop(0)
                     low_word = payload.pop(0)
@@ -120,7 +163,11 @@ class MindWaveMobile(object):
                     self.meditation = val
 
     def update(self):
+<<<<<<< HEAD
         while True:
+=======
+        while 1:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             if not self.wait_sync():
                 continue
             self.in_buffer.pop(0)   # perge sync bytes
@@ -137,7 +184,11 @@ class MindWaveMobile(object):
                     break
             if plen > SYNC_BYTE:  # plen must smaller than 0xaa(170 in dec)
                 continue
+<<<<<<< HEAD
             if (len(self.in_buffer) < plen + 1):
+=======
+            if (len(self.in_buffer) < plen+1):
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                 return False
 
             chksum = 0
@@ -145,8 +196,13 @@ class MindWaveMobile(object):
                 chksum += byte
             chksum = chksum & ord('\xff')
             chksum = (~chksum) & ord('\xff')
+<<<<<<< HEAD
             payload = self.in_buffer[:plen + 1]
             self.in_buffer = self.in_buffer[plen + 1:]
+=======
+            payload = self.in_buffer[:plen+1]
+            self.in_buffer = self.in_buffer[plen+1:]
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             if chksum != payload.pop():  # checksum error
                 continue
             else:

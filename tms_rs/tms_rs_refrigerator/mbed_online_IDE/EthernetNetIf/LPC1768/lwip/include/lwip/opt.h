@@ -6,9 +6,15 @@
 
 /*
  * Copyright (c) 2001-2004 Swedish Institute of Computer Science.
+<<<<<<< HEAD
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * All rights reserved. 
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -17,6 +23,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -32,6 +39,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
@@ -57,15 +81,26 @@
  * allocation and deallocation.
  */
 #ifndef SYS_LIGHTWEIGHT_PROT
+<<<<<<< HEAD
 #define SYS_LIGHTWEIGHT_PROT 0
 #endif
 
 /**
+=======
+#define SYS_LIGHTWEIGHT_PROT            0
+#endif
+
+/** 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * NO_SYS==1: Provides VERY minimal functionality. Otherwise,
  * use lwIP facilities.
  */
 #ifndef NO_SYS
+<<<<<<< HEAD
 #define NO_SYS 0
+=======
+#define NO_SYS                          0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -73,7 +108,11 @@
  * Mainly for compatibility to old versions.
  */
 #ifndef NO_SYS_NO_TIMERS
+<<<<<<< HEAD
 #define NO_SYS_NO_TIMERS 0
+=======
+#define NO_SYS_NO_TIMERS                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -81,7 +120,11 @@
  * one included in your C library
  */
 #ifndef MEMCPY
+<<<<<<< HEAD
 #define MEMCPY(dst, src, len) memcpy(dst, src, len)
+=======
+#define MEMCPY(dst,src,len)             memcpy(dst,src,len)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -89,7 +132,11 @@
  * call to memcpy() if the length is known at compile time and is small.
  */
 #ifndef SMEMCPY
+<<<<<<< HEAD
 #define SMEMCPY(dst, src, len) memcpy(dst, src, len)
+=======
+#define SMEMCPY(dst,src,len)            memcpy(dst,src,len)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -103,7 +150,11 @@
  * already use it.
  */
 #ifndef MEM_LIBC_MALLOC
+<<<<<<< HEAD
 #define MEM_LIBC_MALLOC 0
+=======
+#define MEM_LIBC_MALLOC                 0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -112,7 +163,11 @@
 * speed and usage from interrupts!
 */
 #ifndef MEMP_MEM_MALLOC
+<<<<<<< HEAD
 #define MEMP_MEM_MALLOC 0
+=======
+#define MEMP_MEM_MALLOC                 0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -121,7 +176,11 @@
  *    2 byte alignment -> #define MEM_ALIGNMENT 2
  */
 #ifndef MEM_ALIGNMENT
+<<<<<<< HEAD
 #define MEM_ALIGNMENT 1
+=======
+#define MEM_ALIGNMENT                   1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -129,7 +188,11 @@
  * a lot of data that needs to be copied, this should be set high.
  */
 #ifndef MEM_SIZE
+<<<<<<< HEAD
 #define MEM_SIZE 1600
+=======
+#define MEM_SIZE                        1600
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -138,7 +201,11 @@
  * Default is one big array for all pools
  */
 #ifndef MEMP_SEPARATE_POOLS
+<<<<<<< HEAD
 #define MEMP_SEPARATE_POOLS 0
+=======
+#define MEMP_SEPARATE_POOLS             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -151,7 +218,11 @@
  *      memp_malloc() or memp_free() is called (useful but slow!)
  */
 #ifndef MEMP_OVERFLOW_CHECK
+<<<<<<< HEAD
 #define MEMP_OVERFLOW_CHECK 0
+=======
+#define MEMP_OVERFLOW_CHECK             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -159,7 +230,11 @@
  * sure that there are no cycles in the linked lists.
  */
 #ifndef MEMP_SANITY_CHECK
+<<<<<<< HEAD
 #define MEMP_SANITY_CHECK 0
+=======
+#define MEMP_SANITY_CHECK               0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -169,7 +244,11 @@
  * To use this, MEMP_USE_CUSTOM_POOLS also has to be enabled.
  */
 #ifndef MEM_USE_POOLS
+<<<<<<< HEAD
 #define MEM_USE_POOLS 0
+=======
+#define MEM_USE_POOLS                   0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -177,17 +256,29 @@
  * bigger pool - WARNING: THIS MIGHT WASTE MEMORY but it can make a system more
  * reliable. */
 #ifndef MEM_USE_POOLS_TRY_BIGGER_POOL
+<<<<<<< HEAD
 #define MEM_USE_POOLS_TRY_BIGGER_POOL 0
+=======
+#define MEM_USE_POOLS_TRY_BIGGER_POOL   0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEMP_USE_CUSTOM_POOLS==1: whether to include a user file lwippools.h
  * that defines additional pools beyond the "standard" ones required
+<<<<<<< HEAD
  * by lwIP. If you set this to 1, you must have lwippools.h in your
  * inlude path somewhere.
  */
 #ifndef MEMP_USE_CUSTOM_POOLS
 #define MEMP_USE_CUSTOM_POOLS 0
+=======
+ * by lwIP. If you set this to 1, you must have lwippools.h in your 
+ * inlude path somewhere. 
+ */
+#ifndef MEMP_USE_CUSTOM_POOLS
+#define MEMP_USE_CUSTOM_POOLS           0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -223,7 +314,11 @@
  * this should be set high.
  */
 #ifndef MEMP_NUM_PBUF
+<<<<<<< HEAD
 #define MEMP_NUM_PBUF 16
+=======
+#define MEMP_NUM_PBUF                   16
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -231,7 +326,11 @@
  * (requires the LWIP_RAW option)
  */
 #ifndef MEMP_NUM_RAW_PCB
+<<<<<<< HEAD
 #define MEMP_NUM_RAW_PCB 4
+=======
+#define MEMP_NUM_RAW_PCB                4
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -240,7 +339,11 @@
  * (requires the LWIP_UDP option)
  */
 #ifndef MEMP_NUM_UDP_PCB
+<<<<<<< HEAD
 #define MEMP_NUM_UDP_PCB 4
+=======
+#define MEMP_NUM_UDP_PCB                4
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -248,7 +351,11 @@
  * (requires the LWIP_TCP option)
  */
 #ifndef MEMP_NUM_TCP_PCB
+<<<<<<< HEAD
 #define MEMP_NUM_TCP_PCB 5
+=======
+#define MEMP_NUM_TCP_PCB                5
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -256,7 +363,11 @@
  * (requires the LWIP_TCP option)
  */
 #ifndef MEMP_NUM_TCP_PCB_LISTEN
+<<<<<<< HEAD
 #define MEMP_NUM_TCP_PCB_LISTEN 8
+=======
+#define MEMP_NUM_TCP_PCB_LISTEN         8
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -264,7 +375,11 @@
  * (requires the LWIP_TCP option)
  */
 #ifndef MEMP_NUM_TCP_SEG
+<<<<<<< HEAD
 #define MEMP_NUM_TCP_SEG 16
+=======
+#define MEMP_NUM_TCP_SEG                16
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -272,7 +387,11 @@
  * reassembly (whole packets, not fragments!)
  */
 #ifndef MEMP_NUM_REASSDATA
+<<<<<<< HEAD
 #define MEMP_NUM_REASSDATA 5
+=======
+#define MEMP_NUM_REASSDATA              5
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -283,7 +402,11 @@
  * where the packet is not yet sent when netif->output returns.
  */
 #ifndef MEMP_NUM_FRAG_PBUF
+<<<<<<< HEAD
 #define MEMP_NUM_FRAG_PBUF 15
+=======
+#define MEMP_NUM_FRAG_PBUF              15
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -293,7 +416,11 @@
  * (requires the ARP_QUEUEING option)
  */
 #ifndef MEMP_NUM_ARP_QUEUE
+<<<<<<< HEAD
 #define MEMP_NUM_ARP_QUEUE 30
+=======
+#define MEMP_NUM_ARP_QUEUE              30
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -303,7 +430,11 @@
  * (requires the LWIP_IGMP option)
  */
 #ifndef MEMP_NUM_IGMP_GROUP
+<<<<<<< HEAD
 #define MEMP_NUM_IGMP_GROUP 8
+=======
+#define MEMP_NUM_IGMP_GROUP             8
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -311,7 +442,11 @@
  * (requires NO_SYS==0)
  */
 #ifndef MEMP_NUM_SYS_TIMEOUT
+<<<<<<< HEAD
 #define MEMP_NUM_SYS_TIMEOUT 3
+=======
+#define MEMP_NUM_SYS_TIMEOUT            3
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -319,7 +454,11 @@
  * (only needed if you use the sequential API, like api_lib.c)
  */
 #ifndef MEMP_NUM_NETBUF
+<<<<<<< HEAD
 #define MEMP_NUM_NETBUF 2
+=======
+#define MEMP_NUM_NETBUF                 2
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -327,32 +466,56 @@
  * (only needed if you use the sequential API, like api_lib.c)
  */
 #ifndef MEMP_NUM_NETCONN
+<<<<<<< HEAD
 #define MEMP_NUM_NETCONN 4
+=======
+#define MEMP_NUM_NETCONN                4
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEMP_NUM_TCPIP_MSG_API: the number of struct tcpip_msg, which are used
+<<<<<<< HEAD
  * for callback/timeout API communication.
  * (only needed if you use tcpip.c)
  */
 #ifndef MEMP_NUM_TCPIP_MSG_API
 #define MEMP_NUM_TCPIP_MSG_API 8
+=======
+ * for callback/timeout API communication. 
+ * (only needed if you use tcpip.c)
+ */
+#ifndef MEMP_NUM_TCPIP_MSG_API
+#define MEMP_NUM_TCPIP_MSG_API          8
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEMP_NUM_TCPIP_MSG_INPKT: the number of struct tcpip_msg, which are used
+<<<<<<< HEAD
  * for incoming packets.
  * (only needed if you use tcpip.c)
  */
 #ifndef MEMP_NUM_TCPIP_MSG_INPKT
 #define MEMP_NUM_TCPIP_MSG_INPKT 8
+=======
+ * for incoming packets. 
+ * (only needed if you use tcpip.c)
+ */
+#ifndef MEMP_NUM_TCPIP_MSG_INPKT
+#define MEMP_NUM_TCPIP_MSG_INPKT        8
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEMP_NUM_SNMP_NODE: the number of leafs in the SNMP tree.
  */
 #ifndef MEMP_NUM_SNMP_NODE
+<<<<<<< HEAD
 #define MEMP_NUM_SNMP_NODE 50
+=======
+#define MEMP_NUM_SNMP_NODE              50
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -360,7 +523,11 @@
  * Every branch has one leaf (MEMP_NUM_SNMP_NODE) at least!
  */
 #ifndef MEMP_NUM_SNMP_ROOTNODE
+<<<<<<< HEAD
 #define MEMP_NUM_SNMP_ROOTNODE 30
+=======
+#define MEMP_NUM_SNMP_ROOTNODE          30
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -369,7 +536,11 @@
  * 1 for output)
  */
 #ifndef MEMP_NUM_SNMP_VARBIND
+<<<<<<< HEAD
 #define MEMP_NUM_SNMP_VARBIND 2
+=======
+#define MEMP_NUM_SNMP_VARBIND           2
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -378,7 +549,11 @@
  * (1 for the value read and 2 for OIDs - input and output)
  */
 #ifndef MEMP_NUM_SNMP_VALUE
+<<<<<<< HEAD
 #define MEMP_NUM_SNMP_VALUE 3
+=======
+#define MEMP_NUM_SNMP_VALUE             3
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -386,7 +561,11 @@
  * (before freeing the corresponding memory using lwip_freeaddrinfo()).
  */
 #ifndef MEMP_NUM_NETDB
+<<<<<<< HEAD
 #define MEMP_NUM_NETDB 1
+=======
+#define MEMP_NUM_NETDB                  1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -394,7 +573,11 @@
  * if DNS_LOCAL_HOSTLIST_IS_DYNAMIC==1.
  */
 #ifndef MEMP_NUM_LOCALHOSTLIST
+<<<<<<< HEAD
 #define MEMP_NUM_LOCALHOSTLIST 1
+=======
+#define MEMP_NUM_LOCALHOSTLIST          1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -402,6 +585,7 @@
  * interfaces (only used with PPPOE_SUPPORT==1)
  */
 #ifndef MEMP_NUM_PPPOE_INTERFACES
+<<<<<<< HEAD
 #define MEMP_NUM_PPPOE_INTERFACES 1
 #endif
 
@@ -410,6 +594,16 @@
  */
 #ifndef PBUF_POOL_SIZE
 #define PBUF_POOL_SIZE 16
+=======
+#define MEMP_NUM_PPPOE_INTERFACES       1
+#endif
+
+/**
+ * PBUF_POOL_SIZE: the number of buffers in the pbuf pool. 
+ */
+#ifndef PBUF_POOL_SIZE
+#define PBUF_POOL_SIZE                  16
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -421,14 +615,22 @@
  * LWIP_ARP==1: Enable ARP functionality.
  */
 #ifndef LWIP_ARP
+<<<<<<< HEAD
 #define LWIP_ARP 1
+=======
+#define LWIP_ARP                        1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * ARP_TABLE_SIZE: Number of active MAC-IP address pairs cached.
  */
 #ifndef ARP_TABLE_SIZE
+<<<<<<< HEAD
 #define ARP_TABLE_SIZE 10
+=======
+#define ARP_TABLE_SIZE                  10
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -436,7 +638,11 @@
  * resolution.
  */
 #ifndef ARP_QUEUEING
+<<<<<<< HEAD
 #define ARP_QUEUEING 1
+=======
+#define ARP_QUEUEING                    1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -450,7 +656,11 @@
  * Also notice that this slows down input processing of every IP packet!
  */
 #ifndef ETHARP_TRUST_IP_MAC
+<<<<<<< HEAD
 #define ETHARP_TRUST_IP_MAC 0
+=======
+#define ETHARP_TRUST_IP_MAC             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -460,14 +670,22 @@
  * If ETHARP_VLAN_CHECK is not defined, all traffic is accepted.
  */
 #ifndef ETHARP_SUPPORT_VLAN
+<<<<<<< HEAD
 #define ETHARP_SUPPORT_VLAN 0
+=======
+#define ETHARP_SUPPORT_VLAN             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** LWIP_ETHERNET==1: enable ethernet support for PPPoE even though ARP
  * might be disabled
  */
 #ifndef LWIP_ETHERNET
+<<<<<<< HEAD
 #define LWIP_ETHERNET (LWIP_ARP || PPPOE_SUPPORT)
+=======
+#define LWIP_ETHERNET                   (LWIP_ARP || PPPOE_SUPPORT)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** ETH_PAD_SIZE: number of bytes added before the ethernet header to ensure
@@ -476,16 +694,27 @@
  * on a 32-bit boundary, so setting this to 2 can speed up 32-bit-platforms.
  */
 #ifndef ETH_PAD_SIZE
+<<<<<<< HEAD
 #define ETH_PAD_SIZE 0
+=======
+#define ETH_PAD_SIZE                    0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** ETHARP_SUPPORT_STATIC_ENTRIES==1: enable code to support static ARP table
  * entries (using etharp_add_static_entry/etharp_remove_static_entry).
  */
 #ifndef ETHARP_SUPPORT_STATIC_ENTRIES
+<<<<<<< HEAD
 #define ETHARP_SUPPORT_STATIC_ENTRIES 0
 #endif
 
+=======
+#define ETHARP_SUPPORT_STATIC_ENTRIES   0
+#endif
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /*
    --------------------------------
    ---------- IP options ----------
@@ -497,7 +726,11 @@
  * interface, define this to 0.
  */
 #ifndef IP_FORWARD
+<<<<<<< HEAD
 #define IP_FORWARD 0
+=======
+#define IP_FORWARD                      0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -506,7 +739,11 @@
  *      IP_OPTIONS_ALLOWED==1: IP options are allowed (but not parsed).
  */
 #ifndef IP_OPTIONS_ALLOWED
+<<<<<<< HEAD
 #define IP_OPTIONS_ALLOWED 1
+=======
+#define IP_OPTIONS_ALLOWED              1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -515,7 +752,11 @@
  * via IP_FRAG.
  */
 #ifndef IP_REASSEMBLY
+<<<<<<< HEAD
 #define IP_REASSEMBLY 1
+=======
+#define IP_REASSEMBLY                   1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -524,7 +765,11 @@
  * controlled via IP_REASSEMBLY.
  */
 #ifndef IP_FRAG
+<<<<<<< HEAD
 #define IP_FRAG 1
+=======
+#define IP_FRAG                         1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -533,7 +778,11 @@
  * in this time, the whole packet is discarded.
  */
 #ifndef IP_REASS_MAXAGE
+<<<<<<< HEAD
 #define IP_REASS_MAXAGE 3
+=======
+#define IP_REASS_MAXAGE                 3
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -543,7 +792,11 @@
  * packets even if the maximum amount of fragments is enqueued for reassembly!
  */
 #ifndef IP_REASS_MAX_PBUFS
+<<<<<<< HEAD
 #define IP_REASS_MAX_PBUFS 10
+=======
+#define IP_REASS_MAX_PBUFS              10
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -554,7 +807,11 @@
  * ATTENTION: IP_FRAG_USES_STATIC_BUF==1 may not be used for DMA-enabled MACs!
  */
 #ifndef IP_FRAG_USES_STATIC_BUF
+<<<<<<< HEAD
 #define IP_FRAG_USES_STATIC_BUF 0
+=======
+#define IP_FRAG_USES_STATIC_BUF         0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -562,14 +819,22 @@
  * (requires IP_FRAG_USES_STATIC_BUF==1)
  */
 #if IP_FRAG_USES_STATIC_BUF && !defined(IP_FRAG_MAX_MTU)
+<<<<<<< HEAD
 #define IP_FRAG_MAX_MTU 1500
+=======
+#define IP_FRAG_MAX_MTU                 1500
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * IP_DEFAULT_TTL: Default value for Time-To-Live used by transport layers.
  */
 #ifndef IP_DEFAULT_TTL
+<<<<<<< HEAD
 #define IP_DEFAULT_TTL 255
+=======
+#define IP_DEFAULT_TTL                  255
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -578,7 +843,11 @@
  * on recv operations, you also have to set IP_SOF_BROADCAST_RECV=1.
  */
 #ifndef IP_SOF_BROADCAST
+<<<<<<< HEAD
 #define IP_SOF_BROADCAST 0
+=======
+#define IP_SOF_BROADCAST                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -586,7 +855,11 @@
  * filter on recv operations.
  */
 #ifndef IP_SOF_BROADCAST_RECV
+<<<<<<< HEAD
 #define IP_SOF_BROADCAST_RECV 0
+=======
+#define IP_SOF_BROADCAST_RECV           0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -599,28 +872,44 @@
  * Be careful, disable that make your product non-compliant to RFC1122
  */
 #ifndef LWIP_ICMP
+<<<<<<< HEAD
 #define LWIP_ICMP 1
+=======
+#define LWIP_ICMP                       1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * ICMP_TTL: Default value for Time-To-Live used by ICMP packets.
  */
 #ifndef ICMP_TTL
+<<<<<<< HEAD
 #define ICMP_TTL (IP_DEFAULT_TTL)
+=======
+#define ICMP_TTL                       (IP_DEFAULT_TTL)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_BROADCAST_PING==1: respond to broadcast pings (default is unicast only)
  */
 #ifndef LWIP_BROADCAST_PING
+<<<<<<< HEAD
 #define LWIP_BROADCAST_PING 0
+=======
+#define LWIP_BROADCAST_PING             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_MULTICAST_PING==1: respond to multicast pings (default is unicast only)
  */
 #ifndef LWIP_MULTICAST_PING
+<<<<<<< HEAD
 #define LWIP_MULTICAST_PING 0
+=======
+#define LWIP_MULTICAST_PING             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -632,14 +921,22 @@
  * LWIP_RAW==1: Enable application layer to hook into the IP layer itself.
  */
 #ifndef LWIP_RAW
+<<<<<<< HEAD
 #define LWIP_RAW 1
+=======
+#define LWIP_RAW                        1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_RAW==1: Enable application layer to hook into the IP layer itself.
  */
 #ifndef RAW_TTL
+<<<<<<< HEAD
 #define RAW_TTL (IP_DEFAULT_TTL)
+=======
+#define RAW_TTL                        (IP_DEFAULT_TTL)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -651,14 +948,22 @@
  * LWIP_DHCP==1: Enable DHCP module.
  */
 #ifndef LWIP_DHCP
+<<<<<<< HEAD
 #define LWIP_DHCP 0
+=======
+#define LWIP_DHCP                       0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * DHCP_DOES_ARP_CHECK==1: Do an ARP check on the offered address.
  */
 #ifndef DHCP_DOES_ARP_CHECK
+<<<<<<< HEAD
 #define DHCP_DOES_ARP_CHECK ((LWIP_DHCP) && (LWIP_ARP))
+=======
+#define DHCP_DOES_ARP_CHECK             ((LWIP_DHCP) && (LWIP_ARP))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -670,7 +975,11 @@
  * LWIP_AUTOIP==1: Enable AUTOIP module.
  */
 #ifndef LWIP_AUTOIP
+<<<<<<< HEAD
 #define LWIP_AUTOIP 0
+=======
+#define LWIP_AUTOIP                     0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -678,7 +987,11 @@
  * the same interface at the same time.
  */
 #ifndef LWIP_DHCP_AUTOIP_COOP
+<<<<<<< HEAD
 #define LWIP_DHCP_AUTOIP_COOP 0
+=======
+#define LWIP_DHCP_AUTOIP_COOP           0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -689,7 +1002,11 @@
  * AutoIP.
  */
 #ifndef LWIP_DHCP_AUTOIP_COOP_TRIES
+<<<<<<< HEAD
 #define LWIP_DHCP_AUTOIP_COOP_TRIES 9
+=======
+#define LWIP_DHCP_AUTOIP_COOP_TRIES     9
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -702,7 +1019,11 @@
  * transport.
  */
 #ifndef LWIP_SNMP
+<<<<<<< HEAD
 #define LWIP_SNMP 0
+=======
+#define LWIP_SNMP                       0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -711,7 +1032,11 @@
  * Does not have to be changed unless external MIBs answer request asynchronously
  */
 #ifndef SNMP_CONCURRENT_REQUESTS
+<<<<<<< HEAD
 #define SNMP_CONCURRENT_REQUESTS 1
+=======
+#define SNMP_CONCURRENT_REQUESTS        1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -719,16 +1044,28 @@
  * destination is required
  */
 #ifndef SNMP_TRAP_DESTINATIONS
+<<<<<<< HEAD
 #define SNMP_TRAP_DESTINATIONS 1
 #endif
 
 /**
  * SNMP_PRIVATE_MIB:
+=======
+#define SNMP_TRAP_DESTINATIONS          1
+#endif
+
+/**
+ * SNMP_PRIVATE_MIB: 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * When using a private MIB, you have to create a file 'private_mib.h' that contains
  * a 'struct mib_array_node mib_private' which contains your MIB.
  */
 #ifndef SNMP_PRIVATE_MIB
+<<<<<<< HEAD
 #define SNMP_PRIVATE_MIB 0
+=======
+#define SNMP_PRIVATE_MIB                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -737,7 +1074,11 @@
  * Unsafe requests are disabled by default!
  */
 #ifndef SNMP_SAFE_REQUESTS
+<<<<<<< HEAD
 #define SNMP_SAFE_REQUESTS 1
+=======
+#define SNMP_SAFE_REQUESTS              1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -745,7 +1086,11 @@
  * MEMP_SNMP_VALUE elements.
  */
 #ifndef SNMP_MAX_OCTET_STRING_LEN
+<<<<<<< HEAD
 #define SNMP_MAX_OCTET_STRING_LEN 127
+=======
+#define SNMP_MAX_OCTET_STRING_LEN       127
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -754,7 +1099,11 @@
  * This affects the size of MEMP_SNMP_VALUE elements.
  */
 #ifndef SNMP_MAX_TREE_DEPTH
+<<<<<<< HEAD
 #define SNMP_MAX_TREE_DEPTH 15
+=======
+#define SNMP_MAX_TREE_DEPTH             15
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -762,7 +1111,11 @@
  * SNMP_MAX_OCTET_STRING_LEN and SNMP_MAX_TREE_DEPTH.
  */
 #ifndef SNMP_MAX_VALUE_SIZE
+<<<<<<< HEAD
 #define SNMP_MAX_VALUE_SIZE LWIP_MAX((SNMP_MAX_OCTET_STRING_LEN) + 1, sizeof(s32_t) * (SNMP_MAX_TREE_DEPTH))
+=======
+#define SNMP_MAX_VALUE_SIZE             LWIP_MAX((SNMP_MAX_OCTET_STRING_LEN)+1, sizeof(s32_t)*(SNMP_MAX_TREE_DEPTH))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -771,10 +1124,17 @@
    ----------------------------------
 */
 /**
+<<<<<<< HEAD
  * LWIP_IGMP==1: Turn on IGMP module.
  */
 #ifndef LWIP_IGMP
 #define LWIP_IGMP 0
+=======
+ * LWIP_IGMP==1: Turn on IGMP module. 
+ */
+#ifndef LWIP_IGMP
+#define LWIP_IGMP                       0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -787,32 +1147,56 @@
  * transport.
  */
 #ifndef LWIP_DNS
+<<<<<<< HEAD
 #define LWIP_DNS 0
+=======
+#define LWIP_DNS                        0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** DNS maximum number of entries to maintain locally. */
 #ifndef DNS_TABLE_SIZE
+<<<<<<< HEAD
 #define DNS_TABLE_SIZE 4
+=======
+#define DNS_TABLE_SIZE                  4
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** DNS maximum host name length supported in the name table. */
 #ifndef DNS_MAX_NAME_LENGTH
+<<<<<<< HEAD
 #define DNS_MAX_NAME_LENGTH 256
+=======
+#define DNS_MAX_NAME_LENGTH             256
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** The maximum of DNS servers */
 #ifndef DNS_MAX_SERVERS
+<<<<<<< HEAD
 #define DNS_MAX_SERVERS 2
+=======
+#define DNS_MAX_SERVERS                 2
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** DNS do a name checking between the query and the response. */
 #ifndef DNS_DOES_NAME_CHECK
+<<<<<<< HEAD
 #define DNS_DOES_NAME_CHECK 1
+=======
+#define DNS_DOES_NAME_CHECK             1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** DNS message max. size. Default value is RFC compliant. */
 #ifndef DNS_MSG_SIZE
+<<<<<<< HEAD
 #define DNS_MSG_SIZE 512
+=======
+#define DNS_MSG_SIZE                    512
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** DNS_LOCAL_HOSTLIST: Implements a local host-to-address list. If enabled,
@@ -826,13 +1210,21 @@
  *  that returns the IP address or INADDR_NONE if not found.
  */
 #ifndef DNS_LOCAL_HOSTLIST
+<<<<<<< HEAD
 #define DNS_LOCAL_HOSTLIST 0
+=======
+#define DNS_LOCAL_HOSTLIST              0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* DNS_LOCAL_HOSTLIST */
 
 /** If this is turned on, the local host-list can be dynamically changed
  *  at runtime. */
 #ifndef DNS_LOCAL_HOSTLIST_IS_DYNAMIC
+<<<<<<< HEAD
 #define DNS_LOCAL_HOSTLIST_IS_DYNAMIC 0
+=======
+#define DNS_LOCAL_HOSTLIST_IS_DYNAMIC   0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* DNS_LOCAL_HOSTLIST_IS_DYNAMIC */
 
 /*
@@ -844,28 +1236,44 @@
  * LWIP_UDP==1: Turn on UDP.
  */
 #ifndef LWIP_UDP
+<<<<<<< HEAD
 #define LWIP_UDP 1
+=======
+#define LWIP_UDP                        1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_UDPLITE==1: Turn on UDP-Lite. (Requires LWIP_UDP)
  */
 #ifndef LWIP_UDPLITE
+<<<<<<< HEAD
 #define LWIP_UDPLITE 0
+=======
+#define LWIP_UDPLITE                    0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * UDP_TTL: Default Time-To-Live value.
  */
 #ifndef UDP_TTL
+<<<<<<< HEAD
 #define UDP_TTL (IP_DEFAULT_TTL)
+=======
+#define UDP_TTL                         (IP_DEFAULT_TTL)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_NETBUF_RECVINFO==1: append destination addr and port to every netbuf.
  */
 #ifndef LWIP_NETBUF_RECVINFO
+<<<<<<< HEAD
 #define LWIP_NETBUF_RECVINFO 0
+=======
+#define LWIP_NETBUF_RECVINFO            0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -877,13 +1285,18 @@
  * LWIP_TCP==1: Turn on TCP.
  */
 #ifndef LWIP_TCP
+<<<<<<< HEAD
 #define LWIP_TCP 1
+=======
+#define LWIP_TCP                        1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_TTL: Default Time-To-Live value.
  */
 #ifndef TCP_TTL
+<<<<<<< HEAD
 #define TCP_TTL (IP_DEFAULT_TTL)
 #endif
 
@@ -894,19 +1307,39 @@
 #ifndef TCP_WND
 #define TCP_WND (4 * TCP_MSS)
 #endif
+=======
+#define TCP_TTL                         (IP_DEFAULT_TTL)
+#endif
+
+/**
+ * TCP_WND: The size of a TCP window.  This must be at least 
+ * (2 * TCP_MSS) for things to work well
+ */
+#ifndef TCP_WND
+#define TCP_WND                         (4 * TCP_MSS)
+#endif 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /**
  * TCP_MAXRTX: Maximum number of retransmissions of data segments.
  */
 #ifndef TCP_MAXRTX
+<<<<<<< HEAD
 #define TCP_MAXRTX 12
+=======
+#define TCP_MAXRTX                      12
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_SYNMAXRTX: Maximum number of retransmissions of SYN segments.
  */
 #ifndef TCP_SYNMAXRTX
+<<<<<<< HEAD
 #define TCP_SYNMAXRTX 6
+=======
+#define TCP_SYNMAXRTX                   6
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -914,7 +1347,11 @@
  * Define to 0 if your device is low on memory.
  */
 #ifndef TCP_QUEUE_OOSEQ
+<<<<<<< HEAD
 #define TCP_QUEUE_OOSEQ (LWIP_TCP)
+=======
+#define TCP_QUEUE_OOSEQ                 (LWIP_TCP)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -925,7 +1362,11 @@
  * an upper limit on the MSS advertised by the remote host.
  */
 #ifndef TCP_MSS
+<<<<<<< HEAD
 #define TCP_MSS 536
+=======
+#define TCP_MSS                         536
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -937,6 +1378,7 @@
  * netif used for a connection and limits the MSS if it would be too big otherwise.
  */
 #ifndef TCP_CALCULATE_EFF_SEND_MSS
+<<<<<<< HEAD
 #define TCP_CALCULATE_EFF_SEND_MSS 1
 #endif
 
@@ -945,6 +1387,17 @@
  */
 #ifndef TCP_SND_BUF
 #define TCP_SND_BUF 256
+=======
+#define TCP_CALCULATE_EFF_SEND_MSS      1
+#endif
+
+
+/**
+ * TCP_SND_BUF: TCP sender buffer space (bytes). 
+ */
+#ifndef TCP_SND_BUF
+#define TCP_SND_BUF                     256
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -952,7 +1405,11 @@
  * as much as (2 * TCP_SND_BUF/TCP_MSS) for things to work.
  */
 #ifndef TCP_SND_QUEUELEN
+<<<<<<< HEAD
 #define TCP_SND_QUEUELEN (4 * (TCP_SND_BUF) / (TCP_MSS))
+=======
+#define TCP_SND_QUEUELEN                (4 * (TCP_SND_BUF)/(TCP_MSS))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -961,7 +1418,11 @@
  * TCP snd_buf for select to return writable (combined with TCP_SNDQUEUELOWAT).
  */
 #ifndef TCP_SNDLOWAT
+<<<<<<< HEAD
 #define TCP_SNDLOWAT ((TCP_SND_BUF) / 2)
+=======
+#define TCP_SNDLOWAT                    ((TCP_SND_BUF)/2)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -970,14 +1431,22 @@
  * this number, select returns writable (combined with TCP_SNDLOWAT).
  */
 #ifndef TCP_SNDQUEUELOWAT
+<<<<<<< HEAD
 #define TCP_SNDQUEUELOWAT ((TCP_SND_QUEUELEN) / 2)
+=======
+#define TCP_SNDQUEUELOWAT               ((TCP_SND_QUEUELEN)/2)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_LISTEN_BACKLOG: Enable the backlog option for tcp listen pcb.
  */
 #ifndef TCP_LISTEN_BACKLOG
+<<<<<<< HEAD
 #define TCP_LISTEN_BACKLOG 0
+=======
+#define TCP_LISTEN_BACKLOG              0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -986,7 +1455,11 @@
  * 0xff is the maximum (u8_t).
  */
 #ifndef TCP_DEFAULT_LISTEN_BACKLOG
+<<<<<<< HEAD
 #define TCP_DEFAULT_LISTEN_BACKLOG 0xff
+=======
+#define TCP_DEFAULT_LISTEN_BACKLOG      0xff
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1004,14 +1477,22 @@
  * TCP_MSS/4: Try to create 4 fragments or less per TCP packet.
  */
 #ifndef TCP_OVERSIZE
+<<<<<<< HEAD
 #define TCP_OVERSIZE TCP_MSS
+=======
+#define TCP_OVERSIZE                    TCP_MSS
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_TCP_TIMESTAMPS==1: support the TCP timestamp option.
  */
 #ifndef LWIP_TCP_TIMESTAMPS
+<<<<<<< HEAD
 #define LWIP_TCP_TIMESTAMPS 0
+=======
+#define LWIP_TCP_TIMESTAMPS             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1019,7 +1500,11 @@
  * explicit window update
  */
 #ifndef TCP_WND_UPDATE_THRESHOLD
+<<<<<<< HEAD
 #define TCP_WND_UPDATE_THRESHOLD (TCP_WND / 4)
+=======
+#define TCP_WND_UPDATE_THRESHOLD   (TCP_WND / 4)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1030,6 +1515,7 @@
  *         for the event.
  */
 #ifndef LWIP_EVENT_API
+<<<<<<< HEAD
 #define LWIP_EVENT_API 0
 #define LWIP_CALLBACK_API 1
 #else
@@ -1037,6 +1523,16 @@
 #define LWIP_CALLBACK_API 0
 #endif
 
+=======
+#define LWIP_EVENT_API                  0
+#define LWIP_CALLBACK_API               1
+#else 
+#define LWIP_EVENT_API                  1
+#define LWIP_CALLBACK_API               0
+#endif
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /*
    ----------------------------------
    ---------- Pbuf options ----------
@@ -1048,7 +1544,11 @@
  * Ethernet.
  */
 #ifndef PBUF_LINK_HLEN
+<<<<<<< HEAD
 #define PBUF_LINK_HLEN (14 + ETH_PAD_SIZE)
+=======
+#define PBUF_LINK_HLEN                  (14 + ETH_PAD_SIZE)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1057,7 +1557,11 @@
  * TCP_MSS, IP header, and link header.
  */
 #ifndef PBUF_POOL_BUFSIZE
+<<<<<<< HEAD
 #define PBUF_POOL_BUFSIZE LWIP_MEM_ALIGN_SIZE(TCP_MSS + 40 + PBUF_LINK_HLEN)
+=======
+#define PBUF_POOL_BUFSIZE               LWIP_MEM_ALIGN_SIZE(TCP_MSS+40+PBUF_LINK_HLEN)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1070,14 +1574,22 @@
  * field.
  */
 #ifndef LWIP_NETIF_HOSTNAME
+<<<<<<< HEAD
 #define LWIP_NETIF_HOSTNAME 0
+=======
+#define LWIP_NETIF_HOSTNAME             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_NETIF_API==1: Support netif api (in netifapi.c)
  */
 #ifndef LWIP_NETIF_API
+<<<<<<< HEAD
 #define LWIP_NETIF_API 0
+=======
+#define LWIP_NETIF_API                  0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1085,7 +1597,11 @@
  * changes its up/down status (i.e., due to DHCP IP acquistion)
  */
 #ifndef LWIP_NETIF_STATUS_CALLBACK
+<<<<<<< HEAD
 #define LWIP_NETIF_STATUS_CALLBACK 0
+=======
+#define LWIP_NETIF_STATUS_CALLBACK      0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1093,7 +1609,11 @@
  * whenever the link changes (i.e., link down)
  */
 #ifndef LWIP_NETIF_LINK_CALLBACK
+<<<<<<< HEAD
 #define LWIP_NETIF_LINK_CALLBACK 0
+=======
+#define LWIP_NETIF_LINK_CALLBACK        0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1104,7 +1624,11 @@
  * if you have a tiny ARP table or if there never are concurrent connections.
  */
 #ifndef LWIP_NETIF_HWADDRHINT
+<<<<<<< HEAD
 #define LWIP_NETIF_HWADDRHINT 0
+=======
+#define LWIP_NETIF_HWADDRHINT           0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1112,7 +1636,11 @@
  * address equal to the netif IP address, looping them back up the stack.
  */
 #ifndef LWIP_NETIF_LOOPBACK
+<<<<<<< HEAD
 #define LWIP_NETIF_LOOPBACK 0
+=======
+#define LWIP_NETIF_LOOPBACK             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1120,7 +1648,11 @@
  * sending for each netif (0 = disabled)
  */
 #ifndef LWIP_LOOPBACK_MAX_PBUFS
+<<<<<<< HEAD
 #define LWIP_LOOPBACK_MAX_PBUFS 0
+=======
+#define LWIP_LOOPBACK_MAX_PBUFS         0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1137,7 +1669,11 @@
  *       the main application loop.
  */
 #ifndef LWIP_NETIF_LOOPBACK_MULTITHREADING
+<<<<<<< HEAD
 #define LWIP_NETIF_LOOPBACK_MULTITHREADING (!NO_SYS)
+=======
+#define LWIP_NETIF_LOOPBACK_MULTITHREADING    (!NO_SYS)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1150,7 +1686,11 @@
  * @todo: TCP and IP-frag do not work with this, yet:
  */
 #ifndef LWIP_NETIF_TX_SINGLE_PBUF
+<<<<<<< HEAD
 #define LWIP_NETIF_TX_SINGLE_PBUF 0
+=======
+#define LWIP_NETIF_TX_SINGLE_PBUF             0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* LWIP_NETIF_TX_SINGLE_PBUF */
 
 /*
@@ -1162,7 +1702,11 @@
  * LWIP_HAVE_LOOPIF==1: Support loop interface (127.0.0.1) and loopif.c
  */
 #ifndef LWIP_HAVE_LOOPIF
+<<<<<<< HEAD
 #define LWIP_HAVE_LOOPIF 0
+=======
+#define LWIP_HAVE_LOOPIF                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1174,7 +1718,11 @@
  * LWIP_HAVE_SLIPIF==1: Support slip interface and slipif.c
  */
 #ifndef LWIP_HAVE_SLIPIF
+<<<<<<< HEAD
 #define LWIP_HAVE_SLIPIF 0
+=======
+#define LWIP_HAVE_SLIPIF                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1186,7 +1734,11 @@
  * TCPIP_THREAD_NAME: The name assigned to the main tcpip thread.
  */
 #ifndef TCPIP_THREAD_NAME
+<<<<<<< HEAD
 #define TCPIP_THREAD_NAME "tcpip_thread"
+=======
+#define TCPIP_THREAD_NAME              "tcpip_thread"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1195,7 +1747,11 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef TCPIP_THREAD_STACKSIZE
+<<<<<<< HEAD
 #define TCPIP_THREAD_STACKSIZE 0
+=======
+#define TCPIP_THREAD_STACKSIZE          0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1204,7 +1760,11 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef TCPIP_THREAD_PRIO
+<<<<<<< HEAD
 #define TCPIP_THREAD_PRIO 1
+=======
+#define TCPIP_THREAD_PRIO               1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1213,14 +1773,22 @@
  * sys_mbox_new() when tcpip_init is called.
  */
 #ifndef TCPIP_MBOX_SIZE
+<<<<<<< HEAD
 #define TCPIP_MBOX_SIZE 0
+=======
+#define TCPIP_MBOX_SIZE                 0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SLIPIF_THREAD_NAME: The name assigned to the slipif_loop thread.
  */
 #ifndef SLIPIF_THREAD_NAME
+<<<<<<< HEAD
 #define SLIPIF_THREAD_NAME "slipif_loop"
+=======
+#define SLIPIF_THREAD_NAME             "slipif_loop"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1229,7 +1797,11 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef SLIPIF_THREAD_STACKSIZE
+<<<<<<< HEAD
 #define SLIPIF_THREAD_STACKSIZE 0
+=======
+#define SLIPIF_THREAD_STACKSIZE         0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1238,14 +1810,22 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef SLIPIF_THREAD_PRIO
+<<<<<<< HEAD
 #define SLIPIF_THREAD_PRIO 1
+=======
+#define SLIPIF_THREAD_PRIO              1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * PPP_THREAD_NAME: The name assigned to the pppInputThread.
  */
 #ifndef PPP_THREAD_NAME
+<<<<<<< HEAD
 #define PPP_THREAD_NAME "pppInputThread"
+=======
+#define PPP_THREAD_NAME                "pppInputThread"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1254,7 +1834,11 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef PPP_THREAD_STACKSIZE
+<<<<<<< HEAD
 #define PPP_THREAD_STACKSIZE 0
+=======
+#define PPP_THREAD_STACKSIZE            0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1263,14 +1847,22 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef PPP_THREAD_PRIO
+<<<<<<< HEAD
 #define PPP_THREAD_PRIO 1
+=======
+#define PPP_THREAD_PRIO                 1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * DEFAULT_THREAD_NAME: The name assigned to any other lwIP thread.
  */
 #ifndef DEFAULT_THREAD_NAME
+<<<<<<< HEAD
 #define DEFAULT_THREAD_NAME "lwIP"
+=======
+#define DEFAULT_THREAD_NAME            "lwIP"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1279,7 +1871,11 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef DEFAULT_THREAD_STACKSIZE
+<<<<<<< HEAD
 #define DEFAULT_THREAD_STACKSIZE 0
+=======
+#define DEFAULT_THREAD_STACKSIZE        0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1288,7 +1884,11 @@
  * sys_thread_new() when the thread is created.
  */
 #ifndef DEFAULT_THREAD_PRIO
+<<<<<<< HEAD
 #define DEFAULT_THREAD_PRIO 1
+=======
+#define DEFAULT_THREAD_PRIO             1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1297,7 +1897,11 @@
  * to sys_mbox_new() when the recvmbox is created.
  */
 #ifndef DEFAULT_RAW_RECVMBOX_SIZE
+<<<<<<< HEAD
 #define DEFAULT_RAW_RECVMBOX_SIZE 0
+=======
+#define DEFAULT_RAW_RECVMBOX_SIZE       0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1306,7 +1910,11 @@
  * to sys_mbox_new() when the recvmbox is created.
  */
 #ifndef DEFAULT_UDP_RECVMBOX_SIZE
+<<<<<<< HEAD
 #define DEFAULT_UDP_RECVMBOX_SIZE 0
+=======
+#define DEFAULT_UDP_RECVMBOX_SIZE       0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1315,7 +1923,11 @@
  * to sys_mbox_new() when the recvmbox is created.
  */
 #ifndef DEFAULT_TCP_RECVMBOX_SIZE
+<<<<<<< HEAD
 #define DEFAULT_TCP_RECVMBOX_SIZE 0
+=======
+#define DEFAULT_TCP_RECVMBOX_SIZE       0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1324,7 +1936,11 @@
  * sys_mbox_new() when the acceptmbox is created.
  */
 #ifndef DEFAULT_ACCEPTMBOX_SIZE
+<<<<<<< HEAD
 #define DEFAULT_ACCEPTMBOX_SIZE 0
+=======
+#define DEFAULT_ACCEPTMBOX_SIZE         0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1337,7 +1953,11 @@
  * Don't use it if you're not an active lwIP project member
  */
 #ifndef LWIP_TCPIP_CORE_LOCKING
+<<<<<<< HEAD
 #define LWIP_TCPIP_CORE_LOCKING 0
+=======
+#define LWIP_TCPIP_CORE_LOCKING         0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1345,21 +1965,33 @@
  * Don't use it if you're not an active lwIP project member
  */
 #ifndef LWIP_TCPIP_CORE_LOCKING_INPUT
+<<<<<<< HEAD
 #define LWIP_TCPIP_CORE_LOCKING_INPUT 0
+=======
+#define LWIP_TCPIP_CORE_LOCKING_INPUT   0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_NETCONN==1: Enable Netconn API (require to use api_lib.c)
  */
 #ifndef LWIP_NETCONN
+<<<<<<< HEAD
 #define LWIP_NETCONN 1
+=======
+#define LWIP_NETCONN                    1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /** LWIP_TCPIP_TIMEOUT==1: Enable tcpip_timeout/tcpip_untimeout tod create
  * timers running in tcpip_thread from another thread.
  */
 #ifndef LWIP_TCPIP_TIMEOUT
+<<<<<<< HEAD
 #define LWIP_TCPIP_TIMEOUT 1
+=======
+#define LWIP_TCPIP_TIMEOUT              1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1371,7 +2003,11 @@
  * LWIP_SOCKET==1: Enable Socket API (require to use sockets.c)
  */
 #ifndef LWIP_SOCKET
+<<<<<<< HEAD
 #define LWIP_SOCKET 1
+=======
+#define LWIP_SOCKET                     1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1379,7 +2015,11 @@
  * (only used if you use sockets.c)
  */
 #ifndef LWIP_COMPAT_SOCKETS
+<<<<<<< HEAD
 #define LWIP_COMPAT_SOCKETS 1
+=======
+#define LWIP_COMPAT_SOCKETS             1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1388,7 +2028,11 @@
  * names (read, write & close). (only used if you use sockets.c)
  */
 #ifndef LWIP_POSIX_SOCKETS_IO_NAMES
+<<<<<<< HEAD
 #define LWIP_POSIX_SOCKETS_IO_NAMES 1
+=======
+#define LWIP_POSIX_SOCKETS_IO_NAMES     1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1397,35 +2041,55 @@
  * in seconds. (does not require sockets.c, and will affect tcp.c)
  */
 #ifndef LWIP_TCP_KEEPALIVE
+<<<<<<< HEAD
 #define LWIP_TCP_KEEPALIVE 0
+=======
+#define LWIP_TCP_KEEPALIVE              0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_SO_RCVTIMEO==1: Enable SO_RCVTIMEO processing.
  */
 #ifndef LWIP_SO_RCVTIMEO
+<<<<<<< HEAD
 #define LWIP_SO_RCVTIMEO 0
+=======
+#define LWIP_SO_RCVTIMEO                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LWIP_SO_RCVBUF==1: Enable SO_RCVBUF processing.
  */
 #ifndef LWIP_SO_RCVBUF
+<<<<<<< HEAD
 #define LWIP_SO_RCVBUF 0
+=======
+#define LWIP_SO_RCVBUF                  0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * If LWIP_SO_RCVBUF is used, this is the default value for recv_bufsize.
  */
 #ifndef RECV_BUFSIZE_DEFAULT
+<<<<<<< HEAD
 #define RECV_BUFSIZE_DEFAULT INT_MAX
+=======
+#define RECV_BUFSIZE_DEFAULT            INT_MAX
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SO_REUSE==1: Enable SO_REUSEADDR option.
  */
 #ifndef SO_REUSE
+<<<<<<< HEAD
 #define SO_REUSE 0
+=======
+#define SO_REUSE                        0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1434,7 +2098,11 @@
  * WARNING: Adds a memcpy for every packet if passing to more than one pcb!
  */
 #ifndef SO_REUSE_RXTOALL
+<<<<<<< HEAD
 #define SO_REUSE_RXTOALL 0
+=======
+#define SO_REUSE_RXTOALL                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1446,7 +2114,11 @@
  * LWIP_STATS==1: Enable statistics collection in lwip_stats.
  */
 #ifndef LWIP_STATS
+<<<<<<< HEAD
 #define LWIP_STATS 1
+=======
+#define LWIP_STATS                      1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #if LWIP_STATS
@@ -1455,28 +2127,44 @@
  * LWIP_STATS_DISPLAY==1: Compile in the statistics output functions.
  */
 #ifndef LWIP_STATS_DISPLAY
+<<<<<<< HEAD
 #define LWIP_STATS_DISPLAY 0
+=======
+#define LWIP_STATS_DISPLAY              0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * LINK_STATS==1: Enable link stats.
  */
 #ifndef LINK_STATS
+<<<<<<< HEAD
 #define LINK_STATS 1
+=======
+#define LINK_STATS                      1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * ETHARP_STATS==1: Enable etharp stats.
  */
 #ifndef ETHARP_STATS
+<<<<<<< HEAD
 #define ETHARP_STATS (LWIP_ARP)
+=======
+#define ETHARP_STATS                    (LWIP_ARP)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * IP_STATS==1: Enable IP stats.
  */
 #ifndef IP_STATS
+<<<<<<< HEAD
 #define IP_STATS 1
+=======
+#define IP_STATS                        1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1484,21 +2172,33 @@
  * on if using either frag or reass.
  */
 #ifndef IPFRAG_STATS
+<<<<<<< HEAD
 #define IPFRAG_STATS (IP_REASSEMBLY || IP_FRAG)
+=======
+#define IPFRAG_STATS                    (IP_REASSEMBLY || IP_FRAG)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * ICMP_STATS==1: Enable ICMP stats.
  */
 #ifndef ICMP_STATS
+<<<<<<< HEAD
 #define ICMP_STATS 1
+=======
+#define ICMP_STATS                      1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * IGMP_STATS==1: Enable IGMP stats.
  */
 #ifndef IGMP_STATS
+<<<<<<< HEAD
 #define IGMP_STATS (LWIP_IGMP)
+=======
+#define IGMP_STATS                      (LWIP_IGMP)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1506,7 +2206,11 @@
  * UDP enabled, otherwise off.
  */
 #ifndef UDP_STATS
+<<<<<<< HEAD
 #define UDP_STATS (LWIP_UDP)
+=======
+#define UDP_STATS                       (LWIP_UDP)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1514,32 +2218,49 @@
  * enabled, otherwise off.
  */
 #ifndef TCP_STATS
+<<<<<<< HEAD
 #define TCP_STATS (LWIP_TCP)
+=======
+#define TCP_STATS                       (LWIP_TCP)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEM_STATS==1: Enable mem.c stats.
  */
 #ifndef MEM_STATS
+<<<<<<< HEAD
 #define MEM_STATS ((MEM_LIBC_MALLOC == 0) && (MEM_USE_POOLS == 0))
+=======
+#define MEM_STATS                       ((MEM_LIBC_MALLOC == 0) && (MEM_USE_POOLS == 0))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEMP_STATS==1: Enable memp.c pool stats.
  */
 #ifndef MEMP_STATS
+<<<<<<< HEAD
 #define MEMP_STATS (MEMP_MEM_MALLOC == 0)
+=======
+#define MEMP_STATS                      (MEMP_MEM_MALLOC == 0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SYS_STATS==1: Enable system stats (sem and mbox counts, etc).
  */
 #ifndef SYS_STATS
+<<<<<<< HEAD
 #define SYS_STATS (NO_SYS == 0)
+=======
+#define SYS_STATS                       (NO_SYS == 0)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #else
 
+<<<<<<< HEAD
 #define LINK_STATS 0
 #define IP_STATS 0
 #define IPFRAG_STATS 0
@@ -1551,6 +2272,19 @@
 #define MEMP_STATS 0
 #define SYS_STATS 0
 #define LWIP_STATS_DISPLAY 0
+=======
+#define LINK_STATS                      0
+#define IP_STATS                        0
+#define IPFRAG_STATS                    0
+#define ICMP_STATS                      0
+#define IGMP_STATS                      0
+#define UDP_STATS                       0
+#define TCP_STATS                       0
+#define MEM_STATS                       0
+#define MEMP_STATS                      0
+#define SYS_STATS                       0
+#define LWIP_STATS_DISPLAY              0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #endif /* LWIP_STATS */
 
@@ -1563,21 +2297,33 @@
  * PPP_SUPPORT==1: Enable PPP.
  */
 #ifndef PPP_SUPPORT
+<<<<<<< HEAD
 #define PPP_SUPPORT 0
+=======
+#define PPP_SUPPORT                     0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * PPPOE_SUPPORT==1: Enable PPP Over Ethernet
  */
 #ifndef PPPOE_SUPPORT
+<<<<<<< HEAD
 #define PPPOE_SUPPORT 0
+=======
+#define PPPOE_SUPPORT                   0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * PPPOS_SUPPORT==1: Enable PPP Over Serial
  */
 #ifndef PPPOS_SUPPORT
+<<<<<<< HEAD
 #define PPPOS_SUPPORT PPP_SUPPORT
+=======
+#define PPPOS_SUPPORT                   PPP_SUPPORT
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #if PPP_SUPPORT
@@ -1586,62 +2332,95 @@
  * NUM_PPP: Max PPP sessions.
  */
 #ifndef NUM_PPP
+<<<<<<< HEAD
 #define NUM_PPP 1
+=======
+#define NUM_PPP                         1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * PAP_SUPPORT==1: Support PAP.
  */
 #ifndef PAP_SUPPORT
+<<<<<<< HEAD
 #define PAP_SUPPORT 0
+=======
+#define PAP_SUPPORT                     0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * CHAP_SUPPORT==1: Support CHAP.
  */
 #ifndef CHAP_SUPPORT
+<<<<<<< HEAD
 #define CHAP_SUPPORT 0
+=======
+#define CHAP_SUPPORT                    0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MSCHAP_SUPPORT==1: Support MSCHAP. CURRENTLY NOT SUPPORTED! DO NOT SET!
  */
 #ifndef MSCHAP_SUPPORT
+<<<<<<< HEAD
 #define MSCHAP_SUPPORT 0
+=======
+#define MSCHAP_SUPPORT                  0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * CBCP_SUPPORT==1: Support CBCP. CURRENTLY NOT SUPPORTED! DO NOT SET!
  */
 #ifndef CBCP_SUPPORT
+<<<<<<< HEAD
 #define CBCP_SUPPORT 0
+=======
+#define CBCP_SUPPORT                    0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * CCP_SUPPORT==1: Support CCP. CURRENTLY NOT SUPPORTED! DO NOT SET!
  */
 #ifndef CCP_SUPPORT
+<<<<<<< HEAD
 #define CCP_SUPPORT 0
+=======
+#define CCP_SUPPORT                     0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * VJ_SUPPORT==1: Support VJ header compression.
  */
 #ifndef VJ_SUPPORT
+<<<<<<< HEAD
 #define VJ_SUPPORT 0
+=======
+#define VJ_SUPPORT                      0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MD5_SUPPORT==1: Support MD5 (see also CHAP).
  */
 #ifndef MD5_SUPPORT
+<<<<<<< HEAD
 #define MD5_SUPPORT 0
+=======
+#define MD5_SUPPORT                     0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
  * Timeouts
  */
 #ifndef FSM_DEFTIMEOUT
+<<<<<<< HEAD
 #define FSM_DEFTIMEOUT 6 /* Timeout time in seconds */
 #endif
 
@@ -1671,21 +2450,64 @@
 
 #ifndef CHAP_DEFTRANSMITS
 #define CHAP_DEFTRANSMITS 10 /* max # times to send challenge */
+=======
+#define FSM_DEFTIMEOUT                  6       /* Timeout time in seconds */
+#endif
+
+#ifndef FSM_DEFMAXTERMREQS
+#define FSM_DEFMAXTERMREQS              2       /* Maximum Terminate-Request transmissions */
+#endif
+
+#ifndef FSM_DEFMAXCONFREQS
+#define FSM_DEFMAXCONFREQS              10      /* Maximum Configure-Request transmissions */
+#endif
+
+#ifndef FSM_DEFMAXNAKLOOPS
+#define FSM_DEFMAXNAKLOOPS              5       /* Maximum number of nak loops */
+#endif
+
+#ifndef UPAP_DEFTIMEOUT
+#define UPAP_DEFTIMEOUT                 6       /* Timeout (seconds) for retransmitting req */
+#endif
+
+#ifndef UPAP_DEFREQTIME
+#define UPAP_DEFREQTIME                 30      /* Time to wait for auth-req from peer */
+#endif
+
+#ifndef CHAP_DEFTIMEOUT
+#define CHAP_DEFTIMEOUT                 6       /* Timeout time in seconds */
+#endif
+
+#ifndef CHAP_DEFTRANSMITS
+#define CHAP_DEFTRANSMITS               10      /* max # times to send challenge */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /* Interval in seconds between keepalive echo requests, 0 to disable. */
 #ifndef LCP_ECHOINTERVAL
+<<<<<<< HEAD
 #define LCP_ECHOINTERVAL 0
+=======
+#define LCP_ECHOINTERVAL                0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /* Number of unanswered echo requests before failure. */
 #ifndef LCP_MAXECHOFAILS
+<<<<<<< HEAD
 #define LCP_MAXECHOFAILS 3
+=======
+#define LCP_MAXECHOFAILS                3
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /* Max Xmit idle time (in jiffies) before resend flag char. */
 #ifndef PPP_MAXIDLEFLAG
+<<<<<<< HEAD
 #define PPP_MAXIDLEFLAG 100
+=======
+#define PPP_MAXIDLEFLAG                 100
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1696,6 +2518,7 @@
  * (XXX - these constants should simply be shared by lcp.c instead
  *    of living in lcp.h)
  */
+<<<<<<< HEAD
 #define PPP_MTU 1500 /* Default MTU (size of Info field) */
 #ifndef PPP_MAXMTU
 /* #define PPP_MAXMTU  65535 - (PPP_HDRLEN + PPP_FCSLEN) */
@@ -1714,6 +2537,26 @@
 #endif
 #ifndef MAXSECRETLEN
 #define MAXSECRETLEN 256 /* max length of password or secret */
+=======
+#define PPP_MTU                         1500     /* Default MTU (size of Info field) */
+#ifndef PPP_MAXMTU
+/* #define PPP_MAXMTU  65535 - (PPP_HDRLEN + PPP_FCSLEN) */
+#define PPP_MAXMTU                      1500 /* Largest MTU we allow */
+#endif
+#define PPP_MINMTU                      64
+#define PPP_MRU                         1500     /* default MRU = max length of info field */
+#define PPP_MAXMRU                      1500     /* Largest MRU we allow */
+#ifndef PPP_DEFMRU
+#define PPP_DEFMRU                      296             /* Try for this */
+#endif
+#define PPP_MINMRU                      128             /* No MRUs below this */
+
+#ifndef MAXNAMELEN
+#define MAXNAMELEN                      256     /* max length of hostname or name for auth */
+#endif
+#ifndef MAXSECRETLEN
+#define MAXSECRETLEN                    256     /* max length of password or secret */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #endif /* PPP_SUPPORT */
@@ -1727,42 +2570,74 @@
  * CHECKSUM_GEN_IP==1: Generate checksums in software for outgoing IP packets.
  */
 #ifndef CHECKSUM_GEN_IP
+<<<<<<< HEAD
 #define CHECKSUM_GEN_IP 1
 #endif
 
+=======
+#define CHECKSUM_GEN_IP                 1
+#endif
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /**
  * CHECKSUM_GEN_UDP==1: Generate checksums in software for outgoing UDP packets.
  */
 #ifndef CHECKSUM_GEN_UDP
+<<<<<<< HEAD
 #define CHECKSUM_GEN_UDP 1
 #endif
 
+=======
+#define CHECKSUM_GEN_UDP                1
+#endif
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /**
  * CHECKSUM_GEN_TCP==1: Generate checksums in software for outgoing TCP packets.
  */
 #ifndef CHECKSUM_GEN_TCP
+<<<<<<< HEAD
 #define CHECKSUM_GEN_TCP 1
 #endif
 
+=======
+#define CHECKSUM_GEN_TCP                1
+#endif
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /**
  * CHECKSUM_CHECK_IP==1: Check checksums in software for incoming IP packets.
  */
 #ifndef CHECKSUM_CHECK_IP
+<<<<<<< HEAD
 #define CHECKSUM_CHECK_IP 1
 #endif
 
+=======
+#define CHECKSUM_CHECK_IP               1
+#endif
+ 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 /**
  * CHECKSUM_CHECK_UDP==1: Check checksums in software for incoming UDP packets.
  */
 #ifndef CHECKSUM_CHECK_UDP
+<<<<<<< HEAD
 #define CHECKSUM_CHECK_UDP 1
+=======
+#define CHECKSUM_CHECK_UDP              1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * CHECKSUM_CHECK_TCP==1: Check checksums in software for incoming TCP packets.
  */
 #ifndef CHECKSUM_CHECK_TCP
+<<<<<<< HEAD
 #define CHECKSUM_CHECK_TCP 1
+=======
+#define CHECKSUM_CHECK_TCP              1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1770,7 +2645,11 @@
  * application buffers to pbufs.
  */
 #ifndef LWIP_CHECKSUM_ON_COPY
+<<<<<<< HEAD
 #define LWIP_CHECKSUM_ON_COPY 0
+=======
+#define LWIP_CHECKSUM_ON_COPY           0
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /*
@@ -1784,7 +2663,11 @@
  * messages are written.
  */
 #ifndef LWIP_DBG_MIN_LEVEL
+<<<<<<< HEAD
 #define LWIP_DBG_MIN_LEVEL LWIP_DBG_LEVEL_ALL
+=======
+#define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_ALL
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1792,140 +2675,220 @@
  * debug messages of certain types.
  */
 #ifndef LWIP_DBG_TYPES_ON
+<<<<<<< HEAD
 #define LWIP_DBG_TYPES_ON LWIP_DBG_ON
+=======
+#define LWIP_DBG_TYPES_ON               LWIP_DBG_ON
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * ETHARP_DEBUG: Enable debugging in etharp.c.
  */
 #ifndef ETHARP_DEBUG
+<<<<<<< HEAD
 #define ETHARP_DEBUG LWIP_DBG_OFF
+=======
+#define ETHARP_DEBUG                    LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * NETIF_DEBUG: Enable debugging in netif.c.
  */
 #ifndef NETIF_DEBUG
+<<<<<<< HEAD
 #define NETIF_DEBUG LWIP_DBG_OFF
+=======
+#define NETIF_DEBUG                     LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * PBUF_DEBUG: Enable debugging in pbuf.c.
  */
 #ifndef PBUF_DEBUG
+<<<<<<< HEAD
 #define PBUF_DEBUG LWIP_DBG_OFF
+=======
+#define PBUF_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * API_LIB_DEBUG: Enable debugging in api_lib.c.
  */
 #ifndef API_LIB_DEBUG
+<<<<<<< HEAD
 #define API_LIB_DEBUG LWIP_DBG_OFF
+=======
+#define API_LIB_DEBUG                   LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * API_MSG_DEBUG: Enable debugging in api_msg.c.
  */
 #ifndef API_MSG_DEBUG
+<<<<<<< HEAD
 #define API_MSG_DEBUG LWIP_DBG_OFF
+=======
+#define API_MSG_DEBUG                   LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SOCKETS_DEBUG: Enable debugging in sockets.c.
  */
 #ifndef SOCKETS_DEBUG
+<<<<<<< HEAD
 #define SOCKETS_DEBUG LWIP_DBG_OFF
+=======
+#define SOCKETS_DEBUG                   LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * ICMP_DEBUG: Enable debugging in icmp.c.
  */
 #ifndef ICMP_DEBUG
+<<<<<<< HEAD
 #define ICMP_DEBUG LWIP_DBG_OFF
+=======
+#define ICMP_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * IGMP_DEBUG: Enable debugging in igmp.c.
  */
 #ifndef IGMP_DEBUG
+<<<<<<< HEAD
 #define IGMP_DEBUG LWIP_DBG_OFF
+=======
+#define IGMP_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * INET_DEBUG: Enable debugging in inet.c.
  */
 #ifndef INET_DEBUG
+<<<<<<< HEAD
 #define INET_DEBUG LWIP_DBG_OFF
+=======
+#define INET_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * IP_DEBUG: Enable debugging for IP.
  */
 #ifndef IP_DEBUG
+<<<<<<< HEAD
 #define IP_DEBUG LWIP_DBG_OFF
+=======
+#define IP_DEBUG                        LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * IP_REASS_DEBUG: Enable debugging in ip_frag.c for both frag & reass.
  */
 #ifndef IP_REASS_DEBUG
+<<<<<<< HEAD
 #define IP_REASS_DEBUG LWIP_DBG_OFF
+=======
+#define IP_REASS_DEBUG                  LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * RAW_DEBUG: Enable debugging in raw.c.
  */
 #ifndef RAW_DEBUG
+<<<<<<< HEAD
 #define RAW_DEBUG LWIP_DBG_OFF
+=======
+#define RAW_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEM_DEBUG: Enable debugging in mem.c.
  */
 #ifndef MEM_DEBUG
+<<<<<<< HEAD
 #define MEM_DEBUG LWIP_DBG_OFF
+=======
+#define MEM_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * MEMP_DEBUG: Enable debugging in memp.c.
  */
 #ifndef MEMP_DEBUG
+<<<<<<< HEAD
 #define MEMP_DEBUG LWIP_DBG_OFF
+=======
+#define MEMP_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SYS_DEBUG: Enable debugging in sys.c.
  */
 #ifndef SYS_DEBUG
+<<<<<<< HEAD
 #define SYS_DEBUG LWIP_DBG_OFF
+=======
+#define SYS_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TIMERS_DEBUG: Enable debugging in timers.c.
  */
 #ifndef TIMERS_DEBUG
+<<<<<<< HEAD
 #define TIMERS_DEBUG LWIP_DBG_OFF
+=======
+#define TIMERS_DEBUG                    LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_DEBUG: Enable debugging for TCP.
  */
 #ifndef TCP_DEBUG
+<<<<<<< HEAD
 #define TCP_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_INPUT_DEBUG: Enable debugging in tcp_in.c for incoming debug.
  */
 #ifndef TCP_INPUT_DEBUG
+<<<<<<< HEAD
 #define TCP_INPUT_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_INPUT_DEBUG                 LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_FR_DEBUG: Enable debugging in tcp_in.c for fast retransmit.
  */
 #ifndef TCP_FR_DEBUG
+<<<<<<< HEAD
 #define TCP_FR_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_FR_DEBUG                    LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
@@ -1933,105 +2896,165 @@
  * timeout.
  */
 #ifndef TCP_RTO_DEBUG
+<<<<<<< HEAD
 #define TCP_RTO_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_RTO_DEBUG                   LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_CWND_DEBUG: Enable debugging for TCP congestion window.
  */
 #ifndef TCP_CWND_DEBUG
+<<<<<<< HEAD
 #define TCP_CWND_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_CWND_DEBUG                  LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_WND_DEBUG: Enable debugging in tcp_in.c for window updating.
  */
 #ifndef TCP_WND_DEBUG
+<<<<<<< HEAD
 #define TCP_WND_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_WND_DEBUG                   LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_OUTPUT_DEBUG: Enable debugging in tcp_out.c output functions.
  */
 #ifndef TCP_OUTPUT_DEBUG
+<<<<<<< HEAD
 #define TCP_OUTPUT_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_OUTPUT_DEBUG                LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_RST_DEBUG: Enable debugging for TCP with the RST message.
  */
 #ifndef TCP_RST_DEBUG
+<<<<<<< HEAD
 #define TCP_RST_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_RST_DEBUG                   LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCP_QLEN_DEBUG: Enable debugging for TCP queue lengths.
  */
 #ifndef TCP_QLEN_DEBUG
+<<<<<<< HEAD
 #define TCP_QLEN_DEBUG LWIP_DBG_OFF
+=======
+#define TCP_QLEN_DEBUG                  LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * UDP_DEBUG: Enable debugging in UDP.
  */
 #ifndef UDP_DEBUG
+<<<<<<< HEAD
 #define UDP_DEBUG LWIP_DBG_OFF
+=======
+#define UDP_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * TCPIP_DEBUG: Enable debugging in tcpip.c.
  */
 #ifndef TCPIP_DEBUG
+<<<<<<< HEAD
 #define TCPIP_DEBUG LWIP_DBG_OFF
+=======
+#define TCPIP_DEBUG                     LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * PPP_DEBUG: Enable debugging for PPP.
  */
 #ifndef PPP_DEBUG
+<<<<<<< HEAD
 #define PPP_DEBUG LWIP_DBG_OFF
+=======
+#define PPP_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SLIP_DEBUG: Enable debugging in slipif.c.
  */
 #ifndef SLIP_DEBUG
+<<<<<<< HEAD
 #define SLIP_DEBUG LWIP_DBG_OFF
+=======
+#define SLIP_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * DHCP_DEBUG: Enable debugging in dhcp.c.
  */
 #ifndef DHCP_DEBUG
+<<<<<<< HEAD
 #define DHCP_DEBUG LWIP_DBG_OFF
+=======
+#define DHCP_DEBUG                      LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * AUTOIP_DEBUG: Enable debugging in autoip.c.
  */
 #ifndef AUTOIP_DEBUG
+<<<<<<< HEAD
 #define AUTOIP_DEBUG LWIP_DBG_OFF
+=======
+#define AUTOIP_DEBUG                    LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SNMP_MSG_DEBUG: Enable debugging for SNMP messages.
  */
 #ifndef SNMP_MSG_DEBUG
+<<<<<<< HEAD
 #define SNMP_MSG_DEBUG LWIP_DBG_OFF
+=======
+#define SNMP_MSG_DEBUG                  LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * SNMP_MIB_DEBUG: Enable debugging for SNMP MIBs.
  */
 #ifndef SNMP_MIB_DEBUG
+<<<<<<< HEAD
 #define SNMP_MIB_DEBUG LWIP_DBG_OFF
+=======
+#define SNMP_MIB_DEBUG                  LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /**
  * DNS_DEBUG: Enable debugging for DNS.
  */
 #ifndef DNS_DEBUG
+<<<<<<< HEAD
 #define DNS_DEBUG LWIP_DBG_OFF
+=======
+#define DNS_DEBUG                       LWIP_DBG_OFF
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #endif /* __LWIP_OPT_H__ */

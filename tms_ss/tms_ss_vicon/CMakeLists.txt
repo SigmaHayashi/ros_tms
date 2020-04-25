@@ -10,7 +10,11 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES vicon_stream
   CATKIN_DEPENDS roscpp
+<<<<<<< HEAD
   #DEPENDS system_lib
+=======
+  DEPENDS system_lib
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 ###########
@@ -25,7 +29,11 @@ link_directories(${LINK_DIRECTORIES} ${PROJECT_SOURCE_DIR}/viconSDK)
 
 add_executable(vicon_stream src/vicon_stream.cpp)
 
+<<<<<<< HEAD
 add_dependencies(vicon_stream tms_msg_ss_generate_messages_cpp
+=======
+add_dependencies(vicon_stream tms_msg_ss_generate_messages_cpp 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
                               tms_msg_db_generate_messages_cpp)
 
 target_link_libraries(vicon_stream ${catkin_LIBRARIES} ViconDataStreamSDK_CPP)

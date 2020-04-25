@@ -8,13 +8,21 @@
 * The authors hereby grant permission to use, copy, modify, distribute,
 * and license this software and its documentation for any purpose, provided
 * that existing copyright notices are retained in all copies and that this
+<<<<<<< HEAD
 * notice and the following disclaimer are included verbatim in any
+=======
+* notice and the following disclaimer are included verbatim in any 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * distributions. No written agreement, license, or royalty fee is required
 * for any of the authorized uses.
 *
 * THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS *AS IS* AND ANY EXPRESS OR
 * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+<<<<<<< HEAD
 * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+=======
+* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 * IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
 * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -37,6 +45,7 @@
 #define PPPDEBUG_H
 
 /* Trace levels. */
+<<<<<<< HEAD
 #define LOG_CRITICAL (PPP_DEBUG | LWIP_DBG_LEVEL_SEVERE)
 #define LOG_ERR (PPP_DEBUG | LWIP_DBG_LEVEL_SEVERE)
 #define LOG_NOTICE (PPP_DEBUG | LWIP_DBG_LEVEL_WARNING)
@@ -44,6 +53,16 @@
 #define LOG_INFO (PPP_DEBUG)
 #define LOG_DETAIL (PPP_DEBUG)
 #define LOG_DEBUG (PPP_DEBUG)
+=======
+#define LOG_CRITICAL  (PPP_DEBUG | LWIP_DBG_LEVEL_SEVERE)
+#define LOG_ERR       (PPP_DEBUG | LWIP_DBG_LEVEL_SEVERE)
+#define LOG_NOTICE    (PPP_DEBUG | LWIP_DBG_LEVEL_WARNING)
+#define LOG_WARNING   (PPP_DEBUG | LWIP_DBG_LEVEL_WARNING)
+#define LOG_INFO      (PPP_DEBUG)
+#define LOG_DETAIL    (PPP_DEBUG)
+#define LOG_DEBUG     (PPP_DEBUG)
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #define TRACELCP PPP_DEBUG
 
@@ -52,10 +71,17 @@
 #define AUTHDEBUG(a, b) LWIP_DEBUGF(a, b)
 #define IPCPDEBUG(a, b) LWIP_DEBUGF(a, b)
 #define UPAPDEBUG(a, b) LWIP_DEBUGF(a, b)
+<<<<<<< HEAD
 #define LCPDEBUG(a, b) LWIP_DEBUGF(a, b)
 #define FSMDEBUG(a, b) LWIP_DEBUGF(a, b)
 #define CHAPDEBUG(a, b) LWIP_DEBUGF(a, b)
 #define PPPDEBUG(a, b) LWIP_DEBUGF(a, b)
+=======
+#define LCPDEBUG(a, b)  LWIP_DEBUGF(a, b)
+#define FSMDEBUG(a, b)  LWIP_DEBUGF(a, b)
+#define CHAPDEBUG(a, b) LWIP_DEBUGF(a, b)
+#define PPPDEBUG(a, b)  LWIP_DEBUGF(a, b)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 #else /* PPP_DEBUG */
 

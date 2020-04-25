@@ -121,7 +121,11 @@ Visualization Manager:
             Show Trail: false
             Value: true
           bsen_celling_link:
+<<<<<<< HEAD
             Alpha: 0
+=======
+            Alpha: 1
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             Show Axes: false
             Show Trail: false
             Value: true
@@ -286,6 +290,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
           chipstar_red_link:
             Alpha: 1
             Show Axes: false
@@ -303,6 +308,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           wardrobe_link:
             Alpha: 1
             Show Axes: false
@@ -531,6 +538,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+<<<<<<< HEAD
           chipstar_red_link:
             Alpha: 1
             Show Axes: false
@@ -548,6 +556,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
           wardrobe_link:
             Alpha: 1
             Show Axes: false

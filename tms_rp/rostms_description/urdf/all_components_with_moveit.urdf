@@ -4,7 +4,12 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <!-- All components of ROS-TMS project -->
+<<<<<<< HEAD
 <robot name="rostms" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://ros.org/wiki/xacro">
+=======
+<robot name="rostms" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Import common properties -->
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <!-- Used for fixing all components to 'world' frame of RViz and Gazebo 'world' -->
   <link name="world_link"/>
   <joint name="world_bsen_room_joint" type="fixed">
@@ -17,6 +22,11 @@
     <child link="smartpal5_link"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
+<<<<<<< HEAD
+=======
+  <!-- Defines the components tags -->
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <!--  Environment -->
   <link name="bsen_room_link">
     <visual>
@@ -31,16 +41,23 @@
       </geometry>
       <origin rpy="0 0 0" xyz="7.5 3.5 -0.001"/>
     </collision>
+<<<<<<< HEAD
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.001"/>
       <mass value="100"/>
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </link>
   <joint name="wall_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="bsen_wall_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 0" xyz="0. 0. 0."/>
+=======
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="bsen_wall_link">
     <visual>
@@ -50,8 +67,14 @@
     </visual>
     <collision>
       <geometry>
+<<<<<<< HEAD
         <mesh filename="package://environmental_model/model/bsen_wall.dae"/>
       </geometry>
+=======
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -1"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     </collision>
   </link>
   <joint name="celling_joint" type="fixed">
@@ -74,7 +97,11 @@
   <joint name="kitchen_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="kitchen_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 -1.57079633" xyz="9.03 5.87 0.4855"/>
+=======
+    <origin rpy="0 0 -1.57079633" xyz="9.26 5.9 0.4855"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="kitchen_link">
     <visual>
@@ -87,11 +114,14 @@
         <box size="0.65 3.12 0.65"/>
       </geometry>
     </collision>
+<<<<<<< HEAD
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.001"/>
       <mass value="50"/>
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </link>
   <joint name="meeting_table_joint" type="fixed">
     <parent link="bsen_room_link"/>
@@ -131,7 +161,11 @@
   <joint name="tv_table_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="tv_table_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 0" xyz="14.25 2.5 0.175"/>
+=======
+    <origin rpy="0 0 0" xyz="11.1 2.9 0.175"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="tv_table_link">
     <visual>
@@ -145,10 +179,87 @@
       </geometry>
     </collision>
   </link>
+<<<<<<< HEAD
   <joint name="sofa_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="sofa_link"/>
     <origin rpy="0 0 0" xyz="11.75 2.6 0.395"/>
+  </joint>
+  <link name="sofa_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/sofa.dae"/>
+=======
+  <joint name="tv_52_link" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="tv_52_link"/>
+    <origin rpy="0 0 -1.57079633" xyz="11.2 2.9 0.7085"/>
+  </joint>
+  <link name="tv_52_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/tv_52.dae"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+<<<<<<< HEAD
+        <box size="0.8 2.35 0.77"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="sofa_table_joint" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="sofa_table_link"/>
+    <origin rpy="0 0 0" xyz="12.7 2.5 0.235"/>
+  </joint>
+  <link name="sofa_table_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/sofa_table.dae"/>
+=======
+        <box size="1.2 0.1 0.7"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="recorder_joint" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="recorder_link"/>
+    <origin rpy="0 0 3.14159265" xyz="11.1 2.9 0.3805"/>
+  </joint>
+  <link name="recorder_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/recorder.dae"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+<<<<<<< HEAD
+        <box size="0.5 1.3 0.43"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="bed_joint" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="bed_link"/>
+    <origin rpy="0 0 0" xyz="10.35 2.7 0.235"/>
+  </joint>
+  <link name="bed_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/paramount_bed.dae"/>
+=======
+        <box size="0.25 0.45 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="sofa_joint" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="sofa_link"/>
+    <origin rpy="0 0 0" xyz="9.1 2.9 0.395"/>
   </joint>
   <link name="sofa_link">
     <visual>
@@ -165,41 +276,33 @@
   <joint name="sofa_table_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="sofa_table_link"/>
-    <origin rpy="0 0 0" xyz="12.7 2.5 0.235"/>
+    <origin rpy="0 0 0" xyz="10.2 2.9 0.235"/>
   </joint>
   <link name="sofa_table_link">
     <visual>
       <geometry>
         <mesh filename="package://environmental_model/model/sofa_table.dae"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <box size="0.5 1.3 0.43"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="bed_joint" type="fixed">
-    <parent link="bsen_room_link"/>
-    <child link="bed_link"/>
-    <origin rpy="0 0 0" xyz="10.35 2.7 0.235"/>
-  </joint>
-  <link name="bed_link">
-    <visual>
-      <geometry>
-        <mesh filename="package://environmental_model/model/paramount_bed.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
+<<<<<<< HEAD
         <box size="1.95 0.82 0.38"/>
+=======
+        <box size="0.5 1.3 0.43"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
       </geometry>
     </collision>
   </link>
   <joint name="carpet_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="carpet_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 0" xyz="12.3 2.6 0.01"/>
+=======
+    <origin rpy="0 0 0" xyz="9.9 2.9 0.01"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="carpet_link">
     <visual>
@@ -216,7 +319,11 @@
   <joint name="drawer_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="drawer_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 -1.57079633" xyz="12.72 5.8 0.303"/>
+=======
+    <origin rpy="0 0 -1.57079633" xyz="12.93 5.8 0.303"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="drawer_link">
     <visual>
@@ -230,10 +337,34 @@
       </geometry>
     </collision>
   </link>
+<<<<<<< HEAD
   <joint name="wardrobe_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="wardrobe_link"/>
     <origin rpy="0 0 -1.57079633" xyz="13.46 5.9 1.3"/>
+=======
+  <joint name="bed_joint" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="bed_link"/>
+    <origin rpy="0 0 0" xyz="12.48 2.3 0.2075"/>
+  </joint>
+  <link name="bed_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/bed.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.2 1.88 0.2"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wardrobe_joint" type="fixed">
+    <parent link="bsen_room_link"/>
+    <child link="wardrobe_link"/>
+    <origin rpy="0 0 -1.57079633" xyz="13.7 5.9 1.3"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="wardrobe_link">
     <visual>
@@ -250,7 +381,11 @@
   <joint name="workdesk_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="workdesk_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 -1.57079633" xyz="11.80 5.9 0.35"/>
+=======
+    <origin rpy="0 0 -1.57079633" xyz="12.05 5.9 0.5"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="workdesk_link">
     <visual>
@@ -267,7 +402,11 @@
   <joint name="tv_multi_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="tv_multi_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 -1.57079633" xyz="14.37 2.2 1.45"/>
+=======
+    <origin rpy="0 0 -1.57079633" xyz="14.37 2.2 1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="tv_multi_link">
     <visual>
@@ -284,7 +423,11 @@
   <joint name="intelingent_shelf_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="intelingent_shelf_link"/>
+<<<<<<< HEAD
     <origin rpy="0 0 0" xyz="11.65 3.970 0.005"/>
+=======
+    <origin rpy="0 0 0" xyz="11.56 3.520 0.445"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="intelingent_shelf_link">
     <visual>
@@ -298,6 +441,7 @@
       </geometry>
     </collision>
   </link>
+<<<<<<< HEAD
   <joint name="refrigerator_joint" type="fixed">
     <parent link="bsen_room_link"/>
     <child link="refrigerator_link"/>
@@ -351,6 +495,10 @@
       </geometry>
     </collision>
   </link>
+=======
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <!-- meeting_chair -->
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <!-- chair -->
   <link name="chair_x_link"/>
   <joint name="chair_x_joint" type="prismatic">
@@ -387,6 +535,7 @@
     </collision>
   </link>
   <!-- refrigerator -->
+<<<<<<< HEAD
   <!--     <link name="refrigerator_x_link"/>
 
     <joint name="refrigerator_x_joint" type="prismatic">
@@ -426,6 +575,43 @@
         <origin xyz="0.0 0.0 0.56" rpy="0 0 0"/>
       </collision>
     </link> -->
+=======
+  <link name="refrigerator_x_link"/>
+  <joint name="refrigerator_x_joint" type="prismatic">
+    <parent link="world_link"/>
+    <child link="refrigerator_x_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <limit effort="1000.0" lower="0." upper="15." velocity="0.5"/>
+  </joint>
+  <link name="refrigerator_y_link"/>
+  <joint name="refrigerator_y_joint" type="prismatic">
+    <parent link="refrigerator_x_link"/>
+    <child link="refrigerator_y_link"/>
+    <origin rpy="0 0 1.57079633" xyz="0 0 0"/>
+    <limit effort="1000.0" lower="0." upper="8." velocity="0.5"/>
+  </joint>
+  <joint name="refrigerator_yaw_joint" type="continuous">
+    <parent link="refrigerator_y_link"/>
+    <child link="refrigerator_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="refrigerator_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://environmental_model/model/refrigerator.dae"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.56"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.6 0.5 1.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.56"/>
+    </collision>
+  </link>
+  <!-- Add meeting_chair -->
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <link name="meeting_chair1_x_link"/>
   <joint name="meeting_chair1_x_joint" type="prismatic">
     <parent link="world_link"/>
@@ -597,6 +783,7 @@
       <origin rpy="0 0 0" xyz="0. 0. 0.3"/>
     </collision>
   </link>
+<<<<<<< HEAD
   <!-- object -->
   <!-- chipstar_red -->
   <link name="chipstar_red_x_link"/>
@@ -877,6 +1064,9 @@
   </gazebo>
   <gazebo reference="r_gripper_thumb_link">
   </gazebo>
+=======
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   <!-- Base, Vehicle -->
   <link name="smartpal5_link"/>
   <joint name="smartpal5_x_joint" type="prismatic">
@@ -1013,7 +1203,11 @@
     <child link="l_arm_j1_link"/>
     <origin rpy="3.14159 0 0" xyz="-0.025 -0.480 0.200"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-0.76" upper="3.12" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.7679" upper="3.1066" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j1_link">
     <visual>
@@ -1039,8 +1233,13 @@
     <parent link="l_arm_j1_link"/>
     <child link="l_arm_j2_link"/>
     <origin rpy="1.57075 3.14159 1.57075" xyz="0 0 0"/>
+<<<<<<< HEAD
     <axis xyz="0 0 -1"/>
     <limit effort="100.0" lower="-1.8" upper="0.21" velocity="1.0"/>
+=======
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-0.2443" upper="1.9024" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j2_link">
     <visual>
@@ -1066,8 +1265,13 @@
     <parent link="l_arm_j2_link"/>
     <child link="l_arm_j3_link"/>
     <origin rpy="1.57075 1.57075 1.57075" xyz="0 0 0"/>
+<<<<<<< HEAD
     <axis xyz="0 0 -1"/>
     <limit effort="100.0" lower="-2.0" upper="2.0" velocity="1.0"/>
+=======
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-2.0769" upper="2.0769" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j3_link">
     <visual>
@@ -1094,7 +1298,11 @@
     <child link="l_arm_j4_link"/>
     <origin rpy="-1.57075 0 3.14159" xyz="-0.02 0.0 0.25"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-0.0" upper="2.2" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.0174" upper="2.2514" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j4_link">
     <visual>
@@ -1120,8 +1328,13 @@
     <parent link="l_arm_j4_link"/>
     <child link="l_arm_j5_link"/>
     <origin rpy="1.57075 0 0" xyz="-0.02 0.0 0.0"/>
+<<<<<<< HEAD
     <axis xyz="0 0 -1"/>
     <limit effort="100.0" lower="-2.0" upper="2.0" velocity="1.0"/>
+=======
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-2.0769" upper="2.0769" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j5_link">
     <visual>
@@ -1148,7 +1361,11 @@
     <child link="l_arm_j6_link"/>
     <origin rpy="-1.57075 1.57075 0" xyz="0.0 0.0 0.28"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-0.25" upper="0.75" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.2617" upper="0.7504" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j6_link">
     <visual>
@@ -1175,7 +1392,11 @@
     <child link="l_arm_j7_link"/>
     <origin rpy="1.57075 3.14159 0" xyz="0.0 0.0 0"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-1.5" upper="0.8" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="0" upper="0.5" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="l_arm_j7_link">
     <visual>
@@ -1276,7 +1497,11 @@
     <child link="r_arm_j1_link"/>
     <origin rpy="3.14159 0 0" xyz="-0.025 -0.480 -0.200"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-0.76" upper="3.12" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.7679" upper="3.1066" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j1_link">
     <visual>
@@ -1303,7 +1528,11 @@
     <child link="r_arm_j2_link"/>
     <origin rpy="-1.57075 0 -1.57075" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-1.8" upper="0.21" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-1.9024" upper="0.2443" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j2_link">
     <visual>
@@ -1330,7 +1559,11 @@
     <child link="r_arm_j3_link"/>
     <origin rpy="1.57075 1.57075 1.57075" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-2.0" upper="2.0" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-2.0769" upper="2.0769" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j3_link">
     <visual>
@@ -1357,7 +1590,11 @@
     <child link="r_arm_j4_link"/>
     <origin rpy="-1.57075 0 3.14159" xyz="-0.02 0.0 0.25"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-0.0" upper="2.2" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.0174" upper="2.2514" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j4_link">
     <visual>
@@ -1384,7 +1621,11 @@
     <child link="r_arm_j5_link"/>
     <origin rpy="1.57075 0 0" xyz="-0.02 0.0 0.0"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-2.0" upper="2.0" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-2.0769" upper="2.0769" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j5_link">
     <visual>
@@ -1411,7 +1652,11 @@
     <child link="r_arm_j6_link"/>
     <origin rpy="-1.57075 1.57075 0" xyz="0.0 0.0 0.28"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-0.25" upper="0.75" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.2617" upper="0.7504" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j6_link">
     <visual>
@@ -1438,7 +1683,11 @@
     <child link="r_arm_j7_link"/>
     <origin rpy="1.57075 3.14159 0" xyz="0.0 0.0 0"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-1.5" upper="0.8" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-1.0122" upper="1.0" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_arm_j7_link">
     <visual>
@@ -1511,7 +1760,11 @@
     <child link="r_gripper_thumb_link"/>
     <origin rpy="0 0 -1.57075" xyz="0.042 0.027 0.0"/>
     <axis xyz="0 0 1"/>
+<<<<<<< HEAD
     <limit effort="100.0" lower="-1.0122" upper="0.1396" velocity="1.0"/>
+=======
+    <limit effort="100.0" lower="-0.1396" upper="1.0122" velocity="1.0"/>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   </joint>
   <link name="r_gripper_thumb_link">
     <visual>
@@ -1533,6 +1786,7 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+<<<<<<< HEAD
   <!-- <xacro:macro name="wheelchair"> -->
   <!-- wheelchair -->
   <link name="wheelchair_x_link"/>
@@ -1572,3 +1826,6 @@
   <!-- </xacro:macro> -->
 </robot>
 
+=======
+</robot>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

@@ -9,12 +9,19 @@ from tms_msg_ss.msg import vicon_data
 
 
 class OffsetManager:
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     def __init__(self, index):
         self.ip_index = index
         self.xml_file = path.normpath(
             path.join(path.dirname(path.abspath(__file__)),
+<<<<<<< HEAD
                       '../data/offset' + str(self.ip_index + 1) + '.xml')
+=======
+                      '../data/offset'+str(self.ip_index+1)+'.xml')
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         )
         self.translation = [0.0, 0.0, 0.0]  # x,y,z
         self.rotation = [0.0, 0.0, 0.0, 1.0]  # x,y,z,w
@@ -59,7 +66,11 @@ class OffsetManager:
             file_handler.close()
 
     def run(self):
+<<<<<<< HEAD
         rospy.init_node('get_offset' + str(self.ip_index + 1))
+=======
+        rospy.init_node('get_offset'+str(self.ip_index+1))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         self.sub_offset = rospy.Subscriber('vicon_stream/output',
                                            vicon_data, self.__getFromVicon)
         rospy.spin()

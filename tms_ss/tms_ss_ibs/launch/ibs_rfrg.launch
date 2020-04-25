@@ -1,5 +1,6 @@
 <launch>
 	<node pkg="tms_ss_ibs" type="ibs.py" name="ibs_rfrg" output="screen">
+<<<<<<< HEAD
 		<param name="PORT_TR"  value="/dev/ttyUSB0" />
 		<param name="PORT_LC0" value="/dev/ttyACM0" />
 		<param name="frame_id" value="refrigerator_link" />
@@ -10,5 +11,15 @@
 		<param name="offset_z"		   value="0.74" />
 		<rosparam param="loadcell_points/x">[0.0, 0.00, -0.31, -0.31]</rosparam>
 		<rosparam param="loadcell_points/y">[0.0, 0.34, 0.000, 0.34]</rosparam>
+=======
+		<param name="PORT_TR"  value="/dev/ttyUSB1" />
+		<param name="PORT_LC0" value="/dev/ttyACM1" />
+		<param name="frame_id" value="/irs" />
+		<param name="idSensor" value="3018" />
+		<param name="idPlace"  value="2009" />
+		<param name="z"		   value="800.0" />
+		<rosparam param="loadcell_points/x">[70.0, 380.0, 70.0, 380.0]</rosparam>
+		<rosparam param="loadcell_points/y">[70.0, 70.0, 410.0, 410.0]</rosparam>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 	</node>
 </launch>

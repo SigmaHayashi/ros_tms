@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+<<<<<<< HEAD
 '''
 DBに保存されているみまもる君の座標を表示
 '''
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 import rospy
 import tms_msg_db.srv
@@ -30,7 +33,11 @@ def main():
             if 0 < len(res.tmsdb):
                 print datetime.datetime.now(),
                 print"x:%4f  y:%4f z:%4f" % (res.tmsdb[0].x, res.tmsdb[0].y, res.tmsdb[0].ry)
+<<<<<<< HEAD
         except rospy.ServiceException as e:
+=======
+        except rospy.ServiceException, e:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             print ("Service call failed: %s" % e)
         r.sleep()
     pass

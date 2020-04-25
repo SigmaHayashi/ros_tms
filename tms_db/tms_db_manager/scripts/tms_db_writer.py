@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 import rospy
 import genpy
@@ -6,6 +7,14 @@ import pymongo  # https://api.mongodb.org/python/2.6.3/
 import json
 import copy
 import sys
+=======
+# -*- coding: utf-8 -*- 
+import rospy
+import genpy
+import pymongo # https://api.mongodb.org/python/2.6.3/
+import json
+import copy
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 from bson import json_util
 from bson.objectid import ObjectId
 from datetime import *
@@ -21,6 +30,7 @@ class TmsDbWriter():
         rospy.on_shutdown(self.shutdown)
         db_host = 'localhost'
         db_port = 27017
+<<<<<<< HEAD
         self.is_connected = db_util.check_connection(db_host, db_port)
         if not self.is_connected:
             raise Exception("Problem of connection")
@@ -57,6 +67,46 @@ class TmsDbWriter():
         #         doc,
         #         upsert=True
         #     )
+=======
+        self.is_connected = db_util.check_connection(db_host, db_port);
+        if not self.is_connected:
+            raise Exception("Problem of connection")
+        rospy.Subscriber("tms_db_data", TmsdbStamped, self.dbWriteCallback)
+        self.writeInitData();
+
+    def dbWriteCallback(self, msg):
+        # rospy.loginfo("writing the one msg")
+        for tmsdb in msg.tmsdb:
+            try:
+                doc = db_util.msg_to_document(tmsdb)
+                # store into db of history
+                # rospy.loginfo("store into db of history")
+                db.history.insert(doc)
+                # store into data collection
+                # print(doc['name'])
+                result = db.now.find({"name": doc['name']})
+                # print(result.count())
+                if result.count() >= 1:
+                    del doc['_id']
+                result = db.now.update(
+                    {"name": doc['name']},
+                    doc,
+                    upsert=True
+                )
+                # print(result)
+            except rospy.ServiceException, e:
+                print "ServiceException: %s"%e
+
+    def writeInitData(self):
+        cursor = db.default.find({"$or":[{"type": "furniture"}, {"type": "robot"}]})
+        for doc in cursor:
+            # print(doc['name'])
+            result = db.now.update(
+                {"name": doc['name']},
+                doc,
+                upsert=True
+            )
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             # print(result)
         rospy.loginfo("Writed the init data using collection of default.")
 

@@ -19,4 +19,8 @@ void perf_init(char *fname) {
 }
 #endif
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* __LWIP_ARCH_PERF_H__ */

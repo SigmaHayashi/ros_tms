@@ -16,7 +16,11 @@ catkin_package(
    #INCLUDE_DIRS include
    #LIBRARIES smartpal_control
    CATKIN_DEPENDS roscpp tf geometry_msgs nav_msgs message_runtime
+<<<<<<< HEAD
    #DEPENDS system_lib
+=======
+   DEPENDS system_lib
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 ###########
@@ -54,7 +58,11 @@ add_executable(smartpal5_control
     src/idl/sp5/LumbarExtAxesSK.cc
 )
 
+<<<<<<< HEAD
 add_dependencies(smartpal5_control tms_msg_rc_gencpp)
+=======
+add_dependencies(smartpal5_control DEPENDS tms_msg_rc_gencpp)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 target_link_libraries(smartpal5_control ${catkin_LIBRARIES} omniORB4 omnithread)
 

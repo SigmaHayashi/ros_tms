@@ -24,7 +24,11 @@ catkin_package(
 # INCLUDE_DIRS include
   LIBRARIES tms_rp_voronoi_map
   CATKIN_DEPENDS roscpp std_msgs visualization_msgs tms_msg_db tms_msg_rp
+<<<<<<< HEAD
   #DEPENDS system_lib eigen
+=======
+  DEPENDS system_lib eigen
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 ###########

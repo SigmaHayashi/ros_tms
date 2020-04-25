@@ -6,7 +6,11 @@
   <version>0.0.1</version>
   <description>The kobuki_navigation package</description>
 
+<<<<<<< HEAD
   <maintainer email="kawamura@ait.kyushu-u.ac.jp">Akihiro Kawamura</maintainer>
+=======
+  <maintainer email="sakamoto@irvs.ait.kyushu-u.ac.jp">Junya Sakamoto</maintainer>
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   <url type="website">http://oroca.org/</url>
   <url type="git">https://github.com/oroca/oroca-ros-pkg</url>

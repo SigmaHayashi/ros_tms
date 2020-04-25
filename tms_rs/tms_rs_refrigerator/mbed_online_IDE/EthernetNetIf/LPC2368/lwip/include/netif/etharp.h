@@ -2,9 +2,15 @@
  * Copyright (c) 2001-2003 Swedish Institute of Computer Science.
  * Copyright (c) 2003-2004 Leon Woestenberg <leon.woestenberg@axon.tv>
  * Copyright (c) 2003-2004 Axon Digital Design B.V., The Netherlands.
+<<<<<<< HEAD
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * All rights reserved. 
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -13,6 +19,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -28,6 +35,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
@@ -49,6 +73,7 @@ extern "C" {
 #endif
 
 #ifndef ETHARP_HWADDR_LEN
+<<<<<<< HEAD
 #define ETHARP_HWADDR_LEN 6
 #endif
 
@@ -58,10 +83,21 @@ extern "C" {
 PACK_STRUCT_BEGIN
 struct eth_addr
 {
+=======
+#define ETHARP_HWADDR_LEN     6
+#endif
+
+#ifdef PACK_STRUCT_USE_INCLUDES
+#  include "arch/bpstruct.h"
+#endif
+PACK_STRUCT_BEGIN
+struct eth_addr {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   PACK_STRUCT_FIELD(u8_t addr[ETHARP_HWADDR_LEN]);
 } PACK_STRUCT_STRUCT;
 PACK_STRUCT_END
 #ifdef PACK_STRUCT_USE_INCLUDES
+<<<<<<< HEAD
 #include "arch/epstruct.h"
 #endif
 
@@ -72,6 +108,17 @@ PACK_STRUCT_BEGIN
 /* Ethernet header */
 struct eth_hdr
 {
+=======
+#  include "arch/epstruct.h"
+#endif
+
+#ifdef PACK_STRUCT_USE_INCLUDES
+#  include "arch/bpstruct.h"
+#endif
+PACK_STRUCT_BEGIN
+/* Ethernet header */
+struct eth_hdr {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #if ETH_PAD_SIZE
   PACK_STRUCT_FIELD(u8_t padding[ETH_PAD_SIZE]);
 #endif
@@ -81,7 +128,11 @@ struct eth_hdr
 } PACK_STRUCT_STRUCT;
 PACK_STRUCT_END
 #ifdef PACK_STRUCT_USE_INCLUDES
+<<<<<<< HEAD
 #include "arch/epstruct.h"
+=======
+#  include "arch/epstruct.h"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #define SIZEOF_ETH_HDR (14 + ETH_PAD_SIZE)
@@ -89,20 +140,32 @@ PACK_STRUCT_END
 #if ETHARP_SUPPORT_VLAN
 
 #ifdef PACK_STRUCT_USE_INCLUDES
+<<<<<<< HEAD
 #include "arch/bpstruct.h"
+=======
+#  include "arch/bpstruct.h"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 PACK_STRUCT_BEGIN
 /* VLAN header inserted between ethernet header and payload
  * if 'type' in ethernet header is ETHTYPE_VLAN.
  * See IEEE802.Q */
+<<<<<<< HEAD
 struct eth_vlan_hdr
 {
+=======
+struct eth_vlan_hdr {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   PACK_STRUCT_FIELD(u16_t tpid);
   PACK_STRUCT_FIELD(u16_t prio_vid);
 } PACK_STRUCT_STRUCT;
 PACK_STRUCT_END
 #ifdef PACK_STRUCT_USE_INCLUDES
+<<<<<<< HEAD
 #include "arch/epstruct.h"
+=======
+#  include "arch/epstruct.h"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #define SIZEOF_VLAN_HDR 4
@@ -111,6 +174,7 @@ PACK_STRUCT_END
 #endif /* ETHARP_SUPPORT_VLAN */
 
 #ifdef PACK_STRUCT_USE_INCLUDES
+<<<<<<< HEAD
 #include "arch/bpstruct.h"
 #endif
 PACK_STRUCT_BEGIN
@@ -121,6 +185,17 @@ struct etharp_hdr
   PACK_STRUCT_FIELD(u16_t proto);
   PACK_STRUCT_FIELD(u8_t hwlen);
   PACK_STRUCT_FIELD(u8_t protolen);
+=======
+#  include "arch/bpstruct.h"
+#endif
+PACK_STRUCT_BEGIN
+/* the ARP message, see RFC 826 ("Packet format") */
+struct etharp_hdr {
+  PACK_STRUCT_FIELD(u16_t hwtype);
+  PACK_STRUCT_FIELD(u16_t proto);
+  PACK_STRUCT_FIELD(u8_t  hwlen);
+  PACK_STRUCT_FIELD(u8_t  protolen);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   PACK_STRUCT_FIELD(u16_t opcode);
   PACK_STRUCT_FIELD(struct eth_addr shwaddr);
   PACK_STRUCT_FIELD(struct ip_addr2 sipaddr);
@@ -129,7 +204,11 @@ struct etharp_hdr
 } PACK_STRUCT_STRUCT;
 PACK_STRUCT_END
 #ifdef PACK_STRUCT_USE_INCLUDES
+<<<<<<< HEAD
 #include "arch/epstruct.h"
+=======
+#  include "arch/epstruct.h"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #define SIZEOF_ETHARP_HDR 28
@@ -138,29 +217,49 @@ PACK_STRUCT_END
 /* 5 seconds period */
 #define ARP_TMR_INTERVAL 5000
 
+<<<<<<< HEAD
 #define ETHTYPE_ARP 0x0806
 #define ETHTYPE_IP 0x0800
 #define ETHTYPE_VLAN 0x8100
 #define ETHTYPE_PPPOEDISC 0x8863 /* PPP Over Ethernet Discovery Stage */
 #define ETHTYPE_PPPOE 0x8864     /* PPP Over Ethernet Session Stage */
+=======
+#define ETHTYPE_ARP       0x0806
+#define ETHTYPE_IP        0x0800
+#define ETHTYPE_VLAN      0x8100
+#define ETHTYPE_PPPOEDISC 0x8863  /* PPP Over Ethernet Discovery Stage */
+#define ETHTYPE_PPPOE     0x8864  /* PPP Over Ethernet Session Stage */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /* MEMCPY-like macro to copy to/from struct eth_addr's that are local variables
  * or known to be 32-bit aligned within the protocol header. */
 #ifndef ETHADDR32_COPY
+<<<<<<< HEAD
 #define ETHADDR32_COPY(src, dst) SMEMCPY(src, dst, ETHARP_HWADDR_LEN)
+=======
+#define ETHADDR32_COPY(src, dst)  SMEMCPY(src, dst, ETHARP_HWADDR_LEN)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 /* MEMCPY-like macro to copy to/from struct eth_addr's that are no local
  * variables and known to be 16-bit aligned within the protocol header. */
 #ifndef ETHADDR16_COPY
+<<<<<<< HEAD
 #define ETHADDR16_COPY(src, dst) SMEMCPY(src, dst, ETHARP_HWADDR_LEN)
+=======
+#define ETHADDR16_COPY(src, dst)  SMEMCPY(src, dst, ETHARP_HWADDR_LEN)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif
 
 #if LWIP_ARP /* don't build if not configured for use in lwipopts.h */
 
 /* ARP message types (opcodes) */
 #define ARP_REQUEST 1
+<<<<<<< HEAD
 #define ARP_REPLY 2
+=======
+#define ARP_REPLY   2
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /* Define this to 1 and define LWIP_ARP_FILTER_NETIF_FN(pbuf, netif, type)
  * to a filter function that returns the correct netif when using multiple
@@ -176,8 +275,12 @@ PACK_STRUCT_END
 /* struct for queueing outgoing packets for unknown address
   * defined here to be accessed by memp.h
   */
+<<<<<<< HEAD
 struct etharp_q_entry
 {
+=======
+struct etharp_q_entry {
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   struct etharp_q_entry *next;
   struct pbuf *p;
 };
@@ -185,7 +288,12 @@ struct etharp_q_entry
 
 #define etharp_init() /* Compatibility define, not init needed. */
 void etharp_tmr(void);
+<<<<<<< HEAD
 s8_t etharp_find_addr(struct netif *netif, ip_addr_t *ipaddr, struct eth_addr **eth_ret, ip_addr_t **ip_ret);
+=======
+s8_t etharp_find_addr(struct netif *netif, ip_addr_t *ipaddr,
+         struct eth_addr **eth_ret, ip_addr_t **ip_ret);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 err_t etharp_output(struct netif *netif, struct pbuf *q, ip_addr_t *ipaddr);
 err_t etharp_query(struct netif *netif, ip_addr_t *ipaddr, struct pbuf *q);
 err_t etharp_request(struct netif *netif, ip_addr_t *ipaddr);
@@ -201,9 +309,17 @@ err_t etharp_remove_static_entry(ip_addr_t *ipaddr);
 #endif /* ETHARP_SUPPORT_STATIC_ENTRIES */
 
 #if LWIP_AUTOIP
+<<<<<<< HEAD
 err_t etharp_raw(struct netif *netif, const struct eth_addr *ethsrc_addr, const struct eth_addr *ethdst_addr,
                  const struct eth_addr *hwsrc_addr, const ip_addr_t *ipsrc_addr, const struct eth_addr *hwdst_addr,
                  const ip_addr_t *ipdst_addr, const u16_t opcode);
+=======
+err_t etharp_raw(struct netif *netif, const struct eth_addr *ethsrc_addr,
+                 const struct eth_addr *ethdst_addr,
+                 const struct eth_addr *hwsrc_addr, const ip_addr_t *ipsrc_addr,
+                 const struct eth_addr *hwdst_addr, const ip_addr_t *ipdst_addr,
+                 const u16_t opcode);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #endif /* LWIP_AUTOIP */
 
 #endif /* LWIP_ARP */

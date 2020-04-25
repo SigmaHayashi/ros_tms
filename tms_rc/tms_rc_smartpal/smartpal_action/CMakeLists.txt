@@ -15,7 +15,11 @@ catkin_package(
   #INCLUDE_DIRS include
   LIBRARIES tms_rc_smartpal_action
   CATKIN_DEPENDS roscpp std_msgs message_runtime
+<<<<<<< HEAD
   #DEPENDS eigen
+=======
+  DEPENDS eigen
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 
@@ -35,9 +39,15 @@ set(libname CnoidSmartpalActionPlugin)
 ## Qt specific configuration ##
 ###############################
 
+<<<<<<< HEAD
 find_package(Qt5Core REQUIRED)
 set(QT_USE_QTOPENGL TRUE)
 #include(${QT_USE_FILE})
+=======
+find_package(Qt4 REQUIRED)
+set(QT_USE_QTOPENGL TRUE)
+include(${QT_USE_FILE})
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 include_directories(${QT_INCLUDE_DIR} ${QT_OPENGL_INCLUDE_DIR})
 add_definitions(-DQT_NO_KEYWORDS)
 
@@ -86,6 +96,14 @@ add_definitions(-DQT_NO_KEYWORDS)
 
 # set_target_properties(
 #   ${libname}
+<<<<<<< HEAD
 #   PROPERTIES LIBRARY_OUTPUT_DIRECTORY
 #   ${ChoreonoidLibPath}
 # )
+=======
+#   PROPERTIES LIBRARY_OUTPUT_DIRECTORY 
+#   ${ChoreonoidLibPath}
+# )
+
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

@@ -2,6 +2,7 @@
 #define LASER_H
 
 #ifndef M_PI
+<<<<<<< HEAD
 #define M_PI 3.14159265358979323846
 #endif
 
@@ -9,6 +10,15 @@
 #define MIN_DIFF_DIST 0.50
 #define MIN_OBJ_PROB 0.01
 #define N_RING 100
+=======
+#define M_PI  3.14159265358979323846
+#endif
+
+#define MAX_LRF_RANGE  55.00
+#define MIN_DIFF_DIST   0.50
+#define MIN_OBJ_PROB    0.01
+#define	N_RING        100
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 typedef struct
 {
@@ -46,12 +56,21 @@ public:
   bool m_bNodeActive[m_cnMaxConnect];
   int m_nConnectNum;
 
+<<<<<<< HEAD
   std::vector< std::vector< double > > m_LRFData;
   std::vector< std::vector< double > > m_BackLRFData;
   std::vector< std::vector< range_t > > m_DiffLRFData;
   std::vector< std::vector< pos_t > > m_LRFPoints;
   std::vector< std::vector< cluster_t > > m_LRFClsData;
   std::vector< std::vector< pos_t > > m_LRFClsPoints;
+=======
+  std::vector<std::vector<double> > m_LRFData;
+  std::vector<std::vector<double> > m_BackLRFData;
+  std::vector<std::vector<range_t> > m_DiffLRFData;
+  std::vector<std::vector<pos_t> > m_LRFPoints;
+  std::vector<std::vector<cluster_t> > m_LRFClsData;
+  std::vector<std::vector<pos_t> > m_LRFClsPoints;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
   CvMat* m_LRFPos[m_cnMaxConnect][m_cnMaxDataSizeLRF];
   CvMat* m_LRFClsPos[m_cnMaxConnect][m_cnMaxDataSizeLRF];
@@ -70,6 +89,7 @@ public:
   int m_Target_cnt[m_cnMaxTrackingObject];
 
   int m_TargetNum;
+<<<<<<< HEAD
   double m_Grid[(STAGE_X / GRID_DISTANCE) * (STAGE_Y / GRID_DISTANCE)];
 
   int m_n_ring;
@@ -78,6 +98,17 @@ public:
   std::vector< std::vector< double > > m_BackLRFDataVar;
 
 public:
+=======
+  double m_Grid[(STAGE_X/GRID_DISTANCE)*(STAGE_Y/GRID_DISTANCE)];
+
+  int m_n_ring;
+  std::vector<std::vector<std::vector<double> > > m_BackLRFDataRing;
+  std::vector<std::vector<double> > m_BackLRFDataAve;
+  std::vector<std::vector<double> > m_BackLRFDataVar;
+
+public:
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   bool Init();
 
   int GetLRFParam();
@@ -96,4 +127,8 @@ public:
   int m_ring;
 };
 
+<<<<<<< HEAD
 #endif  // LASER_H
+=======
+#endif // LASER_H
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

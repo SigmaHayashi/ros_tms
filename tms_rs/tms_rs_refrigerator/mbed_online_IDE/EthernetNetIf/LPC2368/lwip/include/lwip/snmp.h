@@ -2,8 +2,13 @@
  * Copyright (c) 2001, 2002 Leon Woestenberg <leon.woestenberg@axon.tv>
  * Copyright (c) 2001, 2002 Axon Digital Design B.V., The Netherlands.
  * All rights reserved.
+<<<<<<< HEAD
  *
  * Redistribution and use in source and binary forms, with or without modification,
+=======
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice,
@@ -12,6 +17,7 @@
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  * 3. The name of the author may not be used to endorse or promote products
+<<<<<<< HEAD
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -27,6 +33,23 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  *
+=======
+ *    derived from this software without specific prior written permission. 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED 
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
+ * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+ * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * OF SUCH DAMAGE.
+ *
+ * This file is part of the lwIP TCP/IP stack.
+ * 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
  * Author: Leon Woestenberg <leon.woestenberg@axon.tv>
  *
  */
@@ -47,9 +70,14 @@ struct netif;
 /**
  * @see RFC1213, "MIB-II, 6. Definitions"
  */
+<<<<<<< HEAD
 enum snmp_ifType
 {
   snmp_ifType_other = 1, /* none of the following */
+=======
+enum snmp_ifType {
+  snmp_ifType_other=1,                /* none of the following */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   snmp_ifType_regular1822,
   snmp_ifType_hdh1822,
   snmp_ifType_ddn_x25,
@@ -66,6 +94,7 @@ enum snmp_ifType
   snmp_ifType_fddi,
   snmp_ifType_lapb,
   snmp_ifType_sdlc,
+<<<<<<< HEAD
   snmp_ifType_ds1, /* T-1 */
   snmp_ifType_e1,  /* european equiv. of T-1 */
   snmp_ifType_basicISDN,
@@ -80,6 +109,22 @@ enum snmp_ifType
   snmp_ifType_ultra, /* ULTRA technologies */
   snmp_ifType_ds3,   /* T-3 */
   snmp_ifType_sip,   /* SMDS */
+=======
+  snmp_ifType_ds1,                    /* T-1 */
+  snmp_ifType_e1,                     /* european equiv. of T-1 */
+  snmp_ifType_basicISDN,
+  snmp_ifType_primaryISDN,            /* proprietary serial */
+  snmp_ifType_propPointToPointSerial,
+  snmp_ifType_ppp,
+  snmp_ifType_softwareLoopback,
+  snmp_ifType_eon,                    /* CLNP over IP [11] */
+  snmp_ifType_ethernet_3Mbit,
+  snmp_ifType_nsip,                   /* XNS over IP */
+  snmp_ifType_slip,                   /* generic SLIP */
+  snmp_ifType_ultra,                  /* ULTRA technologies */
+  snmp_ifType_ds3,                    /* T-3 */
+  snmp_ifType_sip,                    /* SMDS */
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   snmp_ifType_frame_relay
 };
 
@@ -99,7 +144,11 @@ struct snmp_obj_id
 };
 
 /* system */
+<<<<<<< HEAD
 void snmp_set_sysdesr(u8_t *str, u8_t *len);
+=======
+void snmp_set_sysdesr(u8_t* str, u8_t* len);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 void snmp_set_sysobjid(struct snmp_obj_id *oid);
 void snmp_get_sysobjid_ptr(struct snmp_obj_id **oid);
 void snmp_inc_sysuptime(void);
@@ -110,7 +159,11 @@ void snmp_set_sysname(u8_t *ocstr, u8_t *ocstrlen);
 void snmp_set_syslocation(u8_t *ocstr, u8_t *ocstrlen);
 
 /* network interface */
+<<<<<<< HEAD
 void snmp_add_ifinoctets(struct netif *ni, u32_t value);
+=======
+void snmp_add_ifinoctets(struct netif *ni, u32_t value); 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 void snmp_inc_ifinucastpkts(struct netif *ni);
 void snmp_inc_ifinnucastpkts(struct netif *ni);
 void snmp_inc_ifindiscards(struct netif *ni);
@@ -168,7 +221,11 @@ void snmp_inc_icmpoutdestunreachs(void);
 void snmp_inc_icmpouttimeexcds(void);
 void snmp_inc_icmpoutparmprobs(void);
 void snmp_inc_icmpoutsrcquenchs(void);
+<<<<<<< HEAD
 void snmp_inc_icmpoutredirects(void);
+=======
+void snmp_inc_icmpoutredirects(void); 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 void snmp_inc_icmpoutechos(void);
 void snmp_inc_icmpoutechoreps(void);
 void snmp_inc_icmpouttimestamps(void);
@@ -233,11 +290,16 @@ void snmp_get_snmpenableauthentraps(u8_t *value);
 
 /* system */
 #define snmp_set_sysdesr(str, len)
+<<<<<<< HEAD
 #define snmp_set_sysobjid(oid) ;
+=======
+#define snmp_set_sysobjid(oid);
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define snmp_get_sysobjid_ptr(oid)
 #define snmp_inc_sysuptime()
 #define snmp_add_sysuptime(value)
 #define snmp_get_sysuptime(value)
+<<<<<<< HEAD
 #define snmp_set_syscontact(ocstr, ocstrlen) ;
 #define snmp_set_sysname(ocstr, ocstrlen) ;
 #define snmp_set_syslocation(ocstr, ocstrlen) ;
@@ -248,6 +310,18 @@ void snmp_get_snmpenableauthentraps(u8_t *value);
 #define snmp_inc_ifinnucastpkts(ni)
 #define snmp_inc_ifindiscards(ni)
 #define snmp_add_ifoutoctets(ni, value)
+=======
+#define snmp_set_syscontact(ocstr, ocstrlen);
+#define snmp_set_sysname(ocstr, ocstrlen);
+#define snmp_set_syslocation(ocstr, ocstrlen);
+
+/* network interface */
+#define snmp_add_ifinoctets(ni,value) 
+#define snmp_inc_ifinucastpkts(ni)
+#define snmp_inc_ifinnucastpkts(ni)
+#define snmp_inc_ifindiscards(ni)
+#define snmp_add_ifoutoctets(ni,value)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define snmp_inc_ifoutucastpkts(ni)
 #define snmp_inc_ifoutnucastpkts(ni)
 #define snmp_inc_ifoutdiscards(ni)
@@ -255,8 +329,13 @@ void snmp_get_snmpenableauthentraps(u8_t *value);
 #define snmp_dec_iflist()
 
 /* ARP */
+<<<<<<< HEAD
 #define snmp_insert_arpidx_tree(ni, ip)
 #define snmp_delete_arpidx_tree(ni, ip)
+=======
+#define snmp_insert_arpidx_tree(ni,ip)
+#define snmp_delete_arpidx_tree(ni,ip)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 /* IP */
 #define snmp_inc_ipinreceives()
@@ -283,6 +362,7 @@ void snmp_get_snmpenableauthentraps(u8_t *value);
 
 /* ICMP */
 #define snmp_inc_icmpinmsgs()
+<<<<<<< HEAD
 #define snmp_inc_icmpinerrors()
 #define snmp_inc_icmpindestunreachs()
 #define snmp_inc_icmpintimeexcds()
@@ -292,17 +372,37 @@ void snmp_get_snmpenableauthentraps(u8_t *value);
 #define snmp_inc_icmpinechos()
 #define snmp_inc_icmpinechoreps()
 #define snmp_inc_icmpintimestamps()
+=======
+#define snmp_inc_icmpinerrors() 
+#define snmp_inc_icmpindestunreachs() 
+#define snmp_inc_icmpintimeexcds()
+#define snmp_inc_icmpinparmprobs() 
+#define snmp_inc_icmpinsrcquenchs() 
+#define snmp_inc_icmpinredirects() 
+#define snmp_inc_icmpinechos() 
+#define snmp_inc_icmpinechoreps()
+#define snmp_inc_icmpintimestamps() 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define snmp_inc_icmpintimestampreps()
 #define snmp_inc_icmpinaddrmasks()
 #define snmp_inc_icmpinaddrmaskreps()
 #define snmp_inc_icmpoutmsgs()
 #define snmp_inc_icmpouterrors()
+<<<<<<< HEAD
 #define snmp_inc_icmpoutdestunreachs()
 #define snmp_inc_icmpouttimeexcds()
 #define snmp_inc_icmpoutparmprobs()
 #define snmp_inc_icmpoutsrcquenchs()
 #define snmp_inc_icmpoutredirects()
 #define snmp_inc_icmpoutechos()
+=======
+#define snmp_inc_icmpoutdestunreachs() 
+#define snmp_inc_icmpouttimeexcds() 
+#define snmp_inc_icmpoutparmprobs()
+#define snmp_inc_icmpoutsrcquenchs()
+#define snmp_inc_icmpoutredirects() 
+#define snmp_inc_icmpoutechos() 
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 #define snmp_inc_icmpoutechoreps()
 #define snmp_inc_icmpouttimestamps()
 #define snmp_inc_icmpouttimestampreps()

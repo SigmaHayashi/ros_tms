@@ -16,6 +16,7 @@
 //------------------------------------------------------------------------------
 class BoxStatePublisher : public robot_state_publisher::RobotStatePublisher
 {
+<<<<<<< HEAD
 public:
   tf::TransformBroadcaster broadcaster;
 
@@ -48,6 +49,44 @@ BoxStatePublisher::BoxStatePublisher(const KDL::Tree& tree, std::string tf_prefi
   data_sub = nh.subscribe("vicon_stream/output", 10, &BoxStatePublisher::callback, this);
   transform_ = tf::StampedTransform(tf::Transform(tf::Quaternion(0.0, 0.0, 0.0, 1.0), tf::Vector3(0.0, 0.0, 0.0)),
                                     ros::Time::now(), "world_link", tf::resolve(tf_prefix_, "Box"));
+=======
+  public:
+    tf::TransformBroadcaster broadcaster;
+
+    BoxStatePublisher(const KDL::Tree& tree, std::string tf_prefix="");
+    ~BoxStatePublisher();
+
+    void run();
+    void send(ros::Time time);
+
+  private:
+    ros::NodeHandle nh;
+    ros::Subscriber data_sub;
+    ros::Publisher state_pub;
+    sensor_msgs::JointState state_data;
+    tf::StampedTransform transform_;
+
+    std::string tf_prefix_;
+    bool bFind;
+
+    geometry_msgs::Point pos;
+    geometry_msgs::Quaternion rot;
+
+    void callback(const tms_msg_ss::vicon_data::ConstPtr& msg);
+};
+
+//------------------------------------------------------------------------------
+BoxStatePublisher::BoxStatePublisher(const KDL::Tree& tree, std::string tf_prefix) :
+  robot_state_publisher::RobotStatePublisher(tree),
+  bFind(false),
+  tf_prefix_(tf_prefix)
+{
+  data_sub = nh.subscribe("vicon_stream/output", 10,
+      &BoxStatePublisher::callback, this);
+  transform_ = tf::StampedTransform(
+      tf::Transform(tf::Quaternion(0.0,0.0,0.0,1.0), tf::Vector3(0.0,0.0,0.0)),
+      ros::Time::now(), "world_link", tf::resolve(tf_prefix_,"Box"));
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   return;
 }
 
@@ -60,7 +99,11 @@ BoxStatePublisher::~BoxStatePublisher()
 //------------------------------------------------------------------------------
 void BoxStatePublisher::callback(const tms_msg_ss::vicon_data::ConstPtr& msg)
 {
+<<<<<<< HEAD
   if (msg->subjectName == tf::resolve(tf_prefix_, "checker_box"))
+=======
+  if (msg->subjectName == tf::resolve(tf_prefix_,"checker_box"))
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   {
     pos = msg->translation;
     rot = msg->rotation;
@@ -82,7 +125,11 @@ void BoxStatePublisher::run()
     ROS_INFO("Got box state from vicon_stream");
     // [mm] -> [m]
     tf::Quaternion q(rot.x, rot.y, rot.z, rot.w);
+<<<<<<< HEAD
     transform_.setData(tf::Transform(q, tf::Vector3(pos.x / 1000.0, pos.y / 1000.0, pos.z / 1000.0)));
+=======
+    transform_.setData(tf::Transform(q, tf::Vector3(pos.x/1000.0,pos.y/1000.0,pos.z/1000.0)));
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
     this->send(time);
     sleeper.sleep();
@@ -93,7 +140,11 @@ void BoxStatePublisher::run()
 //------------------------------------------------------------------------------
 void BoxStatePublisher::send(ros::Time time)
 {
+<<<<<<< HEAD
   std::map< std::string, double > joint_states;
+=======
+  std::map<std::string, double> joint_states;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   transform_.stamp_ = time;
   broadcaster.sendTransform(transform_);
   this->publishTransforms(joint_states, time, tf_prefix_);
@@ -101,10 +152,17 @@ void BoxStatePublisher::send(ros::Time time)
 }
 
 //------------------------------------------------------------------------------
+<<<<<<< HEAD
 int main(int argc, char** argv)
 {
   std::string tf_prefix("");
   // if (argc > 1)
+=======
+int main(int argc, char **argv)
+{
+  std::string tf_prefix("");
+  //if (argc > 1)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   //{
   //  ROS_INFO("Set tf_prefix: %s.\n", argv[1]);
   //  tf_prefix.assign(argv[1]);
@@ -114,7 +172,11 @@ int main(int argc, char** argv)
 
   urdf::Model model;
   std::stringstream description_name_stream;
+<<<<<<< HEAD
   // if (!tf_prefix.empty())
+=======
+  //if (!tf_prefix.empty())
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
   //{
   //  description_name_stream << tf_prefix << "_";
   //}
@@ -135,3 +197,7 @@ int main(int argc, char** argv)
 
   return 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7

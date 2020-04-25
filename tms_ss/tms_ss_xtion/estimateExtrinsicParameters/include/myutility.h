@@ -15,6 +15,7 @@
 
 class KeyboardEventReader
 {
+<<<<<<< HEAD
 public:
   KeyboardEventReader();
   ~KeyboardEventReader();
@@ -25,6 +26,17 @@ private:
   bool dirty;
   struct termios cooked;
   struct termios raw;
+=======
+  public:
+    KeyboardEventReader();
+    ~KeyboardEventReader();
+    bool getKeycode(char &c);
+  private:
+    int kfd;
+    bool dirty;
+    struct termios cooked;
+    struct termios raw;
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 };
 
 #endif

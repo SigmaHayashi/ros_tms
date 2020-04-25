@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <launch>
+<<<<<<< HEAD
   <node pkg="tms_rp_voronoi_map" type="tms_rp_voronoi_map"   name="tms_rp_voronoi_map" output="screen"/>
   <node pkg="tms_rp_path_planning" type="tms_rp_path_planning"   name="tms_rp_path_planning" output="screen"/>
+=======
+  <node pkg="tms_rp_voronoi_map" type="tms_rp_voronoi_map"   name="tms_rp_voronoi_map" />
+  <node pkg="tms_rp_path_planning" type="tms_rp_path_planning"   name="tms_rp_path_planning" />
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 </launch>

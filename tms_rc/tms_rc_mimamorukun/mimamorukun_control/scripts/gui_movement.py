@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+<<<<<<< HEAD
 '''
 みまもる君を操作するGUIを表示
 '''
@@ -11,12 +12,21 @@ from PyQt4 import QtGui, QtCore
 import argparse
 import rospy
 # import roslib
+=======
+import os, sys
+from PyQt4 import QtGui, QtCore
+import rospy
+#import roslib
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 from tms_msg_rs.srv import *
 from tms_msg_db.msg import TmsdbStamped
 from tms_msg_db.msg import Tmsdb
 import tms_msg_db.srv
 import tms_msg_rp.srv
+<<<<<<< HEAD
 import tms_msg_rc.srv
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 SCRIPT_PATH = os.path.abspath(os.path.dirname(__file__))
 MAP_PATH = '/images/map.jpg'
@@ -28,7 +38,10 @@ MAP_ORIGN = QtCore.QPoint(0.0, 400.0)
 MAP_SIZE = QtCore.QPoint(780.0, 437.0)
 # ROOM_SIZE = QtCore.QPoint(16000.0, 9000.0)
 ROOM_SIZE = QtCore.QPoint(15000.0, 8000.0)
+<<<<<<< HEAD
 ARGS = {}
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 
 
 class MainWidget(QtGui.QWidget):
@@ -40,7 +53,11 @@ class MainWidget(QtGui.QWidget):
     def initUI(self):
         self.tgt_pos = QtCore.QPoint(0, 0)
         self.wc_pos = QtCore.QPoint(0, 0)
+<<<<<<< HEAD
         self.status = ""  # "Stopped"
+=======
+        self.status = "" #"Stopped"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         map_lbl = QtGui.QLabel(self)
         self.status_lbl = QtGui.QLabel(self)
         self.tgt_lbl = QtGui.QLabel(self)
@@ -50,7 +67,11 @@ class MainWidget(QtGui.QWidget):
 
         map_lbl.setGeometry(0, 0, 800, 480)
         map_lbl.setAlignment(QtCore.Qt.AlignTop)
+<<<<<<< HEAD
         map_pmp = QtGui.QPixmap(SCRIPT_PATH + MAP_PATH).scaled(
+=======
+        map_pmp = QtGui.QPixmap(SCRIPT_PATH+MAP_PATH).scaled(
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             map_lbl.size(),
             aspectRatioMode=QtCore.Qt.KeepAspectRatio,
             transformMode=QtCore.Qt.SmoothTransformation)
@@ -65,7 +86,11 @@ class MainWidget(QtGui.QWidget):
 
         self.tgt_lbl.resize(50, 50)
         tgt_pmp = QtGui.QPixmap(50, 50)
+<<<<<<< HEAD
         tgt_pmp = QtGui.QPixmap(SCRIPT_PATH + TGT_PATH).scaled(
+=======
+        tgt_pmp = QtGui.QPixmap(SCRIPT_PATH+TGT_PATH).scaled(
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             self.tgt_lbl.size(),
             aspectRatioMode=QtCore.Qt.KeepAspectRatio,
             transformMode=QtCore.Qt.SmoothTransformation)
@@ -73,7 +98,11 @@ class MainWidget(QtGui.QWidget):
 
         self.wc_lbl.resize(30, 30)
         wc_pmp = QtGui.QPixmap(30, 30)
+<<<<<<< HEAD
         wc_pmp = QtGui.QPixmap(SCRIPT_PATH + WC_PATH).scaled(
+=======
+        wc_pmp = QtGui.QPixmap(SCRIPT_PATH+WC_PATH).scaled(
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             self.wc_lbl.size(),
             aspectRatioMode=QtCore.Qt.KeepAspectRatio,
             transformMode=QtCore.Qt.SmoothTransformation)
@@ -99,12 +128,18 @@ class MainWidget(QtGui.QWidget):
         self.draw()
         # print(self.tgt_pos.x(), self.tgt_pos.y(), "      ", self.wc_pos.x(), self.wc_pos.y())
 #        , "    ", self.wc_pos)
+<<<<<<< HEAD
         if 200 ** 2 > (self.tgt_pos.x() - self.wc_pos.x()) ** 2 + (self.wc_pos.y() - self.wc_pos.y()) ** 2:
             self.status = ""  # "Arrived"
+=======
+        if 200**2 > (self.tgt_pos.x()-self.wc_pos.x())**2 + (self.wc_pos.y()-self.wc_pos.y())**2:
+            self.status = ""  #"Arrived"
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         self.status_lbl.setText(self.status)
 
     def updateCurPos(self):
         try:
+<<<<<<< HEAD
             srv_client = rospy.ServiceProxy("/tms_db_reader",
                                             tms_msg_db.srv.TmsdbGetData)
             req = tms_msg_db.srv.TmsdbGetDataRequest()
@@ -127,10 +162,34 @@ class MainWidget(QtGui.QWidget):
         req = None
         if not ARGS.direct:
             srv_client = rospy.ServiceProxy("/rp_cmd", tms_msg_rp.srv.rp_cmd)
+=======
+            srv_client = rospy.ServiceProxy("/tms_db_reader/dbreader",
+                                            tms_msg_db.srv.TmsdbGetData)
+            req = tms_msg_db.srv.TmsdbGetDataRequest()
+            req.tmsdb.id = 2007
+            req.tmsdb.sensor = 3001  #3501  #kalman filtered data
+            res = srv_client(req)
+            if 0 < len(res.tmsdb):
+                self.wc_pos = QtCore.QPoint(res.tmsdb[0].x, res.tmsdb[0].y)
+                # print(wc_pos.x(), wc_pos.y()),
+                wc_mark_pos = QtCore.QPoint(
+                    self.wc_pos.x()*1.0/ROOM_SIZE.x()*MAP_SIZE.x()+MAP_ORIGN.x(),
+                    -self.wc_pos.y()*1.0/ROOM_SIZE.y()*MAP_SIZE.y()+MAP_ORIGN.y())
+                # print(wc_mark_pos)
+                self.wc_lbl.move(wc_mark_pos - self.wc_lbl.rect().center())
+        except rospy.ServiceException, e:
+            print ("Service call failed: %s" % e)
+
+    def startMoving(self):
+        try:
+            srv_client = rospy.ServiceProxy("/rp_cmd",
+                                            tms_msg_rp.srv.rp_cmd)
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             req = tms_msg_rp.srv.rp_cmdRequest()
             req.command = 9001   # move
             req.type = True      # not sim, in Real World.But this param isn't used yet
             req.robot_id = 2007  # ID of mimamorukun
+<<<<<<< HEAD
             req.arg = [-1, self.tgt_pos.x() * 0.001, self.tgt_pos.y() * 0.001, 0]
         else:
             srv_client = rospy.ServiceProxy("/mkun_goal_pose", tms_msg_rc.srv.rc_robot_control)
@@ -145,6 +204,13 @@ class MainWidget(QtGui.QWidget):
             print ("cmd result:", res.result)
             self.status = ""  # "Moving"
         except rospy.ServiceException as e:
+=======
+            req.arg = [-1, self.tgt_pos.x(), self.tgt_pos.y(), 0]
+            res = srv_client(req)
+            print ("cmd result:", res.result)
+            self.status = ""  #"Moving"
+        except rospy.ServiceException, e:
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
             print ("Service call failed: %s" % e)
 
     def draw(self):
@@ -152,8 +218,13 @@ class MainWidget(QtGui.QWidget):
 
     def updateTgtPos(self, event):
         self.tgt_pos = QtCore.QPoint(
+<<<<<<< HEAD
             (event.pos().x() * 1.0 - MAP_ORIGN.x()) / MAP_SIZE.x() * ROOM_SIZE.x(),
             (-event.pos().y() * 1.0 + MAP_ORIGN.y()) / MAP_SIZE.y() * ROOM_SIZE.y())
+=======
+            (event.pos().x()*1.0-MAP_ORIGN.x())/MAP_SIZE.x() * ROOM_SIZE.x(),
+            (-event.pos().y()*1.0+MAP_ORIGN.y())/MAP_SIZE.y() * ROOM_SIZE.y())
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
         tgt_mark_pos = QtCore.QPoint(event.pos().x(), event.pos().y())
         # print(event.pos())
         print self.tgt_pos
@@ -162,22 +233,32 @@ class MainWidget(QtGui.QWidget):
 
 def main():
     print ("\x1b[32mHello World\x1b[39m")
+<<<<<<< HEAD
     global ARGS
     p = argparse.ArgumentParser(description="vicon用オブジェクトの編集（平行移動のみ）")
     p.add_argument("-d", "--direct", action='store_true', default=False, help='移動先座標を直接指定')
     ARGS = p.parse_args()
     # print args.direct
 
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     app = QtGui.QApplication(sys.argv)
     mnw = MainWidget()
     mnw.bt_quit.clicked.connect(app.quit)
 
     sys.exit(app.exec_())
 
+<<<<<<< HEAD
     # init ROS
     rospy.init_node('tms_ss_vs_viewer')
     print ("finding DB service server")
     rospy.wait_for_service('/tms_db_reader')
+=======
+    ###init ROS
+    rospy.init_node('tms_ss_vs_viewer')
+    print ("finding DB service server")
+    rospy.wait_for_service('/tms_db_reader/dbreader')
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
     print ("found DB service server")
 
 if __name__ == '__main__':

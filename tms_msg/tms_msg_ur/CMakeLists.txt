@@ -21,7 +21,10 @@ add_service_files(
   tms_rs_get_around_object.srv
   tms_rs_get_object_info_rt.srv
   tms_rs_renew.srv
+<<<<<<< HEAD
   tms_ur_notification.srv
+=======
+>>>>>>> 51ecc3540900cfe208d8c2ca1ecaf2184d407ca7
 )
 
 generate_messages(
