@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="smartpal5_arm_navigation" type="subtask_pick.py" name="subtask_pick" output="screen"/>
+  <node pkg="smartpal5_arm_navigation" type="subtask_place.py" name="subtask_place" output="screen"/>
+  <node pkg="smartpal5_arm_navigation" type="subtask_release.py" name="subtask_release" output="screen"/>
+
+  <node pkg="tms_rc_smartpal_control_unity" type="smartpal_arm_control_unity.py" name="smartpal_arm_control_unity" output="screen"/>
+</launch>
