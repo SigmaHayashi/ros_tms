@@ -1,3 +1,58 @@
+# ROS-TMS for Smart Previewed Reality
+Smart Previewed Realityのために改造されたROS-TMS
+
+# 導入方法
+本家ROS-TMSのWikiを参照
+
+本家ROS-TMS : https://github.com/irvs/ros_tms
+
+Wiki : https://github.com/irvs/ros_tms/wiki
+
+# 本家ROS-TMSとの差異
+太字のパッケージは本家ROS-TMSと差異有り
+
+* dependency
+* ros_tms
+* tms_db
+* tms_dev
+* tms_legacy
+* **tms_msg**  
+     msgやsrvを追加
+
+* **tms_rc**  
+     tms_rc_smartpalにsmartpal_control_unity/scripts/smartpal_arm_control_unity.pyを追加  
+     ※ moveitで計画されたロボットアームの動作計画をTopic Messageとして取得し，HoloLens(Unity)に送信する
+
+* **tms_rp**  
+     rostms_bringup, rostms_description下にあるファイルを適宜変更
+
+* tms_rs
+* tms_sa
+* tms_sd
+* tms_ss
+* **tms_ts**  
+     * 本家のtms_ts_subtask.cppをtms_ts_subtask_common.cppに命名変更
+     * tms_ts_subtask.cpp  
+          StepByStepでロボットを移動させる際のtms_ts
+
+     * **tms_ts_subtask_for_preview.cpp (推奨)**  
+          Seriesでロボットを移動させる際のtms_ts  
+          ロボットアームの動作に関してはこちらもStepByStepで実装してある（MoveItからの動作計画の取得周辺をSeriesで実装するのが手間だったため）
+
+* **tms_ur**  
+     tms_ur_notificationの追加  
+     ※ 詳しい説明 : [tms_ur/tms_ur_notification](https://github.com/SigmaHayashi/ros_tms_for_smart_previewed_reality/tree/master/tms_ur/tms_ur_notification)
+
+# Smart Previewed Reality
+Smart Previewed Realityと，その実行方法等については，そちらを参照
+
+Smart Previewed Reality : https://github.com/SigmaHayashi/Smart-Previewed-Reality
+
+***
+***
+以下は本家ROS-TMSのREADME
+***
+
 # ROS-TMS
 * It is a service robot system with an informationally structured environment referred to the ROS-TMS. This system enables the integration of various data from distributed sensors, as well as storage of these data in an on-line database and the planning of the service motion of a robot using real-time information about the surroundings.
 
